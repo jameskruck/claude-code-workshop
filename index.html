@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="header-meta">
-                    <span class="workshop-duration">90 minutes</span>
+                    <span class="workshop-duration">60 minutes</span>
                 </div>
             </div>
         </header>
@@ -191,209 +191,74 @@
                     <div class="activity-item">
                         <div class="activity-time">10 min</div>
                         <div class="activity-content">
-                            <h3>Activity 1: Account Setup</h3>
-                            <p>Create the accounts you'll need to build and deploy your educational tools</p>
+                            <h3>Activity 1: Setup & Deploy Workshop</h3>
+                            <p>Deploy the workshop with your own AI assistant, then set up additional accounts</p>
+                            
+                            <div class="workshop-note">
+                                <div class="note-icon">💡</div>
+                                <div class="note-content">
+                                    <h4>Workshop Setup Note</h4>
+                                    <p><strong>During the live session:</strong> We'll demonstrate using the instructor's deployed version with working AI chat.</p>
+                                    <p><strong>For hands-on practice:</strong> You'll create your own copy with your own API key - this ensures you control your usage and costs.</p>
+                                    <p>Your deployed workshop will be completely independent and private to you!</p>
+                                </div>
+                            </div>
                             
                             <div class="account-setup-flow">
                                 <div class="setup-step-card">
                                     <div class="step-header">
                                         <div class="step-number">1</div>
-                                        <h4>GitHub Account</h4>
+                                        <h4>Fork & Deploy Workshop</h4>
                                     </div>
                                     <div class="step-content">
-                                        <p>GitHub will store your code and connect to deployment services. It's the first step to getting your project online.</p>
+                                        <p>Get your own copy of this workshop running online with AI chat capabilities.</p>
                                         <div class="step-actions">
-                                            <a href="https://github.com/signup" target="_blank" class="action-button primary">
-                                                Create GitHub Account
+                                            <a href="https://github.com/jkrcuk/claude-code-workshop" target="_blank" class="action-button primary">
+                                                Open Workshop Repository
                                             </a>
                                             <div class="step-instructions">
                                                 <p><strong>What to do:</strong></p>
                                                 <ul>
-                                                    <li>Use your work email (recommended for Ivey projects)</li>
-                                                    <li>Choose a professional username</li>
-                                                    <li>Verify your email address</li>
-                                                    <li>Skip the "personalize" questions for now</li>
+                                                    <li>Click "Fork" in the top-right corner</li>
+                                                    <li>Create GitHub account if needed (use work email)</li>
+                                                    <li>Keep default settings and click "Create fork"</li>
+                                                    <li>You now have your own copy!</li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="completion-check">
                                             <input type="checkbox" id="github-complete">
-                                            <label for="github-complete">✓ GitHub account created and email verified</label>
+                                            <label for="github-complete">✓ Forked workshop repository to my GitHub</label>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="setup-step-card claude-code-detailed">
+                                <div class="setup-step-card">
                                     <div class="step-header">
                                         <div class="step-number">2</div>
-                                        <h4>Claude Code Setup</h4>
-                                        <div class="step-badge">Interactive Guide</div>
+                                        <h4>Deploy to Render</h4>
                                     </div>
                                     <div class="step-content">
-                                        <p>Claude Code is your AI programming assistant that can write, debug, and deploy code. Let's set it up step by step!</p>
-                                        
-                                        <!-- Claude Code Substeps -->
-                                        <div class="claude-substeps">
-                                            <!-- Step 2.1: Account Creation -->
-                                            <div class="claude-substep" data-step="account">
-                                                <div class="substep-header">
-                                                    <span class="substep-number">2.1</span>
-                                                    <h5>Create or Access Your Account</h5>
-                                                    <div class="substep-status" id="account-status">⏳ Pending</div>
-                                                </div>
-                                                <div class="substep-content">
-                                                    <p>First, you'll need an Anthropic account to access Claude Code.</p>
-                                                    <div class="substep-actions">
-                                                        <a href="https://claude.ai/code" target="_blank" class="action-button primary" id="claude-open-btn">
-                                                            🚀 Open Claude Code
-                                                        </a>
-                                                        <div class="account-flow">
-                                                            <div class="flow-option">
-                                                                <div class="option-header">
-                                                                    <strong>New to Claude?</strong>
-                                                                </div>
-                                                                <ul>
-                                                                    <li>Click "Sign up" on the Claude Code page</li>
-                                                                    <li>Use your work email for professional projects</li>
-                                                                    <li>Verify your email address</li>
-                                                                    <li>Complete the brief onboarding</li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="flow-option">
-                                                                <div class="option-header">
-                                                                    <strong>Already have Claude?</strong>
-                                                                </div>
-                                                                <ul>
-                                                                    <li>Sign in with your existing credentials</li>
-                                                                    <li>Look for the "Code" option in the sidebar</li>
-                                                                    <li>Accept the Claude Code terms if prompted</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="interactive-check">
-                                                        <button class="check-button" onclick="checkClaudeAccount()">
-                                                            ✓ I can access Claude Code
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Step 2.2: First Test -->
-                                            <div class="claude-substep disabled" data-step="test" id="claude-test-step">
-                                                <div class="substep-header">
-                                                    <span class="substep-number">2.2</span>
-                                                    <h5>Test Your Setup</h5>
-                                                    <div class="substep-status" id="test-status">⏳ Waiting</div>
-                                                </div>
-                                                <div class="substep-content">
-                                                    <p>Let's make sure Claude Code is working properly with a simple test.</p>
-                                                    
-                                                    <div class="test-command-box">
-                                                        <div class="command-header">
-                                                            <strong>📝 Try this in Claude Code:</strong>
-                                                            <button class="copy-button" onclick="copyTestCommand()" id="copy-test-btn">Copy</button>
-                                                        </div>
-                                                        <div class="command-text" id="test-command">
-                                                            Hello! Can you help me create a simple HTML page with a welcome message for Ivey Business School?
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="expected-response">
-                                                        <p><strong>What should happen:</strong></p>
-                                                        <ul>
-                                                            <li>Claude should respond enthusiastically</li>
-                                                            <li>It should offer to create HTML code</li>
-                                                            <li>You might see code appear in the chat or in a file</li>
-                                                            <li>Claude might ask follow-up questions about styling</li>
-                                                        </ul>
-                                                    </div>
-                                                    
-                                                    <div class="interactive-check">
-                                                        <button class="check-button" onclick="checkClaudeTest()">
-                                                            ✓ Claude responded and created code
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Step 2.3: Understanding the Interface -->
-                                            <div class="claude-substep disabled" data-step="interface" id="claude-interface-step">
-                                                <div class="substep-header">
-                                                    <span class="substep-number">2.3</span>
-                                                    <h5>Learn the Interface</h5>
-                                                    <div class="substep-status" id="interface-status">⏳ Waiting</div>
-                                                </div>
-                                                <div class="substep-content">
-                                                    <p>Get familiar with Claude Code's powerful features.</p>
-                                                    
-                                                    <div class="interface-guide">
-                                                        <div class="interface-feature">
-                                                            <div class="feature-icon">💬</div>
-                                                            <div class="feature-info">
-                                                                <strong>Chat Interface</strong>
-                                                                <p>Talk to Claude naturally - describe what you want to build</p>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="interface-feature">
-                                                            <div class="feature-icon">📁</div>
-                                                            <div class="feature-info">
-                                                                <strong>File Explorer</strong>
-                                                                <p>Claude can create, edit, and organize multiple files</p>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="interface-feature">
-                                                            <div class="feature-icon">🖥️</div>
-                                                            <div class="feature-info">
-                                                                <strong>Live Preview</strong>
-                                                                <p>See your web projects running in real-time</p>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="interface-feature">
-                                                            <div class="feature-icon">🔧</div>
-                                                            <div class="feature-info">
-                                                                <strong>Terminal Access</strong>
-                                                                <p>Claude can run commands and manage your project</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="pro-tips">
-                                                        <h6>💡 Pro Tips for Learning Designers:</h6>
-                                                        <ul>
-                                                            <li><strong>Be specific:</strong> "Create a quiz with 5 multiple choice questions about systems thinking"</li>
-                                                            <li><strong>Ask for explanations:</strong> "Can you explain how this code works?"</li>
-                                                            <li><strong>Request iterations:</strong> "Make the buttons bigger and use Ivey colors"</li>
-                                                            <li><strong>Think pedagogy:</strong> "Add accessibility features for screen readers"</li>
-                                                        </ul>
-                                                    </div>
-                                                    
-                                                    <div class="interactive-check">
-                                                        <button class="check-button" onclick="checkClaudeInterface()">
-                                                            ✓ I understand how Claude Code works
-                                                        </button>
-                                                    </div>
-                                                </div>
+                                        <p>Get your workshop running online so you can test the AI chat functionality.</p>
+                                        <div class="step-actions">
+                                            <a href="https://render.com/register" target="_blank" class="action-button primary">
+                                                Open Render & Sign Up
+                                            </a>
+                                            <div class="step-instructions">
+                                                <p><strong>What to do:</strong></p>
+                                                <ul>
+                                                    <li>Sign up with GitHub (same email as your fork)</li>
+                                                    <li>Authorize Render to access your repositories</li>
+                                                    <li>Click "New +" → "Web Service"</li>
+                                                    <li>Select your forked "claude-code-workshop" repo</li>
+                                                    <li>Keep all default settings and click "Create Web Service"</li>
+                                                    <li>Wait 2-3 minutes for deployment to complete</li>
+                                                </ul>
                                             </div>
                                         </div>
-                                        
-                                        <div class="claude-completion-summary" id="claude-summary" style="display: none;">
-                                            <div class="summary-content">
-                                                <h5>🎉 Claude Code Setup Complete!</h5>
-                                                <p>You're ready to start building educational tools with AI assistance.</p>
-                                                <div class="next-steps">
-                                                    <strong>What you can do now:</strong>
-                                                    <ul>
-                                                        <li>Create interactive learning activities</li>
-                                                        <li>Build assessment tools and quizzes</li>
-                                                        <li>Design accessible educational interfaces</li>
-                                                        <li>Deploy your tools for student use</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                        <div class="completion-check">
+                                            <input type="checkbox" id="render-complete">
+                                            <label for="render-complete">✓ Workshop deployed successfully on Render</label>
                                         </div>
                                     </div>
                                 </div>
@@ -401,27 +266,34 @@
                                 <div class="setup-step-card">
                                     <div class="step-header">
                                         <div class="step-number">3</div>
-                                        <h4>Render Account</h4>
+                                        <h4>Add Your AI Assistant</h4>
                                     </div>
                                     <div class="step-content">
-                                        <p>Render will host your educational tools online for free, making them accessible to everyone.</p>
+                                        <p>Enable the AI chat by adding your Anthropic API key to your deployed workshop.</p>
                                         <div class="step-actions">
-                                            <a href="https://render.com/register" target="_blank" class="action-button primary">
-                                                Create Render Account
+                                            <a href="https://console.anthropic.com/settings/keys" target="_blank" class="action-button primary">
+                                                Get Anthropic API Key
                                             </a>
                                             <div class="step-instructions">
-                                                <p><strong>What to do:</strong></p>
+                                                <p><strong>Step 3.1: Get your API key</strong></p>
                                                 <ul>
-                                                    <li>Sign up with the same email as GitHub</li>
-                                                    <li>Choose "Sign up with GitHub" if available</li>
-                                                    <li>Authorize Render to access your GitHub repositories</li>
-                                                    <li>Complete the verification process</li>
+                                                    <li>Sign up/login at console.anthropic.com</li>
+                                                    <li>Go to Settings → API Keys</li>
+                                                    <li>Click "Create Key" and copy it</li>
+                                                </ul>
+                                                <p><strong>Step 3.2: Add to Render</strong></p>
+                                                <ul>
+                                                    <li>Go back to your Render dashboard</li>
+                                                    <li>Click on your deployed workshop service</li>
+                                                    <li>Go to "Environment" tab</li>
+                                                    <li>Add: Key = <code>ANTHROPIC_API_KEY</code>, Value = your copied key</li>
+                                                    <li>Click "Save Changes" (app will redeploy automatically)</li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="completion-check">
-                                            <input type="checkbox" id="render-complete">
-                                            <label for="render-complete">✓ Render account created and connected to GitHub</label>
+                                            <input type="checkbox" id="claude-complete">
+                                            <label for="claude-complete">✓ API key added and AI chat is working</label>
                                         </div>
                                     </div>
                                 </div>
@@ -608,23 +480,23 @@
                     <div class="activity-item">
                         <div class="activity-time">15 min</div>
                         <div class="activity-content">
-                            <h3>Activity 4: Deploy & Share</h3>
-                            <p>Get your tool online using GitHub and Render</p>
+                            <h3>Activity 4: Deploy Your Tool</h3>
+                            <p>Get your educational tool online and share it with others</p>
                             
                             <div class="deployment-flow">
                                 <div class="deploy-step-card">
                                     <div class="step-header">
                                         <div class="step-number">1</div>
-                                        <h4>Save to GitHub</h4>
+                                        <h4>Create New Repository</h4>
                                     </div>
                                     <div class="deploy-step-content">
-                                        <p>Store your code in GitHub for version control and deployment</p>
+                                        <p>Save your educational tool code to GitHub for deployment</p>
                                         <div class="claude-prompt-box">
                                             <h5>Ask Claude Code:</h5>
                                             <div class="prompt-text">
-                                                "Help me save this to GitHub. I need to create a new repository and push my code. Guide me through each step."
+                                                "Help me create a new GitHub repository for this project and push all my files. I want to deploy this educational tool online. Walk me through each step."
                                             </div>
-                                            <button class="copy-prompt-btn" data-prompt="Help me save this to GitHub. I need to create a new repository and push my code. Guide me through each step.">Copy Prompt</button>
+                                            <button class="copy-prompt-btn" data-prompt="Help me create a new GitHub repository for this project and push all my files. I want to deploy this educational tool online. Walk me through each step.">Copy Prompt</button>
                                         </div>
                                         <div class="step-tips">
                                             <p><strong>Claude Code will help you:</strong></p>
@@ -633,6 +505,7 @@
                                                 <li>Initialize git in your project</li>
                                                 <li>Add and commit your files</li>
                                                 <li>Push everything to GitHub</li>
+                                                <li>Prepare for deployment</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -641,28 +514,28 @@
                                 <div class="deploy-step-card">
                                     <div class="step-header">
                                         <div class="step-number">2</div>
-                                        <h4>Deploy with Render</h4>
+                                        <h4>Deploy to Render</h4>
                                     </div>
                                     <div class="deploy-step-content">
-                                        <p>Make your tool accessible online with free hosting</p>
+                                        <p>Make your educational tool accessible online for your students and colleagues</p>
                                         <div class="deployment-instructions">
                                             <h5>In Render Dashboard:</h5>
                                             <ol>
                                                 <li>Click "New +" → "Web Service"</li>
-                                                <li>Connect your GitHub repository</li>
-                                                <li>Render auto-detects it's a Node.js app</li>
+                                                <li>Connect your new GitHub repository</li>
+                                                <li>Render auto-detects the app type</li>
                                                 <li>Click "Create Web Service"</li>
                                                 <li>Wait 2-3 minutes for deployment</li>
-                                                <li>Get your live URL!</li>
+                                                <li>Get your live URL and test your tool!</li>
                                             </ol>
                                         </div>
                                         <div class="troubleshooting">
-                                            <h5>If something goes wrong:</h5>
+                                            <h5>Need help with deployment issues?</h5>
                                             <div class="claude-prompt-box small">
                                                 <div class="prompt-text">
-                                                    "My Render deployment failed. Here's the error message: [paste error]. Can you help me fix this?"
+                                                    "My deployment failed with this error: [paste error]. Can you help me fix this and get my educational tool online?"
                                                 </div>
-                                                <button class="copy-prompt-btn" data-prompt="My Render deployment failed. Here's the error message: [paste error]. Can you help me fix this?">Copy Prompt</button>
+                                                <button class="copy-prompt-btn" data-prompt="My deployment failed with this error: [paste error]. Can you help me fix this and get my educational tool online?">Copy Prompt</button>
                                             </div>
                                         </div>
                                     </div>
@@ -671,24 +544,24 @@
                                 <div class="deploy-step-card success">
                                     <div class="step-header">
                                         <div class="step-number">3</div>
-                                        <h4>Share & Celebrate!</h4>
+                                        <h4>Test & Share Your Tool!</h4>
                                     </div>
                                     <div class="deploy-step-content">
-                                        <p>Your educational tool is now live on the internet!</p>
+                                        <p>Your educational tool is now live and ready for students and colleagues to use!</p>
                                         <div class="celebration-content">
                                             <div class="share-options">
-                                                <h5>🎉 What you can do now:</h5>
+                                                <h5>🎉 Success! Here's what to do next:</h5>
                                                 <ul>
-                                                    <li><strong>Share the URL</strong> with colleagues and students</li>
-                                                    <li><strong>Test it thoroughly</strong> on different devices</li>
-                                                    <li><strong>Gather feedback</strong> from users</li>
-                                                    <li><strong>Plan improvements</strong> for version 2</li>
+                                                    <li><strong>Test your tool</strong> - Try all features on different devices</li>
+                                                    <li><strong>Share the URL</strong> - Send it to colleagues for feedback</li>
+                                                    <li><strong>Gather user input</strong> - What works well? What could be better?</li>
+                                                    <li><strong>Plan version 2</strong> - What features should you add next?</li>
                                                 </ul>
                                             </div>
                                             <div class="next-steps">
-                                                <h5>🚀 Ready for more?</h5>
-                                                <p>You now have the complete workflow: Idea → Build → Deploy → Share</p>
-                                                <p>Consider building tools for other educational challenges!</p>
+                                                <h5>🚀 You've mastered the complete workflow!</h5>
+                                                <p><strong>Idea → Build with AI → Deploy → Share → Iterate</strong></p>
+                                                <p>This process works for any educational tool you can imagine. What will you build next?</p>
                                             </div>
                                         </div>
                                     </div>
