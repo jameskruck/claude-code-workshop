@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: claude-code-workshop
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: ANTHROPIC_API_KEY
+        sync: false # This will be set manually in Render dashboard
+    domains:
+      - claude-code-workshop.onrender.com

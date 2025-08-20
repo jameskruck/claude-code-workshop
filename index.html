@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Educational Tools with Claude Code - Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">CC</div>
+                    <div class="header-text">
+                        <h1>Claude Code Workshop</h1>
+                        <p class="subtitle">Building Educational Tools with AI - A Practical Lunch & Learn</p>
+                    </div>
+                </div>
+                <div class="header-meta">
+                    <span class="workshop-duration">90 minutes</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="workshop-nav">
+            <div class="nav-items">
+                <a href="#overview" class="nav-item active">Overview</a>
+                <a href="#activities" class="nav-item">Activities</a>
+                <a href="#resources" class="nav-item">Resources</a>
+                <a href="#videos" class="nav-item">Videos</a>
+                <a href="#next-steps" class="nav-item">Next Steps</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Overview Section -->
+            <section id="overview" class="workshop-section active">
+                <div class="section-header">
+                    <h2>Workshop Overview</h2>
+                    <p class="section-subtitle">Learn how Claude Code accelerated the development of three educational tools</p>
+                </div>
+
+                <div class="tools-showcase">
+                    <div class="tool-card">
+                        <div class="tool-icon">🎯</div>
+                        <h3>AnalogueAI</h3>
+                        <p>AI-powered learning inspiration cards with 50 educational concepts</p>
+                        <div class="tool-features">
+                            <span class="feature-tag">AI Chat Integration</span>
+                            <span class="feature-tag">Community Examples</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">📊</div>
+                        <h3>Team Assessments</h3>
+                        <p>Professional evaluation platform for student team presentations</p>
+                        <div class="tool-features">
+                            <span class="feature-tag">Real-time Analytics</span>
+                            <span class="feature-tag">Email Reports</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">♿</div>
+                        <h3>IveyAltText</h3>
+                        <p>AI-powered alt text generator for web accessibility</p>
+                        <div class="tool-features">
+                            <span class="feature-tag">GPT-4 Vision</span>
+                            <span class="feature-tag">User Training</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-objectives">
+                    <h3>What You'll Build Today</h3>
+                    <div class="objectives-grid">
+                        <div class="objective-item">
+                            <div class="objective-number">1</div>
+                            <div class="objective-content">
+                                <h4>Your First Educational Tool</h4>
+                                <p>Build a working web application from scratch using Claude Code</p>
+                            </div>
+                        </div>
+                        <div class="objective-item">
+                            <div class="objective-number">2</div>
+                            <div class="objective-content">
+                                <h4>AI Conversation Skills</h4>
+                                <p>Learn to communicate effectively with AI for development</p>
+                            </div>
+                        </div>
+                        <div class="objective-item">
+                            <div class="objective-number">3</div>
+                            <div class="objective-content">
+                                <h4>Problem-Solving Approach</h4>
+                                <p>How to break down ideas into buildable components</p>
+                            </div>
+                        </div>
+                        <div class="objective-item">
+                            <div class="objective-number">4</div>
+                            <div class="objective-content">
+                                <h4>Deployment & Sharing</h4>
+                                <p>Get your tool online and share it with others</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activities Section -->
+            <section id="activities" class="workshop-section">
+                <div class="section-header">
+                    <h2>Building Your Educational Tool</h2>
+                    <p class="section-subtitle">Step-by-step activities to create your own working application</p>
+                </div>
+
+                <div class="build-inspiration">
+                    <h3>🎯 Inspiration: What's Possible</h3>
+                    <p>Before we start building, here are the tools I created to show what you can accomplish:</p>
+                    <div class="inspiration-links">
+                        <a href="https://analogue-ai-inspiration.onrender.com" target="_blank" class="inspiration-link">
+                            <span class="link-icon">🎯</span>
+                            <span class="link-text">AnalogueAI - AI Learning Cards</span>
+                        </a>
+                        <a href="https://team-assessments-platform.onrender.com" target="_blank" class="inspiration-link">
+                            <span class="link-icon">📊</span>
+                            <span class="link-text">Team Assessments - Evaluation Platform</span>
+                        </a>
+                        <a href="https://ivey-alt-text-generator.onrender.com" target="_blank" class="inspiration-link">
+                            <span class="link-icon">♿</span>
+                            <span class="link-text">IveyAltText - Accessibility Tool</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="activity-timeline">
+                    <div class="activity-item">
+                        <div class="activity-time">5 min</div>
+                        <div class="activity-content">
+                            <h3>Setup Check: System Requirements</h3>
+                            <p>Let's verify you have everything needed to build and deploy educational tools</p>
+                            
+                            <div class="setup-checker">
+                                <h4>📋 Quick System Check</h4>
+                                <div class="requirement-checklist">
+                                    <div class="requirement-item">
+                                        <div class="requirement-check">
+                                            <input type="checkbox" id="check-browser">
+                                            <label for="check-browser">
+                                                <strong>Modern Browser</strong> - Chrome, Firefox, Safari, or Edge (latest version)
+                                            </label>
+                                        </div>
+                                        <div class="requirement-status" id="browser-status">
+                                            <span class="status-checking">Checking...</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="requirement-item">
+                                        <div class="requirement-check">
+                                            <input type="checkbox" id="check-internet">
+                                            <label for="check-internet">
+                                                <strong>Stable Internet</strong> - For accessing cloud services and AI tools
+                                            </label>
+                                        </div>
+                                        <div class="requirement-status" id="internet-status">
+                                            <span class="status-checking">Checking...</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="requirement-item">
+                                        <div class="requirement-check">
+                                            <input type="checkbox" id="check-email">
+                                            <label for="check-email">
+                                                <strong>Email Access</strong> - For account creation and verification
+                                            </label>
+                                        </div>
+                                        <div class="requirement-status">
+                                            <span class="status-manual">✓ Manual check required</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="setup-summary">
+                                    <p><strong>All set?</strong> Let's move on to account setup!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-time">10 min</div>
+                        <div class="activity-content">
+                            <h3>Activity 1: Account Setup</h3>
+                            <p>Create the accounts you'll need to build and deploy your educational tools</p>
+                            
+                            <div class="account-setup-flow">
+                                <div class="setup-step-card">
+                                    <div class="step-header">
+                                        <div class="step-number">1</div>
+                                        <h4>GitHub Account</h4>
+                                    </div>
+                                    <div class="step-content">
+                                        <p>GitHub will store your code and connect to deployment services. It's the first step to getting your project online.</p>
+                                        <div class="step-actions">
+                                            <a href="https://github.com/signup" target="_blank" class="action-button primary">
+                                                Create GitHub Account
+                                            </a>
+                                            <div class="step-instructions">
+                                                <p><strong>What to do:</strong></p>
+                                                <ul>
+                                                    <li>Use your work email (recommended for Ivey projects)</li>
+                                                    <li>Choose a professional username</li>
+                                                    <li>Verify your email address</li>
+                                                    <li>Skip the "personalize" questions for now</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="completion-check">
+                                            <input type="checkbox" id="github-complete">
+                                            <label for="github-complete">✓ GitHub account created and email verified</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="setup-step-card claude-code-detailed">
+                                    <div class="step-header">
+                                        <div class="step-number">2</div>
+                                        <h4>Claude Code Setup</h4>
+                                        <div class="step-badge">Interactive Guide</div>
+                                    </div>
+                                    <div class="step-content">
+                                        <p>Claude Code is your AI programming assistant that can write, debug, and deploy code. Let's set it up step by step!</p>
+                                        
+                                        <!-- Claude Code Substeps -->
+                                        <div class="claude-substeps">
+                                            <!-- Step 2.1: Account Creation -->
+                                            <div class="claude-substep" data-step="account">
+                                                <div class="substep-header">
+                                                    <span class="substep-number">2.1</span>
+                                                    <h5>Create or Access Your Account</h5>
+                                                    <div class="substep-status" id="account-status">⏳ Pending</div>
+                                                </div>
+                                                <div class="substep-content">
+                                                    <p>First, you'll need an Anthropic account to access Claude Code.</p>
+                                                    <div class="substep-actions">
+                                                        <a href="https://claude.ai/code" target="_blank" class="action-button primary" id="claude-open-btn">
+                                                            🚀 Open Claude Code
+                                                        </a>
+                                                        <div class="account-flow">
+                                                            <div class="flow-option">
+                                                                <div class="option-header">
+                                                                    <strong>New to Claude?</strong>
+                                                                </div>
+                                                                <ul>
+                                                                    <li>Click "Sign up" on the Claude Code page</li>
+                                                                    <li>Use your work email for professional projects</li>
+                                                                    <li>Verify your email address</li>
+                                                                    <li>Complete the brief onboarding</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="flow-option">
+                                                                <div class="option-header">
+                                                                    <strong>Already have Claude?</strong>
+                                                                </div>
+                                                                <ul>
+                                                                    <li>Sign in with your existing credentials</li>
+                                                                    <li>Look for the "Code" option in the sidebar</li>
+                                                                    <li>Accept the Claude Code terms if prompted</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="interactive-check">
+                                                        <button class="check-button" onclick="checkClaudeAccount()">
+                                                            ✓ I can access Claude Code
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Step 2.2: First Test -->
+                                            <div class="claude-substep disabled" data-step="test" id="claude-test-step">
+                                                <div class="substep-header">
+                                                    <span class="substep-number">2.2</span>
+                                                    <h5>Test Your Setup</h5>
+                                                    <div class="substep-status" id="test-status">⏳ Waiting</div>
+                                                </div>
+                                                <div class="substep-content">
+                                                    <p>Let's make sure Claude Code is working properly with a simple test.</p>
+                                                    
+                                                    <div class="test-command-box">
+                                                        <div class="command-header">
+                                                            <strong>📝 Try this in Claude Code:</strong>
+                                                            <button class="copy-button" onclick="copyTestCommand()" id="copy-test-btn">Copy</button>
+                                                        </div>
+                                                        <div class="command-text" id="test-command">
+                                                            Hello! Can you help me create a simple HTML page with a welcome message for Ivey Business School?
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="expected-response">
+                                                        <p><strong>What should happen:</strong></p>
+                                                        <ul>
+                                                            <li>Claude should respond enthusiastically</li>
+                                                            <li>It should offer to create HTML code</li>
+                                                            <li>You might see code appear in the chat or in a file</li>
+                                                            <li>Claude might ask follow-up questions about styling</li>
+                                                        </ul>
+                                                    </div>
+                                                    
+                                                    <div class="interactive-check">
+                                                        <button class="check-button" onclick="checkClaudeTest()">
+                                                            ✓ Claude responded and created code
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Step 2.3: Understanding the Interface -->
+                                            <div class="claude-substep disabled" data-step="interface" id="claude-interface-step">
+                                                <div class="substep-header">
+                                                    <span class="substep-number">2.3</span>
+                                                    <h5>Learn the Interface</h5>
+                                                    <div class="substep-status" id="interface-status">⏳ Waiting</div>
+                                                </div>
+                                                <div class="substep-content">
+                                                    <p>Get familiar with Claude Code's powerful features.</p>
+                                                    
+                                                    <div class="interface-guide">
+                                                        <div class="interface-feature">
+                                                            <div class="feature-icon">💬</div>
+                                                            <div class="feature-info">
+                                                                <strong>Chat Interface</strong>
+                                                                <p>Talk to Claude naturally - describe what you want to build</p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="interface-feature">
+                                                            <div class="feature-icon">📁</div>
+                                                            <div class="feature-info">
+                                                                <strong>File Explorer</strong>
+                                                                <p>Claude can create, edit, and organize multiple files</p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="interface-feature">
+                                                            <div class="feature-icon">🖥️</div>
+                                                            <div class="feature-info">
+                                                                <strong>Live Preview</strong>
+                                                                <p>See your web projects running in real-time</p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="interface-feature">
+                                                            <div class="feature-icon">🔧</div>
+                                                            <div class="feature-info">
+                                                                <strong>Terminal Access</strong>
+                                                                <p>Claude can run commands and manage your project</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="pro-tips">
+                                                        <h6>💡 Pro Tips for Learning Designers:</h6>
+                                                        <ul>
+                                                            <li><strong>Be specific:</strong> "Create a quiz with 5 multiple choice questions about systems thinking"</li>
+                                                            <li><strong>Ask for explanations:</strong> "Can you explain how this code works?"</li>
+                                                            <li><strong>Request iterations:</strong> "Make the buttons bigger and use Ivey colors"</li>
+                                                            <li><strong>Think pedagogy:</strong> "Add accessibility features for screen readers"</li>
+                                                        </ul>
+                                                    </div>
+                                                    
+                                                    <div class="interactive-check">
+                                                        <button class="check-button" onclick="checkClaudeInterface()">
+                                                            ✓ I understand how Claude Code works
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="claude-completion-summary" id="claude-summary" style="display: none;">
+                                            <div class="summary-content">
+                                                <h5>🎉 Claude Code Setup Complete!</h5>
+                                                <p>You're ready to start building educational tools with AI assistance.</p>
+                                                <div class="next-steps">
+                                                    <strong>What you can do now:</strong>
+                                                    <ul>
+                                                        <li>Create interactive learning activities</li>
+                                                        <li>Build assessment tools and quizzes</li>
+                                                        <li>Design accessible educational interfaces</li>
+                                                        <li>Deploy your tools for student use</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="setup-step-card">
+                                    <div class="step-header">
+                                        <div class="step-number">3</div>
+                                        <h4>Render Account</h4>
+                                    </div>
+                                    <div class="step-content">
+                                        <p>Render will host your educational tools online for free, making them accessible to everyone.</p>
+                                        <div class="step-actions">
+                                            <a href="https://render.com/register" target="_blank" class="action-button primary">
+                                                Create Render Account
+                                            </a>
+                                            <div class="step-instructions">
+                                                <p><strong>What to do:</strong></p>
+                                                <ul>
+                                                    <li>Sign up with the same email as GitHub</li>
+                                                    <li>Choose "Sign up with GitHub" if available</li>
+                                                    <li>Authorize Render to access your GitHub repositories</li>
+                                                    <li>Complete the verification process</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="completion-check">
+                                            <input type="checkbox" id="render-complete">
+                                            <label for="render-complete">✓ Render account created and connected to GitHub</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="setup-summary-card">
+                                    <h4>🎉 Ready to Build!</h4>
+                                    <p>You now have all the accounts needed to create and deploy educational tools. Let's generate some ideas!</p>
+                                    <div class="progress-indicator">
+                                        <span class="progress-text">Setup Progress: </span>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" id="setup-progress"></div>
+                                        </div>
+                                        <span class="progress-percent" id="setup-percent">0%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-time">10 min</div>
+                        <div class="activity-content">
+                            <h3>Activity 2: AI-Powered Idea Generation</h3>
+                            <p>Chat with AI to discover educational tool ideas tailored for Ivey Business School</p>
+                            
+                            <div class="ai-chat-section">
+                                <div class="chat-intro">
+                                    <h4>💬 Talk to Your AI Assistant</h4>
+                                    <p>This AI understands Ivey's case-based learning, MBA programs, and the unique needs of business education. Ask for ideas!</p>
+                                </div>
+                                
+                                <div class="chat-suggestions">
+                                    <h5>Try asking:</h5>
+                                    <div class="suggestion-buttons">
+                                        <button class="suggestion-btn" data-message="What educational tools would help MBA students collaborate better on case analyses?">
+                                            💼 Case collaboration tools
+                                        </button>
+                                        <button class="suggestion-btn" data-message="Suggest simple tools that could save instructors time while improving student engagement in business courses.">
+                                            ⏰ Time-saving instructor tools
+                                        </button>
+                                        <button class="suggestion-btn" data-message="What digital tools could enhance leadership skill development for executive education participants?">
+                                            👥 Leadership development tools
+                                        </button>
+                                        <button class="suggestion-btn" data-message="I need ideas for tools that work well for both in-person and remote business education.">
+                                            🌐 Hybrid learning tools
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="chat-interface">
+                                    <div class="chat-messages" id="chat-messages">
+                                        <div class="ai-message">
+                                            <div class="message-avatar">🤖</div>
+                                            <div class="message-content">
+                                                <p>Hello! I'm here to help you brainstorm educational tool ideas specifically for Ivey Business School. I understand your case-based learning approach, MBA programs, and the practical needs of business education.</p>
+                                                <p>What kind of educational challenge would you like to solve with a simple digital tool?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="chat-input-area">
+                                        <div class="input-wrapper">
+                                            <textarea 
+                                                id="chat-input" 
+                                                placeholder="Ask for educational tool ideas for Ivey..."
+                                                rows="2"
+                                            ></textarea>
+                                            <button id="send-chat" disabled>Send</button>
+                                        </div>
+                                        <div class="chat-status" id="chat-status"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-selection-section">
+                                <h4>Choose Your Project</h4>
+                                <p>Based on AI suggestions or your own idea, select what you'd like to build:</p>
+                            <div class="build-options">
+                                <div class="build-option" data-project="feedback">
+                                    <h4>🔄 Student Feedback Collector</h4>
+                                    <p>Simple form to gather course feedback with ratings and comments</p>
+                                    <div class="project-features">
+                                        <span class="feature">Form submission</span>
+                                        <span class="feature">Star ratings</span>
+                                        <span class="feature">Results view</span>
+                                    </div>
+                                </div>
+                                <div class="build-option" data-project="timer">
+                                    <h4>⏰ Study Session Timer</h4>
+                                    <p>Pomodoro-style timer with breaks and progress tracking</p>
+                                    <div class="project-features">
+                                        <span class="feature">Countdown timer</span>
+                                        <span class="feature">Break reminders</span>
+                                        <span class="feature">Session history</span>
+                                    </div>
+                                </div>
+                                <div class="build-option" data-project="quiz">
+                                    <h4>📝 Quick Quiz Builder</h4>
+                                    <p>Create and take simple multiple-choice quizzes</p>
+                                    <div class="project-features">
+                                        <span class="feature">Question builder</span>
+                                        <span class="feature">Score tracking</span>
+                                        <span class="feature">Results analysis</span>
+                                    </div>
+                                </div>
+                                <div class="build-option" data-project="journal">
+                                    <h4>📔 Learning Journal</h4>
+                                    <p>Daily reflection tool with guided prompts</p>
+                                    <div class="project-features">
+                                        <span class="feature">Daily entries</span>
+                                        <span class="feature">Reflection prompts</span>
+                                        <span class="feature">Progress view</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-selection">
+                                <p><strong>Selected Project:</strong> <span id="selected-project">None selected</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-time">15 min</div>
+                        <div class="activity-content">
+                            <h3>Activity 3: Build Your Tool</h3>
+                            <p>Use Claude Code to create your educational tool from start to finish</p>
+                            
+                            <div class="setup-steps">
+                                <div class="setup-step">
+                                    <div class="step-number">1</div>
+                                    <div class="build-step-content">
+                                        <h4>Access Claude Code</h4>
+                                        <p>Open <a href="https://claude.ai/code" target="_blank">claude.ai/code</a> in a new tab</p>
+                                    </div>
+                                </div>
+                                <div class="setup-step">
+                                    <div class="step-number">2</div>
+                                    <div class="build-step-content">
+                                        <h4>Copy Your Starting Prompt</h4>
+                                        <div class="prompt-templates">
+                                            <div class="prompt-template" data-for="feedback">
+                                                <h5>Feedback Collector Prompt:</h5>
+                                                <div class="prompt-box">
+                                                    <code>Create a student feedback collection web application. Include: a form with name, course, 5-star rating for overall satisfaction, 5-star rating for content quality, text area for comments, and a submit button. Also create a simple results page that shows all submitted feedback in a clean list. Use modern, clean styling with a professional look. Make it mobile-friendly.</code>
+                                                    <button class="copy-prompt">Copy Prompt</button>
+                                                </div>
+                                            </div>
+                                            <div class="prompt-template" data-for="timer">
+                                                <h5>Study Timer Prompt:</h5>
+                                                <div class="prompt-box">
+                                                    <code>Create a Pomodoro study timer web application. Include: 25-minute work timer, 5-minute break timer, start/pause/reset buttons, session counter, and a simple progress display. Add notification sounds when timers complete. Use clean, focused design that helps concentration. Make the timer large and easy to read.</code>
+                                                    <button class="copy-prompt">Copy Prompt</button>
+                                                </div>
+                                            </div>
+                                            <div class="prompt-template" data-for="quiz">
+                                                <h5>Quiz Builder Prompt:</h5>
+                                                <div class="prompt-box">
+                                                    <code>Create a simple quiz application. Include: a way to add multiple-choice questions with 4 options each, a quiz-taking interface that shows one question at a time, immediate feedback on answers, final score display, and ability to retake the quiz. Use engaging colors and clear typography. Make it intuitive for both creating and taking quizzes.</code>
+                                                    <button class="copy-prompt">Copy Prompt</button>
+                                                </div>
+                                            </div>
+                                            <div class="prompt-template" data-for="journal">
+                                                <h5>Learning Journal Prompt:</h5>
+                                                <div class="prompt-box">
+                                                    <code>Create a daily learning journal web application. Include: date picker, reflection prompts (What did I learn today? What challenged me? What will I do differently?), text areas for responses, save entry button, and a view to see past entries by date. Use calming colors and readable fonts that encourage reflection.</code>
+                                                    <button class="copy-prompt">Copy Prompt</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setup-step">
+                                    <div class="step-number">3</div>
+                                    <div class="build-step-content">
+                                        <h4>Paste & Send</h4>
+                                        <p>Paste the prompt into Claude Code and hit enter to start building!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-time">15 min</div>
+                        <div class="activity-content">
+                            <h3>Activity 4: Deploy & Share</h3>
+                            <p>Get your tool online using GitHub and Render</p>
+                            
+                            <div class="deployment-flow">
+                                <div class="deploy-step-card">
+                                    <div class="step-header">
+                                        <div class="step-number">1</div>
+                                        <h4>Save to GitHub</h4>
+                                    </div>
+                                    <div class="deploy-step-content">
+                                        <p>Store your code in GitHub for version control and deployment</p>
+                                        <div class="claude-prompt-box">
+                                            <h5>Ask Claude Code:</h5>
+                                            <div class="prompt-text">
+                                                "Help me save this to GitHub. I need to create a new repository and push my code. Guide me through each step."
+                                            </div>
+                                            <button class="copy-prompt-btn" data-prompt="Help me save this to GitHub. I need to create a new repository and push my code. Guide me through each step.">Copy Prompt</button>
+                                        </div>
+                                        <div class="step-tips">
+                                            <p><strong>Claude Code will help you:</strong></p>
+                                            <ul>
+                                                <li>Create a new GitHub repository</li>
+                                                <li>Initialize git in your project</li>
+                                                <li>Add and commit your files</li>
+                                                <li>Push everything to GitHub</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="deploy-step-card">
+                                    <div class="step-header">
+                                        <div class="step-number">2</div>
+                                        <h4>Deploy with Render</h4>
+                                    </div>
+                                    <div class="deploy-step-content">
+                                        <p>Make your tool accessible online with free hosting</p>
+                                        <div class="deployment-instructions">
+                                            <h5>In Render Dashboard:</h5>
+                                            <ol>
+                                                <li>Click "New +" → "Web Service"</li>
+                                                <li>Connect your GitHub repository</li>
+                                                <li>Render auto-detects it's a Node.js app</li>
+                                                <li>Click "Create Web Service"</li>
+                                                <li>Wait 2-3 minutes for deployment</li>
+                                                <li>Get your live URL!</li>
+                                            </ol>
+                                        </div>
+                                        <div class="troubleshooting">
+                                            <h5>If something goes wrong:</h5>
+                                            <div class="claude-prompt-box small">
+                                                <div class="prompt-text">
+                                                    "My Render deployment failed. Here's the error message: [paste error]. Can you help me fix this?"
+                                                </div>
+                                                <button class="copy-prompt-btn" data-prompt="My Render deployment failed. Here's the error message: [paste error]. Can you help me fix this?">Copy Prompt</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="deploy-step-card success">
+                                    <div class="step-header">
+                                        <div class="step-number">3</div>
+                                        <h4>Share & Celebrate!</h4>
+                                    </div>
+                                    <div class="deploy-step-content">
+                                        <p>Your educational tool is now live on the internet!</p>
+                                        <div class="celebration-content">
+                                            <div class="share-options">
+                                                <h5>🎉 What you can do now:</h5>
+                                                <ul>
+                                                    <li><strong>Share the URL</strong> with colleagues and students</li>
+                                                    <li><strong>Test it thoroughly</strong> on different devices</li>
+                                                    <li><strong>Gather feedback</strong> from users</li>
+                                                    <li><strong>Plan improvements</strong> for version 2</li>
+                                                </ul>
+                                            </div>
+                                            <div class="next-steps">
+                                                <h5>🚀 Ready for more?</h5>
+                                                <p>You now have the complete workflow: Idea → Build → Deploy → Share</p>
+                                                <p>Consider building tools for other educational challenges!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-time">5 min</div>
+                        <div class="activity-content">
+                            <h3>Activity 5: Reflect & Plan Next</h3>
+                            <p>Capture what you learned and plan your next educational tools</p>
+                            
+                            <div class="building-tips">
+                                <div class="tip-section">
+                                    <h4>💡 Building Tips</h4>
+                                    <ul class="tip-list">
+                                        <li>Start with the basic functionality first</li>
+                                        <li>Test your tool frequently as you build</li>
+                                        <li>Ask Claude Code to explain any code you don't understand</li>
+                                        <li>Request styling improvements after core features work</li>
+                                        <li>Add one feature at a time</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="tip-section">
+                                    <h4>🔄 Common Follow-up Requests</h4>
+                                    <div class="followup-examples">
+                                        <div class="followup-example">
+                                            <strong>Styling:</strong> "Make the design more modern and add some color"
+                                        </div>
+                                        <div class="followup-example">
+                                            <strong>Features:</strong> "Add a way to delete entries" or "Include data validation"
+                                        </div>
+                                        <div class="followup-example">
+                                            <strong>Layout:</strong> "Make this mobile-friendly" or "Center the content better"
+                                        </div>
+                                        <div class="followup-example">
+                                            <strong>Fixes:</strong> "The submit button isn't working" or "The timer resets too early"
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="progress-tracker">
+                                <h4>✅ Building Checklist</h4>
+                                <div class="checklist">
+                                    <label class="checklist-item">
+                                        <input type="checkbox"> Basic functionality working
+                                    </label>
+                                    <label class="checklist-item">
+                                        <input type="checkbox"> Styling looks clean and professional
+                                    </label>
+                                    <label class="checklist-item">
+                                        <input type="checkbox"> Tool is easy to understand and use
+                                    </label>
+                                    <label class="checklist-item">
+                                        <input type="checkbox"> Added at least one custom improvement
+                                    </label>
+                                    <label class="checklist-item">
+                                        <input type="checkbox"> Tested on mobile/tablet view
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="workshop-section">
+                <div class="section-header">
+                    <h2>Resources & Links</h2>
+                    <p class="section-subtitle">Everything you need to get started with Claude Code</p>
+                </div>
+
+                <div class="resources-grid">
+                    <div class="resource-category">
+                        <h3>Getting Started</h3>
+                        <ul class="resource-list">
+                            <li><a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank">Claude Code Documentation</a></li>
+                            <li><a href="https://claude.ai/code" target="_blank">Access Claude Code</a></li>
+                            <li><a href="https://docs.anthropic.com/en/docs/claude-code/quickstart" target="_blank">Quick Start Guide</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-category">
+                        <h3>Example Projects</h3>
+                        <ul class="resource-list">
+                            <li><a href="https://github.com/jkrcuk/analogueAI" target="_blank">AnalogueAI Source Code</a></li>
+                            <li><a href="https://github.com/jkrcuk/TeamAssessments" target="_blank">Team Assessments Source Code</a></li>
+                            <li><a href="https://github.com/jkrcuk/IveyAltText" target="_blank">IveyAltText Source Code</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-category">
+                        <h3>Development Tools</h3>
+                        <ul class="resource-list">
+                            <li><a href="https://nodejs.org" target="_blank">Node.js</a> - Runtime for web applications</li>
+                            <li><a href="https://render.com" target="_blank">Render</a> - Easy web hosting</li>
+                            <li><a href="https://vercel.com" target="_blank">Vercel</a> - Frontend deployment</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-category">
+                        <h3>Learning Resources</h3>
+                        <ul class="resource-list">
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank">MDN Web Docs</a></li>
+                            <li><a href="https://www.freecodecamp.org" target="_blank">FreeCodeCamp</a></li>
+                            <li><a href="https://javascript.info" target="_blank">JavaScript.info</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quick-reference">
+                    <h3>Quick Reference: Common Prompts</h3>
+                    <div class="prompt-examples">
+                        <div class="prompt-example">
+                            <h4>Starting a New Project:</h4>
+                            <code>"Create a simple web application with [describe functionality]. Use HTML, CSS, and JavaScript. Make it mobile-friendly."</code>
+                        </div>
+                        <div class="prompt-example">
+                            <h4>Debugging Issues:</h4>
+                            <code>"I'm getting this error: [error message]. Here's my code: [code]. Can you help me fix it?"</code>
+                        </div>
+                        <div class="prompt-example">
+                            <h4>Adding Features:</h4>
+                            <code>"Add [specific feature] to this existing application. Here's the current code structure: [code]"</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Videos Section -->
+            <section id="videos" class="workshop-section">
+                <div class="section-header">
+                    <h2>Video Resources</h2>
+                    <p class="section-subtitle">Watch demonstrations and tutorials</p>
+                </div>
+
+                <div class="video-grid">
+                    <div class="video-placeholder">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <h3>Building AnalogueAI with Claude Code</h3>
+                        <p>See how the AI learning cards tool was developed from concept to deployment</p>
+                    </div>
+
+                    <div class="video-placeholder">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <h3>Team Assessment Platform Demo</h3>
+                        <p>Walkthrough of the professional evaluation system features</p>
+                    </div>
+
+                    <div class="video-placeholder">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <h3>Alt Text Generator Deep Dive</h3>
+                        <p>Exploring AI-powered accessibility tool development</p>
+                    </div>
+
+                    <div class="video-placeholder">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <h3>Getting Started with Claude Code</h3>
+                        <p>Step-by-step guide for beginners</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps Section -->
+            <section id="next-steps" class="workshop-section">
+                <div class="section-header">
+                    <h2>Next Steps</h2>
+                    <p class="section-subtitle">Your journey continues after the workshop</p>
+                </div>
+
+                <div class="next-steps-content">
+                    <div class="steps-timeline">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="next-step-content">
+                                <h3>Get Access</h3>
+                                <p>Sign up for Claude Code and familiarize yourself with the interface</p>
+                                <a href="https://claude.ai/code" target="_blank" class="step-link">Get Claude Code Access</a>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="next-step-content">
+                                <h3>Start Small</h3>
+                                <p>Begin with simple HTML/CSS projects to build confidence</p>
+                                <div class="starter-ideas">
+                                    <span class="idea-tag">Personal webpage</span>
+                                    <span class="idea-tag">Simple calculator</span>
+                                    <span class="idea-tag">To-do list</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="next-step-content">
+                                <h3>Solve Real Problems</h3>
+                                <p>Identify specific challenges in your educational work</p>
+                                <ul class="problem-examples">
+                                    <li>Streamline grading or feedback collection</li>
+                                    <li>Create interactive learning materials</li>
+                                    <li>Build student engagement tools</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="next-step-content">
+                                <h3>Share & Iterate</h3>
+                                <p>Get feedback from colleagues and continuously improve your tools</p>
+                                <div class="sharing-tips">
+                                    <p><strong>💡 Tip:</strong> Start with paper prototypes or mockups before coding</p>
+                                    <p><strong>🔄 Remember:</strong> Small improvements compound over time</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="support-section">
+                        <h3>Ongoing Support</h3>
+                        <div class="support-options">
+                            <div class="support-option">
+                                <h4>📧 Email Support</h4>
+                                <p>Questions about workshop content or tools</p>
+                                <code>jkrcuk@ivey.ca</code>
+                            </div>
+                            <div class="support-option">
+                                <h4>💬 Community</h4>
+                                <p>Connect with other educators exploring AI tools</p>
+                                <em>Community forum coming soon</em>
+                            </div>
+                            <div class="support-option">
+                                <h4>🔧 Office Hours</h4>
+                                <p>Monthly drop-in sessions for hands-on help</p>
+                                <em>Schedule TBA</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="workshop-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Ivey EdTech Lab - Building Educational Tools with Claude Code Workshop</p>
+                <p class="footer-note">This workshop and all materials are designed to help educators leverage AI for educational innovation.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
