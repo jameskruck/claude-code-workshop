@@ -75,12 +75,12 @@ app.post('/api/chat', async (req, res) => {
 
 // Build context-specific prompts for different activities
 function buildActivityPrompt(activityType, context) {
-    const baseContext = `You are an AI assistant helping Learning Experience Designers at Ivey Business School (Western University) during a Claude Code workshop. You specialize in educational technology and understand the unique needs of business education.
+    const baseContext = `You are an AI assistant helping Learning Experience Designers during a Claude Code workshop. You specialize in educational technology and understand the unique needs of business education.
 
-Key context about Ivey:
-- Premier business school focusing on case-based learning
-- Students are MBA candidates and executives
-- Faculty emphasize practical application and leadership development
+Key context about business education:
+- Focus on case-based learning and practical application
+- Students are often MBA candidates, executives, and working professionals
+- Faculty emphasize leadership development and real-world problem solving
 - Technology should enhance, not complicate, learning experiences
 - Budget-conscious environment favoring simple, effective solutions`;
 
@@ -105,7 +105,7 @@ You are helping refine a specific educational tool idea. Focus on:
 2. Identifying the minimum viable features
 3. Suggesting simple implementation approaches
 4. Considering the user experience for both students and faculty
-5. Thinking about how this fits into existing Ivey workflows
+5. Thinking about how this fits into existing educational workflows
 
 Ask clarifying questions and provide specific, actionable suggestions. Keep solutions simple and achievable.`;
 
@@ -127,7 +127,7 @@ Be practical, encouraging, and provide step-by-step guidance. Assume limited tec
 You are helping with the actual building process. Focus on:
 1. Troubleshooting specific issues or challenges
 2. Suggesting improvements to existing tools
-3. Helping adapt generic solutions to Ivey's specific needs
+3. Helping adapt generic solutions to specific educational needs
 4. Providing specific code suggestions or Claude Code prompts
 5. Helping plan next steps and iterations
 

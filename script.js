@@ -657,7 +657,7 @@ async function sendChatMessage(message) {
                 message: message,
                 activityType: 'idea-generation',
                 context: {
-                    institution: 'Ivey Business School',
+                    institution: 'Business Education',
                     role: 'Learning Experience Designer',
                     focus: 'Educational tool development'
                 }
