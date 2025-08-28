@@ -225,6 +225,30 @@ main {
     border: 1px solid #e1e5e9;
 }
 
+/* Clickable Tool Cards */
+.tool-card.clickable {
+    cursor: pointer;
+}
+
+.tool-card.clickable:hover {
+    border-color: #c5b783;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tool-link {
+    color: #c5b783;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tool-card.clickable:hover .tool-link {
+    opacity: 1;
+}
+
 /* Learning Objectives */
 .learning-objectives {
     background: #f8f9fa;
