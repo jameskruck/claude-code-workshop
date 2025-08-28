@@ -488,105 +488,29 @@
                                 </div>
                             </div>
                             
-                            <div class="account-setup-flow">
-                                <div class="setup-step-card">
-                                    <div class="step-header">
-                                        <div class="step-number">1</div>
-                                        <h4>Fork & Deploy Workshop</h4>
+                            <div class="setup-prereq-check">
+                                <h4>🔧 Pre-Workshop Setup Check</h4>
+                                <p>Before we start building, make sure you've completed the <a href="#setup">Pre-Workshop Setup</a> steps above:</p>
+                                
+                                <div class="prereq-checklist">
+                                    <div class="prereq-item">
+                                        <input type="checkbox" id="prereq-github">
+                                        <label for="prereq-github">✓ GitHub account created and workshop repository forked</label>
                                     </div>
-                                    <div class="step-content">
-                                        <p>Get your own copy of this workshop running online with AI chat capabilities.</p>
-                                        <div class="step-actions">
-                                            <a href="https://github.com/jkrcuk/claude-code-workshop" target="_blank" class="action-button primary">
-                                                Open Workshop Repository
-                                            </a>
-                                            <div class="step-instructions">
-                                                <p><strong>What to do:</strong></p>
-                                                <ul>
-                                                    <li>Click "Fork" in the top-right corner</li>
-                                                    <li>Create GitHub account if needed (use work email)</li>
-                                                    <li>Keep default settings and click "Create fork"</li>
-                                                    <li>You now have your own copy!</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="completion-check">
-                                            <input type="checkbox" id="github-complete">
-                                            <label for="github-complete">✓ Forked workshop repository to my GitHub</label>
-                                        </div>
+                                    <div class="prereq-item">
+                                        <input type="checkbox" id="prereq-render">
+                                        <label for="prereq-render">✓ Render account created and workshop deployed</label>
                                     </div>
-                                </div>
-
-                                <div class="setup-step-card">
-                                    <div class="step-header">
-                                        <div class="step-number">2</div>
-                                        <h4>Deploy to Render</h4>
-                                    </div>
-                                    <div class="step-content">
-                                        <p>Get your workshop running online so you can test the AI chat functionality.</p>
-                                        <div class="step-actions">
-                                            <a href="https://render.com/register" target="_blank" class="action-button primary">
-                                                Open Render & Sign Up
-                                            </a>
-                                            <div class="step-instructions">
-                                                <p><strong>What to do:</strong></p>
-                                                <ul>
-                                                    <li>Sign up with GitHub (same email as your fork)</li>
-                                                    <li>Authorize Render to access your repositories</li>
-                                                    <li>Click "New +" → "Web Service"</li>
-                                                    <li>Select your forked "claude-code-workshop" repo</li>
-                                                    <li>Keep all default settings and click "Create Web Service"</li>
-                                                    <li>Wait 2-3 minutes for deployment to complete</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="completion-check">
-                                            <input type="checkbox" id="render-complete">
-                                            <label for="render-complete">✓ Workshop deployed successfully on Render</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="setup-step-card">
-                                    <div class="step-header">
-                                        <div class="step-number">3</div>
-                                        <h4>Add Your AI Assistant</h4>
-                                    </div>
-                                    <div class="step-content">
-                                        <p>Enable the AI chat by adding your Anthropic API key to your deployed workshop.</p>
-                                        <div class="step-actions">
-                                            <a href="https://console.anthropic.com/settings/keys" target="_blank" class="action-button primary">
-                                                Get Anthropic API Key
-                                            </a>
-                                            <div class="step-instructions">
-                                                <p><strong>Step 3.1: Get your API key</strong></p>
-                                                <ul>
-                                                    <li>Sign up/login at console.anthropic.com</li>
-                                                    <li>Go to Settings → API Keys</li>
-                                                    <li>Click "Create Key" and copy it</li>
-                                                </ul>
-                                                <p><strong>Step 3.2: Add to Render</strong></p>
-                                                <ul>
-                                                    <li>Go back to your Render dashboard</li>
-                                                    <li>Click on your deployed workshop service</li>
-                                                    <li>Go to "Environment" tab</li>
-                                                    <li>Add: Key = <code>ANTHROPIC_API_KEY</code>, Value = your copied key</li>
-                                                    <li>Click "Save Changes" (app will redeploy automatically)</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="completion-check">
-                                            <input type="checkbox" id="claude-complete">
-                                            <label for="claude-complete">✓ API key added and AI chat is working</label>
-                                        </div>
+                                    <div class="prereq-item">
+                                        <input type="checkbox" id="prereq-anthropic">
+                                        <label for="prereq-anthropic">✓ Anthropic API key added and AI chat working</label>
                                     </div>
                                 </div>
                                 
-                                <div class="setup-summary-card">
-                                    <h4>🎉 Ready to Build!</h4>
-                                    <p>You now have all the accounts needed to create and deploy educational tools. Let's generate some ideas!</p>
-                                    <div class="progress-indicator">
-                                        <span class="progress-text">Setup Progress: </span>
+                                <div class="setup-help">
+                                    <p><strong>Need help?</strong> Go back to <a href="#setup">Pre-Workshop Setup</a> or use the AI troubleshooting chat above.</p>
+                                </div>
+                            </div>
                                         <div class="progress-bar">
                                             <div class="progress-fill" id="setup-progress"></div>
                                         </div>
@@ -936,9 +860,9 @@
                     <div class="resource-category">
                         <h3>Example Projects</h3>
                         <ul class="resource-list">
-                            <li><a href="https://github.com/jkrcuk/analogueAI" target="_blank">AnalogueAI Source Code</a></li>
-                            <li><a href="https://github.com/jkrcuk/TeamAssessments" target="_blank">Team Assessments Source Code</a></li>
-                            <li><a href="https://github.com/jkrcuk/IveyAltText" target="_blank">IveyAltText Source Code</a></li>
+                            <li><a href="https://analogue.ai" target="_blank">AnalogueAI</a> - AI learning inspiration cards</li>
+                            <li><a href="https://github.com/jkruckivey/educational-prompts-hub" target="_blank">Educational Prompts Hub</a> - Curated ChatGPT prompts</li>
+                            <li><a href="https://github.com/jameskruck/claude-code-workshop" target="_blank">This Workshop</a> - AI-powered workshop interface</li>
                         </ul>
                     </div>
 
@@ -984,41 +908,12 @@
             <section id="videos" class="workshop-section">
                 <div class="section-header">
                     <h2>Video Resources</h2>
-                    <p class="section-subtitle">Watch demonstrations and tutorials</p>
+                    <p class="section-subtitle">Documentation and tutorials</p>
                 </div>
 
-                <div class="video-grid">
-                    <div class="video-placeholder">
-                        <div class="video-thumbnail">
-                            <div class="play-button">▶</div>
-                        </div>
-                        <h3>Building AnalogueAI with Claude Code</h3>
-                        <p>See how the AI learning cards tool was developed from concept to deployment</p>
-                    </div>
-
-                    <div class="video-placeholder">
-                        <div class="video-thumbnail">
-                            <div class="play-button">▶</div>
-                        </div>
-                        <h3>Team Assessment Platform Demo</h3>
-                        <p>Walkthrough of the professional evaluation system features</p>
-                    </div>
-
-                    <div class="video-placeholder">
-                        <div class="video-thumbnail">
-                            <div class="play-button">▶</div>
-                        </div>
-                        <h3>Alt Text Generator Deep Dive</h3>
-                        <p>Exploring AI-powered accessibility tool development</p>
-                    </div>
-
-                    <div class="video-placeholder">
-                        <div class="video-thumbnail">
-                            <div class="play-button">▶</div>
-                        </div>
-                        <h3>Getting Started with Claude Code</h3>
-                        <p>Step-by-step guide for beginners</p>
-                    </div>
+                <div class="video-note">
+                    <p><strong>📹 Workshop Recording:</strong> This live workshop will be recorded and made available to all participants.</p>
+                    <p><strong>📚 Additional Resources:</strong> Check the <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank">Claude Code Documentation</a> for detailed guides and examples.</p>
                 </div>
             </section>
 
@@ -1034,9 +929,9 @@
                         <div class="step-item">
                             <div class="step-number">1</div>
                             <div class="next-step-content">
-                                <h3>Get Access</h3>
-                                <p>Sign up for Claude Code and familiarize yourself with the interface</p>
-                                <a href="https://claude.ai/code" target="_blank" class="step-link">Get Claude Code Access</a>
+                                <h3>Continue Building</h3>
+                                <p>Use Claude Code to expand and improve the tool you built today</p>
+                                <p><em>You already have access from the workshop setup!</em></p>
                             </div>
                         </div>
 

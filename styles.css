@@ -2510,6 +2510,94 @@ main {
     margin-bottom: 2rem;
 }
 
+/* Setup Prerequisite Check */
+.setup-prereq-check {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.setup-prereq-check h4 {
+    color: #856404;
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+}
+
+.setup-prereq-check p {
+    color: #856404;
+    margin-bottom: 1.5rem;
+}
+
+.prereq-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.prereq-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.prereq-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #ffc107;
+}
+
+.prereq-item label {
+    color: #856404;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.setup-help {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 3px solid #ffc107;
+}
+
+.setup-help p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Video Section Simplification */
+.video-note {
+    background: #f8f9fa;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.video-note p {
+    color: #2c2c2c;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+}
+
+.video-note p:last-child {
+    margin-bottom: 0;
+}
+
+.video-note a {
+    color: #c5b783;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.video-note a:hover {
+    text-decoration: underline;
+}
+}
+
 .time-badge {
     background: #c5b783;
     color: #2c2c2c;
