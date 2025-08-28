@@ -27,9 +27,9 @@
             <div class="nav-items">
                 <a href="#overview" class="nav-item active">Overview</a>
                 <a href="#starter-pack" class="nav-item">Starter Pack</a>
-                <a href="#activities" class="nav-item">Activities</a>
+                <a href="#setup" class="nav-item">Pre-Workshop Setup</a>
+                <a href="#activities" class="nav-item">Live Workshop</a>
                 <a href="#resources" class="nav-item">Resources</a>
-                <a href="#videos" class="nav-item">Videos</a>
                 <a href="#next-steps" class="nav-item">Next Steps</a>
             </div>
         </nav>
@@ -295,7 +295,287 @@
                 </div>
             </section>
 
-            <!-- Activities Section -->
+            <!-- Pre-Workshop Setup Section -->
+            <section id="setup" class="workshop-section">
+                <div class="section-header">
+                    <h2>Pre-Workshop Setup (Do This Before We Meet!)</h2>
+                    <p class="section-subtitle">Complete these steps ahead of time so we can focus on building during our live session</p>
+                </div>
+
+                <div class="setup-time-estimate">
+                    <div class="time-badge">⏱️ 15-20 minutes total</div>
+                    <p>Get this done beforehand and you'll hit the ground running in our workshop!</p>
+                </div>
+
+                <div class="setup-benefits">
+                    <div class="benefit-callout">
+                        <div class="benefit-icon">🚀</div>
+                        <div class="benefit-content">
+                            <h3>Why Do This Ahead of Time?</h3>
+                            <p>Account setup and deployments can be unpredictable. By handling this beforehand, our live workshop time is 100% focused on building amazing educational tools, not wrestling with passwords and waiting for deployments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-help-callout">
+                    <div class="ai-help-header">
+                        <div class="ai-icon">🤖</div>
+                        <h3>Stuck? Get AI Help!</h3>
+                    </div>
+                    <div class="ai-help-content">
+                        <p><strong>Having trouble with setup?</strong> Use the AI chat below to get personalized troubleshooting help. The AI understands all these setup steps and can guide you through any problems.</p>
+                        <div class="ai-help-examples">
+                            <p><strong>Try asking:</strong></p>
+                            <ul>
+                                <li>"My GitHub fork isn't working, what should I try?"</li>
+                                <li>"Render deployment failed with error X, how do I fix it?"</li>
+                                <li>"I can't find my Anthropic API key, where is it?"</li>
+                                <li>"The AI chat isn't responding, what's wrong?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setup-checklist">
+                    <div class="checklist-header">
+                        <h3>📋 Complete Setup Checklist</h3>
+                        <p>Check off each step as you complete it. All must be done before the workshop!</p>
+                    </div>
+
+                    <div class="setup-steps">
+                        <div class="setup-step-card">
+                            <div class="step-header">
+                                <div class="step-number">1</div>
+                                <h4>Create Your Accounts</h4>
+                                <div class="step-time">5 minutes</div>
+                            </div>
+                            <div class="step-content">
+                                <p>Get set up with the three services you'll need:</p>
+                                
+                                <div class="account-grid">
+                                    <div class="account-card">
+                                        <div class="account-info">
+                                            <h5>GitHub (Free)</h5>
+                                            <p>For storing and sharing your code</p>
+                                        </div>
+                                        <div class="account-action">
+                                            <a href="https://github.com/signup" target="_blank" class="setup-button">Sign Up</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="account-card">
+                                        <div class="account-info">
+                                            <h5>Render (Free)</h5>
+                                            <p>For hosting your tools online</p>
+                                        </div>
+                                        <div class="account-action">
+                                            <a href="https://render.com/register" target="_blank" class="setup-button">Sign Up</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="account-card">
+                                        <div class="account-info">
+                                            <h5>Anthropic (Free)</h5>
+                                            <p>For Claude Code access</p>
+                                        </div>
+                                        <div class="account-action">
+                                            <a href="https://console.anthropic.com/" target="_blank" class="setup-button">Sign Up</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="completion-check">
+                                    <input type="checkbox" id="accounts-complete">
+                                    <label for="accounts-complete">✓ All three accounts created</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="setup-step-card">
+                            <div class="step-header">
+                                <div class="step-number">2</div>
+                                <h4>Fork Workshop Repository</h4>
+                                <div class="step-time">2 minutes</div>
+                            </div>
+                            <div class="step-content">
+                                <p>Get your own copy of the workshop code:</p>
+                                
+                                <div class="step-instructions">
+                                    <ol>
+                                        <li>Go to <a href="https://github.com/jkrcuk/claude-code-workshop" target="_blank">github.com/jkrcuk/claude-code-workshop</a></li>
+                                        <li>Click the <strong>"Fork"</strong> button in the top-right</li>
+                                        <li>Keep all default settings and click <strong>"Create fork"</strong></li>
+                                        <li>You now have your own copy at <code>github.com/your-username/claude-code-workshop</code></li>
+                                    </ol>
+                                </div>
+                                
+                                <div class="completion-check">
+                                    <input type="checkbox" id="fork-complete">
+                                    <label for="fork-complete">✓ Workshop repository forked to my GitHub</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="setup-step-card">
+                            <div class="step-header">
+                                <div class="step-number">3</div>
+                                <h4>Deploy Your Workshop</h4>
+                                <div class="step-time">5 minutes</div>
+                            </div>
+                            <div class="step-content">
+                                <p>Get your personal workshop running online:</p>
+                                
+                                <div class="step-instructions">
+                                    <ol>
+                                        <li>In Render dashboard, click <strong>"New +"</strong> → <strong>"Web Service"</strong></li>
+                                        <li>Connect your GitHub account and select your forked repository</li>
+                                        <li>Render auto-detects all settings - just click <strong>"Create Web Service"</strong></li>
+                                        <li>Wait 2-3 minutes for deployment (you'll see a live URL when done)</li>
+                                        <li>Click the URL to test - you should see this same workshop interface</li>
+                                    </ol>
+                                </div>
+                                
+                                <div class="completion-check">
+                                    <input type="checkbox" id="deploy-complete">
+                                    <label for="deploy-complete">✓ Workshop deployed and accessible online</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="setup-step-card">
+                            <div class="step-header">
+                                <div class="step-number">4</div>
+                                <h4>Enable AI Chat</h4>
+                                <div class="step-time">3 minutes</div>
+                            </div>
+                            <div class="step-content">
+                                <p>Add your API key so the AI assistant can help you:</p>
+                                
+                                <div class="step-instructions">
+                                    <ol>
+                                        <li>In Anthropic console → <strong>Settings → API Keys</strong></li>
+                                        <li>Click <strong>"Create Key"</strong> and copy the key (starts with sk-ant-)</li>
+                                        <li>In Render → your deployed service → <strong>Environment</strong> tab</li>
+                                        <li>Add variable: <code>ANTHROPIC_API_KEY</code> = [paste your key]</li>
+                                        <li>Click <strong>"Save Changes"</strong> (service will redeploy automatically)</li>
+                                    </ol>
+                                </div>
+                                
+                                <div class="completion-check">
+                                    <input type="checkbox" id="ai-complete">
+                                    <label for="ai-complete">✓ AI chat is working in my deployed workshop</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="setup-step-card">
+                            <div class="step-header">
+                                <div class="step-number">5</div>
+                                <h4>Test Everything</h4>
+                                <div class="step-time">2 minutes</div>
+                            </div>
+                            <div class="step-content">
+                                <p>Quick verification that you're ready for the workshop:</p>
+                                
+                                <div class="test-checklist">
+                                    <div class="test-item">
+                                        <input type="checkbox" id="test-access">
+                                        <label for="test-access">✓ I can access my deployed workshop URL</label>
+                                    </div>
+                                    <div class="test-item">
+                                        <input type="checkbox" id="test-ai">
+                                        <label for="test-ai">✓ AI chat responds when I ask "What educational tools should I build?"</label>
+                                    </div>
+                                    <div class="test-item">
+                                        <input type="checkbox" id="test-mobile">
+                                        <label for="test-mobile">✓ Workshop works on my phone/tablet</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="success-message" id="setup-success" style="display: none;">
+                                    <div class="success-icon">🎉</div>
+                                    <div class="success-content">
+                                        <h4>Perfect! You're Ready!</h4>
+                                        <p>Everything is working. You're all set for an amazing workshop experience!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setup-ai-chat">
+                    <div class="ai-chat-header">
+                        <h3>🤖 Setup Troubleshooting AI</h3>
+                        <p>Having issues with any of the steps above? Ask the AI for personalized help!</p>
+                    </div>
+                    
+                    <div class="chat-interface">
+                        <div class="chat-messages" id="setup-chat-messages">
+                            <div class="ai-message">
+                                <div class="message-avatar">🤖</div>
+                                <div class="message-content">
+                                    <p>Hi! I'm here to help you get set up for the workshop. I can help troubleshoot GitHub, Render, Anthropic API, or any deployment issues you're facing.</p>
+                                    <p>What step are you working on, and what problem are you encountering?</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-input-area">
+                            <div class="input-wrapper">
+                                <textarea 
+                                    id="setup-chat-input" 
+                                    placeholder="Describe the setup problem you're facing..."
+                                    rows="2"
+                                ></textarea>
+                                <button id="send-setup-chat" disabled>Send</button>
+                            </div>
+                            <div class="chat-status" id="setup-chat-status"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setup-final-checklist">
+                    <h3>🎯 Ready for Workshop Checklist</h3>
+                    <p>You're ready when ALL of these are complete:</p>
+                    
+                    <div class="final-checks">
+                        <div class="final-check-item">
+                            <div class="check-icon" id="final-check-1">❌</div>
+                            <div class="check-content">
+                                <h4>All Accounts Created</h4>
+                                <p>GitHub, Render, and Anthropic accounts are active</p>
+                            </div>
+                        </div>
+                        
+                        <div class="final-check-item">
+                            <div class="check-icon" id="final-check-2">❌</div>
+                            <div class="check-content">
+                                <h4>Workshop Deployed</h4>
+                                <p>Your personal workshop is running and accessible online</p>
+                            </div>
+                        </div>
+                        
+                        <div class="final-check-item">
+                            <div class="check-icon" id="final-check-3">❌</div>
+                            <div class="check-content">
+                                <h4>AI Chat Working</h4>
+                                <p>You can successfully interact with the AI assistant</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="workshop-ready" id="workshop-ready" style="display: none;">
+                        <div class="ready-icon">🚀</div>
+                        <div class="ready-content">
+                            <h3>You're Workshop Ready!</h3>
+                            <p>Excellent work! You've completed all setup steps. See you at the live workshop where we'll focus entirely on building amazing educational tools!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Workshop Activities Section -->
             <section id="activities" class="workshop-section">
                 <div class="section-header">
                     <h2>Building Your Educational Tool</h2>
