@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Workshop - Claude Code Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ai-chat-widget.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">CC</div>
+                    <div class="header-text">
+                        <h1>Claude Code Workshop</h1>
+                        <p class="subtitle">Building Educational Tools with AI - A Practical Lunch & Learn</p>
+                    </div>
+                </div>
+                <div class="header-meta">
+                    <span class="workshop-duration">60 minutes</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="workshop-nav">
+            <div class="nav-items">
+                <a href="index.html" class="nav-item">Overview</a>
+                <a href="setup.html" class="nav-item">Pre-Workshop Setup</a>
+                <a href="activities.html" class="nav-item active">Live Workshop</a>
+                <a href="resources.html" class="nav-item">Resources</a>
+                <a href="next-steps.html" class="nav-item">Next Steps</a>
+            </div>
+        </nav>
+
+        <main>
+            <div class="section-header">
+                <h2>Building Your Educational Tool</h2>
+                <p class="section-subtitle">Step-by-step activities to create your own working application</p>
+            </div>
+
+            <div class="build-inspiration">
+                <h3>🎯 Inspiration: What's Possible</h3>
+                <p>Before we start building, here are the tools I created to show what you can accomplish:</p>
+                <div class="inspiration-links">
+                    <a href="https://analogue-ai-inspiration.onrender.com" target="_blank" class="inspiration-link">
+                        <span class="link-icon">🎯</span>
+                        <span class="link-text">AnalogueAI - AI Learning Cards</span>
+                    </a>
+                    <a href="https://team-assessments-platform.onrender.com" target="_blank" class="inspiration-link">
+                        <span class="link-icon">📊</span>
+                        <span class="link-text">Team Assessments - Evaluation Platform</span>
+                    </a>
+                    <a href="https://ivey-alt-text-generator.onrender.com" target="_blank" class="inspiration-link">
+                        <span class="link-icon">♿</span>
+                        <span class="link-text">IveyAltText - Accessibility Tool</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="activity-timeline">
+                <div class="activity-item">
+                    <div class="activity-time">5 min</div>
+                    <div class="activity-content">
+                        <h3>Setup Check: System Requirements</h3>
+                        <p>Let's verify you have everything needed to build and deploy educational tools</p>
+                        
+                        <div class="setup-checker">
+                            <h4>📋 Quick System Check</h4>
+                            <div class="requirement-checklist">
+                                <div class="requirement-item">
+                                    <div class="requirement-check">
+                                        <input type="checkbox" id="check-browser">
+                                        <label for="check-browser">
+                                            <strong>Modern Browser</strong> - Chrome, Firefox, Safari, or Edge (latest version)
+                                        </label>
+                                    </div>
+                                    <div class="requirement-status" id="browser-status">
+                                        <span class="status-checking">Checking...</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="requirement-item">
+                                    <div class="requirement-check">
+                                        <input type="checkbox" id="check-internet">
+                                        <label for="check-internet">
+                                            <strong>Stable Internet</strong> - For accessing cloud services and AI tools
+                                        </label>
+                                    </div>
+                                    <div class="requirement-status" id="internet-status">
+                                        <span class="status-checking">Checking...</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="requirement-item">
+                                    <div class="requirement-check">
+                                        <input type="checkbox" id="check-email">
+                                        <label for="check-email">
+                                            <strong>Email Access</strong> - For account creation and verification
+                                        </label>
+                                    </div>
+                                    <div class="requirement-status">
+                                        <span class="status-manual">✓ Manual check required</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="setup-summary">
+                                <p><strong>All set?</strong> Let's move on to account setup!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-time">10 min</div>
+                    <div class="activity-content">
+                        <h3>Activity 1: Setup & Deploy Workshop</h3>
+                        <p>Deploy the workshop with your own AI assistant, then set up additional accounts</p>
+                        
+                        <div class="workshop-note">
+                            <div class="note-icon">💡</div>
+                            <div class="note-content">
+                                <h4>Workshop Setup Note</h4>
+                                <p><strong>During the live session:</strong> We'll demonstrate using the instructor's deployed version with working AI chat.</p>
+                                <p><strong>For hands-on practice:</strong> You'll create your own copy with your own API key - this ensures you control your usage and costs.</p>
+                                <p>Your deployed workshop will be completely independent and private to you!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="setup-prereq-check">
+                            <h4>🔧 Pre-Workshop Setup Check</h4>
+                            <p>Before we start building, make sure you've completed the <a href="setup.html">Pre-Workshop Setup</a> steps above:</p>
+                            
+                            <div class="prereq-checklist">
+                                <div class="prereq-item">
+                                    <input type="checkbox" id="prereq-github">
+                                    <label for="prereq-github">✓ GitHub account created and workshop repository forked</label>
+                                </div>
+                                <div class="prereq-item">
+                                    <input type="checkbox" id="prereq-render">
+                                    <label for="prereq-render">✓ Render account created and workshop deployed</label>
+                                </div>
+                                <div class="prereq-item">
+                                    <input type="checkbox" id="prereq-anthropic">
+                                    <label for="prereq-anthropic">✓ Anthropic API key added and AI chat working</label>
+                                </div>
+                            </div>
+                            
+                            <div class="setup-help">
+                                <p><strong>Need help?</strong> Go back to <a href="setup.html">Pre-Workshop Setup</a> or use the AI troubleshooting chat above.</p>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="setup-progress"></div>
+                        </div>
+                        <span class="progress-percent" id="setup-percent">0%</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-time">10 min</div>
+                    <div class="activity-content">
+                        <h3>Activity 2: AI-Powered Idea Generation</h3>
+                        <p>Chat with AI to discover educational tool ideas tailored for business education</p>
+                        
+                        <div class="ai-chat-section">
+                            <div class="chat-intro">
+                                <h4>💬 Talk to Your AI Assistant</h4>
+                                <p>This AI understands case-based learning, MBA programs, and the unique needs of business education. Ask for ideas!</p>
+                            </div>
+                            
+                            <div class="chat-suggestions">
+                                <h5>Try asking:</h5>
+                                <div class="suggestion-buttons">
+                                    <button class="suggestion-btn" data-message="What educational tools would help MBA students collaborate better on case analyses?">
+                                        💼 Case collaboration tools
+                                    </button>
+                                    <button class="suggestion-btn" data-message="Suggest simple tools that could save instructors time while improving student engagement in business courses.">
+                                        ⏰ Time-saving instructor tools
+                                    </button>
+                                    <button class="suggestion-btn" data-message="What digital tools could enhance leadership skill development for executive education participants?">
+                                        👥 Leadership development tools
+                                    </button>
+                                    <button class="suggestion-btn" data-message="I need ideas for tools that work well for both in-person and remote business education.">
+                                        🌐 Hybrid learning tools
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="chat-interface">
+                                <div class="chat-messages" id="chat-messages">
+                                    <div class="ai-message">
+                                        <div class="message-avatar">🤖</div>
+                                        <div class="message-content">
+                                            <p>Hello! I'm here to help you brainstorm educational tool ideas for business education. I understand case-based learning approaches, MBA programs, and the practical needs of business education.</p>
+                                            <p>What kind of educational challenge would you like to solve with a simple digital tool?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="chat-input-area">
+                                    <div class="input-wrapper">
+                                        <textarea 
+                                            id="chat-input" 
+                                            placeholder="Ask for educational tool ideas for business education..."
+                                            rows="2"
+                                        ></textarea>
+                                        <button id="send-chat" disabled>Send</button>
+                                    </div>
+                                    <div class="chat-status" id="chat-status"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-selection-section">
+                            <h4>Choose Your Project</h4>
+                            <p>Based on AI suggestions or your own idea, select what you'd like to build:</p>
+                        <div class="build-options">
+                            <div class="build-option" data-project="feedback">
+                                <h4>🔄 Student Feedback Collector</h4>
+                                <p>Simple form to gather course feedback with ratings and comments</p>
+                                <div class="project-features">
+                                    <span class="feature">Form submission</span>
+                                    <span class="feature">Star ratings</span>
+                                    <span class="feature">Results view</span>
+                                </div>
+                            </div>
+                            <div class="build-option" data-project="timer">
+                                <h4>⏰ Study Session Timer</h4>
+                                <p>Pomodoro-style timer with breaks and progress tracking</p>
+                                <div class="project-features">
+                                    <span class="feature">Countdown timer</span>
+                                    <span class="feature">Break reminders</span>
+                                    <span class="feature">Session history</span>
+                                </div>
+                            </div>
+                            <div class="build-option" data-project="quiz">
+                                <h4>📝 Quick Quiz Builder</h4>
+                                <p>Create and take simple multiple-choice quizzes</p>
+                                <div class="project-features">
+                                    <span class="feature">Question builder</span>
+                                    <span class="feature">Score tracking</span>
+                                    <span class="feature">Results analysis</span>
+                                </div>
+                            </div>
+                            <div class="build-option" data-project="journal">
+                                <h4>📔 Learning Journal</h4>
+                                <p>Daily reflection tool with guided prompts</p>
+                                <div class="project-features">
+                                    <span class="feature">Daily entries</span>
+                                    <span class="feature">Reflection prompts</span>
+                                    <span class="feature">Progress view</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-selection">
+                            <p><strong>Selected Project:</strong> <span id="selected-project">None selected</span></p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-time">15 min</div>
+                    <div class="activity-content">
+                        <h3>Activity 3: Build Your Tool</h3>
+                        <p>Use Claude Code to create your educational tool from start to finish</p>
+                        
+                        <div class="setup-steps">
+                            <div class="setup-step">
+                                <div class="step-number">1</div>
+                                <div class="build-step-content">
+                                    <h4>Access Claude Code</h4>
+                                    <p>Open <a href="https://claude.ai/code" target="_blank">claude.ai/code</a> in a new tab</p>
+                                </div>
+                            </div>
+                            <div class="setup-step">
+                                <div class="step-number">2</div>
+                                <div class="build-step-content">
+                                    <h4>Copy Your Starting Prompt</h4>
+                                    <div class="prompt-templates">
+                                        <div class="prompt-template" data-for="feedback">
+                                            <h5>Feedback Collector Prompt:</h5>
+                                            <div class="prompt-box">
+                                                <code>Create a student feedback collection web application. Include: a form with name, course, 5-star rating for overall satisfaction, 5-star rating for content quality, text area for comments, and a submit button. Also create a simple results page that shows all submitted feedback in a clean list. Use modern, clean styling with a professional look. Make it mobile-friendly.</code>
+                                                <button class="copy-prompt">Copy Prompt</button>
+                                            </div>
+                                        </div>
+                                        <div class="prompt-template" data-for="timer">
+                                            <h5>Study Timer Prompt:</h5>
+                                            <div class="prompt-box">
+                                                <code>Create a Pomodoro study timer web application. Include: 25-minute work timer, 5-minute break timer, start/pause/reset buttons, session counter, and a simple progress display. Add notification sounds when timers complete. Use clean, focused design that helps concentration. Make the timer large and easy to read.</code>
+                                                <button class="copy-prompt">Copy Prompt</button>
+                                            </div>
+                                        </div>
+                                        <div class="prompt-template" data-for="quiz">
+                                            <h5>Quiz Builder Prompt:</h5>
+                                            <div class="prompt-box">
+                                                <code>Create a simple quiz application. Include: a way to add multiple-choice questions with 4 options each, a quiz-taking interface that shows one question at a time, immediate feedback on answers, final score display, and ability to retake the quiz. Use engaging colors and clear typography. Make it intuitive for both creating and taking quizzes.</code>
+                                                <button class="copy-prompt">Copy Prompt</button>
+                                            </div>
+                                        </div>
+                                        <div class="prompt-template" data-for="journal">
+                                            <h5>Learning Journal Prompt:</h5>
+                                            <div class="prompt-box">
+                                                <code>Create a daily learning journal web application. Include: date picker, reflection prompts (What did I learn today? What challenged me? What will I do differently?), text areas for responses, save entry button, and a view to see past entries by date. Use calming colors and readable fonts that encourage reflection.</code>
+                                                <button class="copy-prompt">Copy Prompt</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setup-step">
+                                <div class="step-number">3</div>
+                                <div class="build-step-content">
+                                    <h4>Paste & Send</h4>
+                                    <p>Paste the prompt into Claude Code and hit enter to start building!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-time">15 min</div>
+                    <div class="activity-content">
+                        <h3>Activity 4: Deploy Your Tool</h3>
+                        <p>Get your educational tool online and share it with others</p>
+                        
+                        <div class="deployment-flow">
+                            <div class="deploy-step-card">
+                                <div class="step-header">
+                                    <div class="step-number">1</div>
+                                    <h4>Create New Repository</h4>
+                                </div>
+                                <div class="deploy-step-content">
+                                    <p>Save your educational tool code to GitHub for deployment</p>
+                                    <div class="claude-prompt-box">
+                                        <h5>Ask Claude Code:</h5>
+                                        <div class="prompt-text">
+                                            "Help me create a new GitHub repository for this project and push all my files. I want to deploy this educational tool online. Walk me through each step."
+                                        </div>
+                                        <button class="copy-prompt-btn" data-prompt="Help me create a new GitHub repository for this project and push all my files. I want to deploy this educational tool online. Walk me through each step.">Copy Prompt</button>
+                                    </div>
+                                    <div class="step-tips">
+                                        <p><strong>Claude Code will help you:</strong></p>
+                                        <ul>
+                                            <li>Create a new GitHub repository</li>
+                                            <li>Initialize git in your project</li>
+                                            <li>Add and commit your files</li>
+                                            <li>Push everything to GitHub</li>
+                                            <li>Prepare for deployment</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="deploy-step-card">
+                                <div class="step-header">
+                                    <div class="step-number">2</div>
+                                    <h4>Deploy to Render</h4>
+                                </div>
+                                <div class="deploy-step-content">
+                                    <p>Make your educational tool accessible online for your students and colleagues</p>
+                                    <div class="deployment-instructions">
+                                        <h5>In Render Dashboard:</h5>
+                                        <ol>
+                                            <li>Click "New +" → "Web Service"</li>
+                                            <li>Connect your new GitHub repository</li>
+                                            <li>Render auto-detects the app type</li>
+                                            <li>Click "Create Web Service"</li>
+                                            <li>Wait 2-3 minutes for deployment</li>
+                                            <li>Get your live URL and test your tool!</li>
+                                        </ol>
+                                    </div>
+                                    <div class="troubleshooting">
+                                        <h5>Need help with deployment issues?</h5>
+                                        <div class="claude-prompt-box small">
+                                            <div class="prompt-text">
+                                                "My deployment failed with this error: [paste error]. Can you help me fix this and get my educational tool online?"
+                                            </div>
+                                            <button class="copy-prompt-btn" data-prompt="My deployment failed with this error: [paste error]. Can you help me fix this and get my educational tool online?">Copy Prompt</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="deploy-step-card success">
+                                <div class="step-header">
+                                    <div class="step-number">3</div>
+                                    <h4>Test & Share Your Tool!</h4>
+                                </div>
+                                <div class="deploy-step-content">
+                                    <p>Your educational tool is now live and ready for students and colleagues to use!</p>
+                                    <div class="celebration-content">
+                                        <div class="share-options">
+                                            <h5>🎉 Success! Here's what to do next:</h5>
+                                            <ul>
+                                                <li><strong>Test your tool</strong> - Try all features on different devices</li>
+                                                <li><strong>Share the URL</strong> - Send it to colleagues for feedback</li>
+                                                <li><strong>Gather user input</strong> - What works well? What could be better?</li>
+                                                <li><strong>Plan version 2</strong> - What features should you add next?</li>
+                                            </ul>
+                                        </div>
+                                        <div class="next-steps">
+                                            <h5>🚀 You've mastered the complete workflow!</h5>
+                                            <p><strong>Idea → Build with AI → Deploy → Share → Iterate</strong></p>
+                                            <p>This process works for any educational tool you can imagine. What will you build next?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-time">5 min</div>
+                    <div class="activity-content">
+                        <h3>Activity 5: Reflect & Plan Next</h3>
+                        <p>Capture what you learned and plan your next educational tools</p>
+                        
+                        <div class="building-tips">
+                            <div class="tip-section">
+                                <h4>💡 Building Tips</h4>
+                                <ul class="tip-list">
+                                    <li>Start with the basic functionality first</li>
+                                    <li>Test your tool frequently as you build</li>
+                                    <li>Ask Claude Code to explain any code you don't understand</li>
+                                    <li>Request styling improvements after core features work</li>
+                                    <li>Add one feature at a time</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip-section">
+                                <h4>🔄 Common Follow-up Requests</h4>
+                                <div class="followup-examples">
+                                    <div class="followup-example">
+                                        <strong>Styling:</strong> "Make the design more modern and add some color"
+                                    </div>
+                                    <div class="followup-example">
+                                        <strong>Features:</strong> "Add a way to delete entries" or "Include data validation"
+                                    </div>
+                                    <div class="followup-example">
+                                        <strong>Layout:</strong> "Make this mobile-friendly" or "Center the content better"
+                                    </div>
+                                    <div class="followup-example">
+                                        <strong>Fixes:</strong> "The submit button isn't working" or "The timer resets too early"
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="progress-tracker">
+                            <h4>✅ Building Checklist</h4>
+                            <div class="checklist">
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Basic functionality working
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Styling looks clean and professional
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Tool is easy to understand and use
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Added at least one custom improvement
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Tested on mobile/tablet view
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-navigation">
+                <div class="nav-buttons">
+                    <a href="setup.html" class="nav-btn prev-btn">
+                        ← Previous: Pre-Workshop Setup
+                    </a>
+                    <a href="resources.html" class="nav-btn next-btn">
+                        Next: Resources & Links →
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="ai-chat-widget.js"></script>
+</body>
+</html>

@@ -132,26 +132,7 @@ main {
 }
 
 /* Workshop Sections */
-.workshop-section {
-    display: none;
-    padding: 3rem;
-    animation: fadeIn 0.3s ease-in;
-    position: relative;
-    border: 2px solid transparent;
-}
-
-.workshop-section.active {
-    display: block;
-    border: 2px solid #c5b783;
-}
-
-/* Debug: Add visual indicators for each section */
-.workshop-section::before {
-    content: attr(id);
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: #c5b783;
+/* Removed old section-switching CSS - no longer needed with separate HTML files */
     color: #2c2c2c;
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;

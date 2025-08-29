@@ -3,7 +3,9 @@
     "allow": [
       "Bash(node:*)",
       "Bash(npm:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
