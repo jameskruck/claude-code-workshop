@@ -45,7 +45,7 @@ Complete these steps BEFORE the live session to maximize hands-on time.
 
 ### Step 2: Fork the Workshop Repository
 
-1. Go to [github.com/jkrcuk/claude-code-workshop](https://github.com/jkrcuk/claude-code-workshop)
+1. Go to [github.com/jameskruck/claude-code-workshop](https://github.com/jameskruck/claude-code-workshop)
 2. Click **"Fork"** in the top-right corner
 3. Keep all default settings and click **"Create fork"**
 4. ✅ **Checkpoint:** You now have `your-username/claude-code-workshop`
