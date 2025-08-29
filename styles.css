@@ -2957,6 +2957,30 @@ main {
     color: #2c2c2c;
 }
 
+.step-instructions h5 {
+    color: #c5b783;
+    font-size: 1rem;
+    margin: 1.5rem 0 0.75rem 0;
+    font-weight: 600;
+}
+
+.step-note {
+    background: #f8f9fa;
+    border-left: 4px solid #c5b783;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.step-note ul {
+    margin: 0.5rem 0 0 1rem;
+    padding: 0;
+}
+
+.step-note li {
+    margin: 0.25rem 0;
+}
+
 .setup-ai-chat {
     background: white;
     border: 2px solid #c5b783;
