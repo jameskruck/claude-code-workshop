@@ -43,14 +43,8 @@ class AIchatWidget {
                     <div class="ai-message welcome-message">
                         <div class="message-avatar">🤖</div>
                         <div class="message-content">
-                            <p><strong>Hi! I'm your AI workshop assistant.</strong></p>
-                            <p>I can help you with:</p>
-                            <ul>
-                                <li>Troubleshooting setup issues</li>
-                                <li>Educational tool ideas</li>
-                                <li>Technical guidance</li>
-                                <li>Claude Code questions</li>
-                            </ul>
+                            <p><strong>Hi! I'm your workshop assistant.</strong></p>
+                            <p>I can help with setup issues, tool ideas, technical guidance, and Claude Code questions. I have access to this workshop's repository data.</p>
                             <p>What can I help you with?</p>
                         </div>
                     </div>

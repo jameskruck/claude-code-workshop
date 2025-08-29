@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 require('dotenv').config();
 
 const app = express();
@@ -73,9 +74,96 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
+// Load workshop data to provide context-aware responses
+function loadWorkshopData() {
+    try {
+        const workshopData = {
+            readme: '',
+            sessionLog: '',
+            starterPackContents: [],
+            deploymentInfo: ''
+        };
+
+        // Load README.md if it exists
+        if (fs.existsSync(path.join(__dirname, 'README.md'))) {
+            workshopData.readme = fs.readFileSync(path.join(__dirname, 'README.md'), 'utf8');
+        }
+
+        // Load SESSION_LOG.md
+        if (fs.existsSync(path.join(__dirname, 'SESSION_LOG.md'))) {
+            workshopData.sessionLog = fs.readFileSync(path.join(__dirname, 'SESSION_LOG.md'), 'utf8');
+        }
+
+        // Load DEPLOYMENT.md if it exists
+        if (fs.existsSync(path.join(__dirname, 'DEPLOYMENT.md'))) {
+            workshopData.deploymentInfo = fs.readFileSync(path.join(__dirname, 'DEPLOYMENT.md'), 'utf8');
+        }
+
+        // Scan Starter Pack directory
+        const starterPackPath = path.join(__dirname, 'Starter Pack');
+        if (fs.existsSync(starterPackPath)) {
+            function scanDirectory(dir, relativePath = '') {
+                const items = fs.readdirSync(dir);
+                return items.map(item => {
+                    const fullPath = path.join(dir, item);
+                    const itemRelativePath = path.join(relativePath, item);
+                    
+                    if (fs.statSync(fullPath).isDirectory()) {
+                        return {
+                            type: 'directory',
+                            name: item,
+                            path: itemRelativePath,
+                            contents: scanDirectory(fullPath, itemRelativePath)
+                        };
+                    } else {
+                        return {
+                            type: 'file',
+                            name: item,
+                            path: itemRelativePath
+                        };
+                    }
+                });
+            }
+            workshopData.starterPackContents = scanDirectory(starterPackPath);
+        }
+
+        return workshopData;
+    } catch (error) {
+        console.error('Error loading workshop data:', error);
+        return null;
+    }
+}
+
 // Build context-specific prompts for different activities
 function buildActivityPrompt(activityType, context) {
+    // Load fresh workshop data for each request
+    const workshopData = loadWorkshopData();
+    
+    let workshopContext = '';
+    if (workshopData) {
+        workshopContext = `
+WORKSHOP REPOSITORY CONTEXT:
+This workshop repository contains the following resources that you can reference:
+
+README Information: ${workshopData.readme ? 'Available' : 'Not found'}
+Session Development Log: ${workshopData.sessionLog ? 'Available - contains complete development history' : 'Not found'}
+Deployment Guide: ${workshopData.deploymentInfo ? 'Available' : 'Not found'}
+
+Starter Pack Resources Available:
+${workshopData.starterPackContents.length > 0 ? 
+    workshopData.starterPackContents.map(item => `- ${item.name} (${item.type})`).join('\n') : 
+    'No starter pack resources found'}
+
+Recent Development History (from SESSION_LOG.md):
+${workshopData.sessionLog ? workshopData.sessionLog.split('\n').slice(0, 20).join('\n') + '\n...' : 'No development log available'}
+
+IMPORTANT: When users ask about workshop setup, deployment, or available resources, reference this actual repository content first.
+`;
+    }
+
     const baseContext = `You are an AI assistant helping Learning Experience Designers during a Claude Code workshop. You specialize in educational technology and understand the unique needs of business education.
+
+${workshopContext}
 
 Key context about business education:
 - Focus on case-based learning and practical application
