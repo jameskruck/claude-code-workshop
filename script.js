@@ -63,6 +63,43 @@ function initializeNavigation() {
     }
 }
 
+// Section Navigation Function (for next/previous buttons)
+function navigateToSection(sectionId) {
+    const targetNav = document.querySelector(`a[href="#${sectionId}"]`);
+    if (targetNav) {
+        targetNav.click();
+    } else {
+        // Fallback if nav item not found - directly activate section
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.workshop-section');
+        const targetSection = document.getElementById(sectionId);
+        
+        if (targetSection) {
+            // Remove active class from all nav items and sections
+            navItems.forEach(nav => nav.classList.remove('active'));
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Activate target section
+            targetSection.classList.add('active');
+            
+            // Update nav if exists
+            const correspondingNav = document.querySelector(`a[href="#${sectionId}"]`);
+            if (correspondingNav) {
+                correspondingNav.classList.add('active');
+            }
+            
+            // Smooth scroll to section
+            targetSection.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+            
+            // Update URL
+            history.replaceState(null, null, `#${sectionId}`);
+        }
+    }
+}
+
 // Interactive Elements
 function initializeInteractiveElements() {
     // Project selection
