@@ -133,13 +133,13 @@ main {
 
 /* Workshop Sections */
 .workshop-section {
-    display: none !important;
+    display: none;
     padding: 3rem;
     animation: fadeIn 0.3s ease-in;
 }
 
 .workshop-section.active {
-    display: block !important;
+    display: block;
 }
 
 @keyframes fadeIn {

@@ -1,5 +1,10 @@
 // Workshop Website Interactive Elements
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing workshop...');
+    
+    // Ensure only overview section is active initially
+    ensureSingleActiveSection('overview');
+    
     // Navigation functionality
     initializeNavigation();
     
@@ -17,7 +22,41 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Smooth animations
     initializeAnimations();
+    
+    console.log('Workshop initialization complete');
 });
+
+// Ensure only one section is active
+function ensureSingleActiveSection(activeId) {
+    const sections = document.querySelectorAll('.workshop-section');
+    const navItems = document.querySelectorAll('.nav-item');
+    
+    console.log(`Ensuring only ${activeId} section is active`);
+    
+    // Remove active from all sections and nav items
+    sections.forEach(section => {
+        section.classList.remove('active');
+        console.log(`Removed active from section: ${section.id}`);
+    });
+    
+    navItems.forEach(nav => nav.classList.remove('active'));
+    
+    // Add active to target section and nav
+    const targetSection = document.getElementById(activeId);
+    const targetNav = document.querySelector(`a[href="#${activeId}"]`);
+    
+    if (targetSection) {
+        targetSection.classList.add('active');
+        console.log(`Added active to section: ${activeId}`);
+    } else {
+        console.error(`Section ${activeId} not found`);
+    }
+    
+    if (targetNav) {
+        targetNav.classList.add('active');
+        console.log(`Added active to nav: ${activeId}`);
+    }
+}
 
 // Navigation Management
 function initializeNavigation() {
@@ -65,30 +104,20 @@ function initializeNavigation() {
 
 // Section Navigation Function (for next/previous buttons)
 function navigateToSection(sectionId) {
+    console.log(`Navigating to section: ${sectionId}`);
+    
     const targetNav = document.querySelector(`a[href="#${sectionId}"]`);
     if (targetNav) {
+        console.log(`Found nav item for ${sectionId}, clicking it`);
         targetNav.click();
     } else {
-        // Fallback if nav item not found - directly activate section
-        const navItems = document.querySelectorAll('.nav-item');
-        const sections = document.querySelectorAll('.workshop-section');
-        const targetSection = document.getElementById(sectionId);
+        console.log(`No nav item found for ${sectionId}, using direct navigation`);
+        // Use our helper function to ensure clean section switching
+        ensureSingleActiveSection(sectionId);
         
+        // Smooth scroll to section
+        const targetSection = document.getElementById(sectionId);
         if (targetSection) {
-            // Remove active class from all nav items and sections
-            navItems.forEach(nav => nav.classList.remove('active'));
-            sections.forEach(section => section.classList.remove('active'));
-            
-            // Activate target section
-            targetSection.classList.add('active');
-            
-            // Update nav if exists
-            const correspondingNav = document.querySelector(`a[href="#${sectionId}"]`);
-            if (correspondingNav) {
-                correspondingNav.classList.add('active');
-            }
-            
-            // Smooth scroll to section
             targetSection.scrollIntoView({ 
                 behavior: 'smooth', 
                 block: 'start' 
