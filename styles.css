@@ -3285,14 +3285,23 @@ main {
 .nav-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(197, 183, 131, 0.25);
-    text-decoration: none;
     /* Preserve the original background colors */
     background: #b8a56f;
+    /* Add elegant underline effect */
+    text-decoration: underline;
+    text-decoration-color: rgba(44, 44, 44, 0.8);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
 }
 
 .nav-btn.next-btn:hover {
     background: #1a1a1a !important;
     box-shadow: 0 8px 25px rgba(44, 44, 44, 0.3);
+    /* Different underline color for dark next button */
+    text-decoration: underline;
+    text-decoration-color: rgba(197, 183, 131, 0.9);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
 }
 
 .nav-btn:active {
@@ -3308,7 +3317,11 @@ main {
     transform: translateY(-1px);
     box-shadow: 0 6px 20px rgba(197, 183, 131, 0.3);
     filter: brightness(1.05);
-    text-decoration: none;
+    /* Add underline effect for setup buttons */
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.8);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
 }
 
 .setup-button:active {
@@ -3325,6 +3338,11 @@ main {
     box-shadow: 0 4px 15px rgba(197, 183, 131, 0.2);
     background-color: rgba(197, 183, 131, 0.08);
     border-color: #c5b783;
+    /* Add subtle underline effect */
+    text-decoration: underline;
+    text-decoration-color: rgba(197, 183, 131, 0.7);
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
 }
 
 .suggestion-btn:active, .copy-prompt:active, .copy-prompt-btn:active {
@@ -3377,6 +3395,15 @@ main {
     transform: translateY(0px);
 }
 
+/* General link hover effects */
+a:hover:not(.nav-btn):not(.setup-button):not(.suggestion-btn):not(.copy-prompt):not(.copy-prompt-btn) {
+    text-decoration: underline;
+    text-decoration-color: #c5b783;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+    transition: text-decoration-color 0.2s ease;
+}
+
 /* General button focus states for accessibility */
 .nav-btn:focus-visible, .setup-button:focus-visible, 
 .suggestion-btn:focus-visible, .copy-prompt:focus-visible, .copy-prompt-btn:focus-visible,
@@ -3390,11 +3417,12 @@ main {
     .nav-btn:hover, .setup-button:hover, 
     .suggestion-btn:hover, .copy-prompt:hover, .copy-prompt-btn:hover,
     .video-placeholder:hover, .screenshot-item:hover,
-    #send-chat:hover {
+    #send-chat:hover, a:hover {
         transform: none;
         box-shadow: initial;
         background-color: initial;
         filter: none;
+        text-decoration: initial;
     }
     
     .video-placeholder:hover .play-button {
