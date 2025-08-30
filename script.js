@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup functionality
     initializeSetupCheckers();
     
-    // AI Chat functionality
-    initializeAIChat();
+    // AI Chat functionality now handled by ai-chat-widget.js
+    // initializeAIChat();
     
     // Form handlers
     initializeFormHandlers();
@@ -640,7 +640,8 @@ function trackDeploymentPromptCopy(prompt) {
     console.log('Deployment prompt copy tracked');
 }
 
-// AI Chat Functionality
+// AI Chat Functionality - DISABLED (using ai-chat-widget.js instead)
+/*
 function initializeAIChat() {
     const chatInput = document.getElementById('chat-input');
     const sendButton = document.getElementById('send-chat');
@@ -885,6 +886,7 @@ function trackChatInteraction(userMessage, aiResponse) {
     
     console.log('Chat interaction tracked');
 }
+*/
 
 // Form Handlers
 function initializeFormHandlers() {
