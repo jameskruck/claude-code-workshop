@@ -3275,6 +3275,128 @@ main {
     }
 }
 
+/* ===== ENHANCED HOVER STATES (inspired by educational-prompts-hub) ===== */
+
+/* Navigation buttons */
+.nav-btn {
+    transition: transform 0.18s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(197, 183, 131, 0.25);
+    text-decoration: none;
+}
+
+.nav-btn:active {
+    transform: translateY(0px);
+}
+
+/* Setup action buttons */
+.setup-button {
+    transition: transform 0.18s ease, box-shadow 0.2s ease, background-color 0.2s ease, filter 0.2s ease !important;
+}
+
+.setup-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(197, 183, 131, 0.3);
+    filter: brightness(1.05);
+    text-decoration: none;
+}
+
+.setup-button:active {
+    transform: translateY(0px);
+}
+
+/* Suggestion and copy buttons */
+.suggestion-btn, .copy-prompt, .copy-prompt-btn {
+    transition: transform 0.18s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.suggestion-btn:hover, .copy-prompt:hover, .copy-prompt-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(197, 183, 131, 0.2);
+    background-color: rgba(197, 183, 131, 0.08);
+    border-color: #c5b783;
+}
+
+.suggestion-btn:active, .copy-prompt:active, .copy-prompt-btn:active {
+    transform: translateY(0px);
+}
+
+/* Video play buttons */
+.play-button {
+    transition: transform 0.18s ease, color 0.2s ease, filter 0.2s ease !important;
+}
+
+.video-placeholder:hover .play-button {
+    transform: scale(1.1);
+    color: #dac589;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* Enhanced video placeholder hover */
+.video-placeholder {
+    transition: transform 0.18s ease, box-shadow 0.2s ease !important;
+}
+
+.video-placeholder:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Screenshot items hover */
+.screenshot-item {
+    transition: transform 0.18s ease, box-shadow 0.2s ease !important;
+}
+
+.screenshot-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(197, 183, 131, 0.15);
+}
+
+/* Chat send button */
+#send-chat {
+    transition: transform 0.18s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+
+#send-chat:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(197, 183, 131, 0.3);
+    background-color: #b5a373;
+}
+
+#send-chat:active:not(:disabled) {
+    transform: translateY(0px);
+}
+
+/* General button focus states for accessibility */
+.nav-btn:focus-visible, .setup-button:focus-visible, 
+.suggestion-btn:focus-visible, .copy-prompt:focus-visible, .copy-prompt-btn:focus-visible,
+#send-chat:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(197, 183, 131, 0.4), 0 0 0 6px rgba(44, 44, 44, 0.1);
+}
+
+/* Prevent hover effects on mobile/touch devices */
+@media (hover: none) {
+    .nav-btn:hover, .setup-button:hover, 
+    .suggestion-btn:hover, .copy-prompt:hover, .copy-prompt-btn:hover,
+    .video-placeholder:hover, .screenshot-item:hover,
+    #send-chat:hover {
+        transform: none;
+        box-shadow: initial;
+        background-color: initial;
+        filter: none;
+    }
+    
+    .video-placeholder:hover .play-button {
+        transform: none;
+        color: initial;
+        filter: initial;
+    }
+}
+
 .setup-ai-chat {
     background: white;
     border: 2px solid #c5b783;
