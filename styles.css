@@ -3286,6 +3286,13 @@ main {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(197, 183, 131, 0.25);
     text-decoration: none;
+    /* Preserve the original background colors */
+    background: #b8a56f;
+}
+
+.nav-btn.next-btn:hover {
+    background: #1a1a1a !important;
+    box-shadow: 0 8px 25px rgba(44, 44, 44, 0.3);
 }
 
 .nav-btn:active {
