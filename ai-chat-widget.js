@@ -4,7 +4,8 @@
 class AIchatWidget {
     constructor() {
         this.isOpen = false;
-        this.isMinimized = localStorage.getItem('aiChatMinimized') === 'true';
+        // Start visible by default - don't restore minimized state for now
+        this.isMinimized = false;
         this.chatHistory = [];
         this.init();
     }
