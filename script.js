@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Custom prompt functionality for Activity 2
     initializeCustomPromptHandling();
     
+    // Activity progress tracking
+    initializeActivityProgressTracking();
+    
     // Smooth animations
     initializeAnimations();
     
@@ -943,17 +946,44 @@ function initializeCustomPromptHandling() {
             return;
         }
         
-        // Save to localStorage
-        localStorage.setItem('customClaudePrompt', promptText);
+        // Visual feedback during save
+        const originalText = this.textContent;
+        this.textContent = 'Saving...';
+        this.disabled = true;
         
-        // Update displays
-        updatePromptDisplay(promptText);
-        showSaveStatus('Prompt saved successfully! ✓', 'success');
-        
-        // Enable copy button
-        if (copySavedButton) {
-            copySavedButton.disabled = false;
-        }
+        // Simulate save delay for better UX
+        setTimeout(() => {
+            // Save to localStorage
+            localStorage.setItem('customClaudePrompt', promptText);
+            
+            // Update displays
+            updatePromptDisplay(promptText);
+            showSaveStatus('Prompt saved successfully! ✓', 'success');
+            
+            // Enable copy button
+            if (copySavedButton) {
+                copySavedButton.disabled = false;
+            }
+            
+            // Reset button
+            this.textContent = '✓ Saved!';
+            setTimeout(() => {
+                this.textContent = originalText;
+                this.disabled = false;
+            }, 2000);
+            
+            // Auto-check the "saved-prompt" checkbox
+            const savedPromptCheckbox = document.getElementById('saved-prompt');
+            if (savedPromptCheckbox) {
+                savedPromptCheckbox.checked = true;
+                localStorage.setItem('activity-2-saved-prompt', 'true');
+                // Trigger the completion check
+                if (window.checkActivity2Completion) {
+                    window.checkActivity2Completion();
+                }
+            }
+            
+        }, 500);
     });
     
     // Copy saved prompt functionality
@@ -1019,6 +1049,84 @@ function initializeCustomPromptHandling() {
             textArea.select();
             document.execCommand('copy');
             document.body.removeChild(textArea);
+        }
+    }
+}
+
+// Activity Progress Tracking
+function initializeActivityProgressTracking() {
+    // Track Activity 2 completion
+    const activity2Checkboxes = ['discussed-challenge', 'got-custom-prompt', 'saved-prompt'];
+    const activity2Completion = document.getElementById('activity-2-completion');
+    
+    if (activity2Completion) {
+        activity2Checkboxes.forEach(id => {
+            const checkbox = document.getElementById(id);
+            if (checkbox) {
+                // Load saved state
+                const saved = localStorage.getItem(`activity-2-${id}`);
+                if (saved === 'true') {
+                    checkbox.checked = true;
+                }
+                
+                checkbox.addEventListener('change', function() {
+                    // Save state
+                    localStorage.setItem(`activity-2-${id}`, this.checked);
+                    
+                    // Check if all are complete
+                    checkActivity2Completion();
+                });
+            }
+        });
+        
+        // Initial check
+        checkActivity2Completion();
+    }
+    
+    // Track Activity 5 (building checklist)
+    const activity5Checkboxes = ['basic-functionality', 'clean-styling', 'easy-to-use', 'custom-improvement', 'mobile-tested'];
+    
+    activity5Checkboxes.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox) {
+            // Load saved state
+            const saved = localStorage.getItem(`activity-5-${id}`);
+            if (saved === 'true') {
+                checkbox.checked = true;
+            }
+            
+            checkbox.addEventListener('change', function() {
+                // Save state
+                localStorage.setItem(`activity-5-${id}`, this.checked);
+                
+                // Visual feedback
+                const label = this.closest('.checklist-item');
+                if (this.checked) {
+                    label.style.background = '#f0f9ff';
+                    label.style.borderColor = '#10b981';
+                } else {
+                    label.style.background = '';
+                    label.style.borderColor = '';
+                }
+            });
+        }
+    });
+    
+    window.checkActivity2Completion = function() {
+        const activity2Checkboxes = ['discussed-challenge', 'got-custom-prompt', 'saved-prompt'];
+        const allComplete = activity2Checkboxes.every(id => {
+            const checkbox = document.getElementById(id);
+            return checkbox && checkbox.checked;
+        });
+        
+        const completionDiv = document.getElementById('activity-2-completion');
+        if (completionDiv) {
+            if (allComplete) {
+                completionDiv.style.display = 'block';
+                completionDiv.style.animation = 'slideIn 0.5s ease-out';
+            } else {
+                completionDiv.style.display = 'none';
+            }
         }
     }
 }
