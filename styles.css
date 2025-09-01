@@ -46,6 +46,50 @@
     cursor: not-allowed;
 }
 
+/* Activity Success Markers Styles */
+.activity-success {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 8px;
+    border: 2px solid #c5b783;
+}
+
+.activity-success h4 {
+    margin: 0 0 15px 0;
+    color: #2c2c2c;
+    font-weight: 600;
+}
+
+.success-markers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.success-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 6px;
+    border-left: 4px solid #c5b783;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.marker-icon {
+    font-size: 1.2em;
+    min-width: 24px;
+    text-align: center;
+}
+
+.marker-text {
+    flex: 1;
+    color: #2c2c2c;
+    font-weight: 500;
+}
+
 /* Enhanced Resources Page Styles */
 .example-tools {
     display: flex;

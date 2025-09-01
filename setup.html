@@ -41,8 +41,8 @@
             </div>
 
             <div class="setup-time-estimate">
-                <div class="time-badge">⏱️ 5-10 minutes total</div>
-                <p>Just create your accounts beforehand - we'll do all the building together during the workshop!</p>
+                <div class="time-badge">⏱️ 10-15 minutes total</div>
+                <p>Create your accounts and install Claude Code beforehand - we'll do all the building together during the workshop!</p>
             </div>
 
             <div class="setup-benefits">
@@ -169,27 +169,41 @@
                     <div class="setup-step-card">
                         <div class="step-header">
                             <div class="step-number">2</div>
-                            <h4>Access Claude Code</h4>
-                            <div class="step-time">2 minutes</div>
+                            <h4>Install Claude Code</h4>
+                            <div class="step-time">5 minutes</div>
                         </div>
                         <div class="step-content">
-                            <p>Make sure you can access Claude Code - this is where you'll build your educational tool:</p>
+                            <p>Install Claude Code on your computer - this is the AI development tool we'll use to build your educational tool:</p>
                             
                             <div class="step-instructions">
+                                <h5>System Requirements:</h5>
+                                <ul>
+                                    <li>Node.js 18+ (we'll check this during workshop if needed)</li>
+                                    <li>Terminal/Command Line access</li>
+                                    <li>4GB+ RAM</li>
+                                </ul>
+                                
+                                <h5>Installation Steps:</h5>
                                 <ol>
-                                    <li>Go to <a href="https://claude.ai/code" target="_blank">claude.ai/code</a></li>
-                                    <li>Sign in with your Anthropic account</li>
-                                    <li>You should see the Claude Code interface - you're ready!</li>
+                                    <li>Open your terminal/command prompt</li>
+                                    <li>Run: <code>npm install -g @anthropic-ai/claude-code</code></li>
+                                    <li>After installation, type <code>claude</code> to start</li>
+                                    <li>Sign in with your Anthropic account when prompted</li>
+                                    <li>Run <code>claude doctor</code> to verify everything works</li>
                                 </ol>
                                 
                                 <div class="step-note">
-                                    <strong>Can't access Claude Code?</strong> Make sure you're signed up for Anthropic (step 1 above). If you're still having trouble, we'll help you get access during the workshop.
+                                    <strong>Need help with installation?</strong> We'll help you install during the workshop if you run into any issues. The important thing is having your accounts ready!
+                                </div>
+                                
+                                <div class="step-note">
+                                    <strong>Alternative:</strong> If you have Claude Pro or Max subscription, you can also access Claude Code through your existing Claude account.
                                 </div>
                             </div>
                             
                             <div class="completion-check">
                                 <input type="checkbox" id="claude-access-complete">
-                                <label for="claude-access-complete">✓ I can access Claude Code successfully</label>
+                                <label for="claude-access-complete">✓ I have Claude Code installed and can authenticate</label>
                             </div>
                         </div>
                     </div>
@@ -212,8 +226,8 @@
                     <div class="final-check-item">
                         <div class="check-icon" id="final-check-2">☐</div>
                         <div class="check-content">
-                            <h4>Claude Code Access</h4>
-                            <p>You can successfully log into claude.ai/code</p>
+                            <h4>Claude Code Installed</h4>
+                            <p>Claude Code is installed and you can authenticate with your Anthropic account</p>
                         </div>
                     </div>
                 </div>
