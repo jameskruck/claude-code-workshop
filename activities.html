@@ -288,9 +288,35 @@
                                             <li>Get your live URL and test your tool!</li>
                                         </ol>
                                     </div>
+                                    <div class="deployment-success">
+                                        <h5>✅ How to Know It Worked:</h5>
+                                        <ul class="success-indicators">
+                                            <li>You get a live URL (ending in .render.com)</li>
+                                            <li>Clicking the URL loads your tool without errors</li>
+                                            <li>All features work the same as when testing locally</li>
+                                            <li>Tool works on mobile devices</li>
+                                        </ul>
+                                    </div>
+                                    
                                     <div class="troubleshooting">
-                                        <h5>Need help with deployment issues?</h5>
+                                        <h5>🚨 Common Deployment Problems & Solutions:</h5>
+                                        <div class="common-issues">
+                                            <div class="issue-solution">
+                                                <strong>Build fails:</strong> Check package.json has correct dependencies and start script
+                                            </div>
+                                            <div class="issue-solution">
+                                                <strong>App shows "Application Error":</strong> Usually missing environment variables or port issues
+                                            </div>
+                                            <div class="issue-solution">
+                                                <strong>Deployment takes >5 minutes:</strong> Normal for first deploy, subsequent ones are faster
+                                            </div>
+                                            <div class="issue-solution">
+                                                <strong>Features don't work online:</strong> Check browser console for JavaScript errors
+                                            </div>
+                                        </div>
+                                        
                                         <div class="claude-prompt-box small">
+                                            <h6>Get AI Help:</h6>
                                             <div class="prompt-text">
                                                 "My deployment failed with this error: [paste error]. Can you help me fix this and get my educational tool online?"
                                             </div>

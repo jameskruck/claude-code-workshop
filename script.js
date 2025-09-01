@@ -32,6 +32,37 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Workshop initialization complete');
 });
 
+// Global function for resources page copy buttons
+function copyPromptToClipboard(button, text) {
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = button.textContent;
+        button.textContent = '✓ Copied!';
+        button.style.backgroundColor = '#10b981';
+        button.style.color = 'white';
+        
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.style.backgroundColor = '';
+            button.style.color = '';
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+        // Fallback
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        const originalText = button.textContent;
+        button.textContent = '✓ Copied!';
+        setTimeout(() => {
+            button.textContent = originalText;
+        }, 2000);
+    });
+}
+
 // Ensure only one section is active
 function ensureSingleActiveSection(activeId) {
     const sections = document.querySelectorAll('.workshop-section');
