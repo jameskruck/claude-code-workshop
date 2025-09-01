@@ -8,7 +8,17 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(taskkill:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(cmd /c:*)",
+      "Bash(PORT=3001 node server.js)",
+      "Bash(PORT=3002 node server.js)",
+      "Bash(PORT=3005 node server.js)",
+      "Read(C:\\Users\\james\\OneDrive\\Documents2\\GitHub\\educational-prompts-hub/**)",
+      "Read(C:\\Users\\james\\OneDrive\\Documents2\\GitHub\\educational-prompts-hub/**)",
+      "Read(C:\\Users\\james\\OneDrive\\Documents2\\GitHub\\educational-prompts-hub/**)",
+      "Read(C:\\Users\\james\\OneDrive\\Documents2\\GitHub\\educational-prompts-hub/**)",
+      "Read(C:\\Users\\james\\OneDrive\\Documents2\\GitHub\\educational-prompts-hub/**)",
+      "Read(C:\\Users\\james\\OneDrive\\Documents2\\GitHub\\educational-prompts-hub/**)"
     ],
     "deny": [],
     "ask": []
