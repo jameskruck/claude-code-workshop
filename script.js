@@ -2,8 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing workshop...');
     
-    // Ensure only overview section is active initially
-    ensureSingleActiveSection('overview');
+    // Multi-page navigation - no need to manage sections
     
     // Navigation functionality
     initializeNavigation();
@@ -95,74 +94,38 @@ function ensureSingleActiveSection(activeId) {
     }
 }
 
-// Navigation Management
+// Navigation Management - Multi-page version
 function initializeNavigation() {
+    // For multi-page navigation, we don't need to override click behavior
+    // Just ensure the correct nav item is active based on current page
+    
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navItems = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('.workshop-section');
     
     navItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all nav items and sections
-            navItems.forEach(nav => nav.classList.remove('active'));
-            sections.forEach(section => section.classList.remove('active'));
-            
-            // Add active class to clicked nav item
-            this.classList.add('active');
-            
-            // Show corresponding section
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-                
-                // Smooth scroll to top of content
-                targetSection.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
-            }
-            
-            // Update URL without triggering navigation
-            history.replaceState(null, null, this.getAttribute('href'));
-        });
-    });
-    
-    // Handle direct URL navigation
-    const hash = window.location.hash;
-    if (hash) {
-        const targetNav = document.querySelector(`a[href="${hash}"]`);
-        if (targetNav) {
-            targetNav.click();
+        const href = item.getAttribute('href');
+        if (href === currentPage) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
         }
-    }
+    });
 }
 
-// Section Navigation Function (for next/previous buttons)
+// Section Navigation Function (for next/previous buttons) - Multi-page version
 function navigateToSection(sectionId) {
-    console.log(`Navigating to section: ${sectionId}`);
+    // Map section IDs to page files
+    const sectionToPage = {
+        'overview': 'index.html',
+        'setup': 'setup.html', 
+        'activities': 'activities.html',
+        'resources': 'resources.html',
+        'next-steps': 'next-steps.html'
+    };
     
-    const targetNav = document.querySelector(`a[href="#${sectionId}"]`);
-    if (targetNav) {
-        console.log(`Found nav item for ${sectionId}, clicking it`);
-        targetNav.click();
-    } else {
-        console.log(`No nav item found for ${sectionId}, using direct navigation`);
-        // Use our helper function to ensure clean section switching
-        ensureSingleActiveSection(sectionId);
-        
-        // Smooth scroll to section
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            targetSection.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start' 
-            });
-            
-            // Update URL
-            history.replaceState(null, null, `#${sectionId}`);
-        }
+    const targetPage = sectionToPage[sectionId];
+    if (targetPage) {
+        window.location.href = targetPage;
     }
 }
 
