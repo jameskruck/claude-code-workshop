@@ -34,14 +34,14 @@ Complete these steps BEFORE the live session to maximize hands-on time.
 3. Authorize Render to access your repositories
 4. ✅ **Checkpoint:** You see the Render dashboard
 
-**Anthropic Account (Free)**
+**Anthropic Account (Pro/Max Required)**
 1. Go to [console.anthropic.com](https://console.anthropic.com)
 2. Sign up and complete email verification
 3. Go to **Settings → API Keys**
 4. Click **"Create Key"** and copy it somewhere safe
 5. ✅ **Checkpoint:** You have an API key starting with `sk-ant-`
 
-> 💡 **Cost Note:** Free tiers include everything needed. Anthropic gives $5 free credit (enough for extensive testing).
+> 💡 **Cost Note:** Claude Code requires a Claude Pro ($20/month) or Max ($40/month) subscription, or Console access with billing setup. GitHub and Render offer free tiers sufficient for workshop needs.
 
 ### Step 2: Fork the Workshop Repository
 
@@ -278,7 +278,7 @@ As you get comfortable, these become possible:
 - 🔄 Try slightly different prompts if Claude Code seems stuck
 
 **After Workshop:**
-- 📧 Email technical questions: `jkrcuk@ivey.ca`
+- 📧 Email technical questions: `jkruck@ivey.ca`
 - 📅 Monthly office hours (schedule TBA)
 - 🔍 Claude Code community forums and documentation
 

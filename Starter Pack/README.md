@@ -137,7 +137,7 @@ After working through this starter pack, you will be able to:
 
 ## 📞 Contact and Feedback
 
-**Workshop Questions:** `jkrcuk@ivey.ca`  
+**Workshop Questions:** `jkruck@ivey.ca`  
 **Resource Suggestions:** Use GitHub issues in the workshop repository  
 **Success Stories:** Share your wins - we love celebrating innovation!  
 
