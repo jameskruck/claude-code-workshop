@@ -235,6 +235,202 @@
     font-weight: 500;
 }
 
+/* Screenshot Zoom Modal Styles */
+.screenshot-modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.screenshot-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 16px 24px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #c5b783;
+}
+
+.screenshot-modal-header h3 {
+    margin: 0;
+    color: #2c2c2c;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.screenshot-modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.screenshot-modal-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #2c2c2c;
+}
+
+.screenshot-modal-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 400px;
+    background: #f8f9fa;
+}
+
+.zoomed-screenshot {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    object-fit: contain;
+}
+
+.screenshot-modal-footer {
+    padding: 12px 24px 16px 24px;
+    background: #f8f9fa;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.screenshot-modal-footer p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.screenshot-modal-footer kbd {
+    background: #e5e7eb;
+    border: 1px solid #d1d5db;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+/* Add hover effect to screenshots to indicate they're clickable */
+.step-image:not([data-placeholder]) {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step-image:not([data-placeholder]):hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile responsive modal */
+@media (max-width: 768px) {
+    .screenshot-modal-content {
+        max-width: 98vw;
+        max-height: 98vh;
+        margin: 1vh;
+    }
+    
+    .screenshot-modal-header {
+        padding: 16px 20px 12px 20px;
+    }
+    
+    .screenshot-modal-header h3 {
+        font-size: 1.1em;
+    }
+    
+    .screenshot-modal-body {
+        padding: 16px;
+        min-height: 300px;
+    }
+    
+    .zoomed-screenshot {
+        max-height: 60vh;
+    }
+    
+    .screenshot-modal-footer {
+        padding: 10px 20px 14px 20px;
+    }
+    
+    .screenshot-modal-footer p {
+        font-size: 13px;
+    }
+}
+
+/* Setup Prerequisite Check Styles */
+.setup-prereq-check {
+    transition: all 0.4s ease;
+    border-radius: 8px;
+    border: 2px solid transparent;
+}
+
+.prereq-item {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: 6px 0;
+}
+
+.setup-completion-msg {
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 6px;
+    display: none;
+    animation: slideIn 0.5s ease-out;
+}
+
+.setup-completion-msg p {
+    margin: 0;
+    color: #065f46;
+    font-weight: 500;
+}
+
+.setup-completion-msg strong {
+    color: #047857;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Deployment Experience Note Styles */
+.experience-note {
+    margin-top: 15px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #e0f2fe, #b3e5fc);
+    border: 1px solid #4fc3f7;
+    border-radius: 6px;
+    border-left: 4px solid #29b6f6;
+}
+
+.experience-note p {
+    margin: 0;
+    color: #01579b;
+    font-weight: 500;
+    font-size: 14px;
+}
+
 /* Enhanced Resources Page Styles */
 .example-tools {
     display: flex;

@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Activity progress tracking
     initializeActivityProgressTracking();
     
+    // Setup prerequisite check
+    initializePrereqCheck();
+    
     // Smooth animations
     initializeAnimations();
     
@@ -151,6 +154,9 @@ function initializeInteractiveElements() {
             this.style.transform = '';
         });
     });
+    
+    // Screenshot click-to-zoom functionality
+    initializeScreenshotZoom();
     
     // Video placeholder interactions
     const videoPlaceholders = document.querySelectorAll('.video-placeholder');
@@ -1798,6 +1804,212 @@ window.addEventListener('beforeunload', function() {
 });
 
 // Console message for developers
+// Setup Prerequisite Check
+function initializePrereqCheck() {
+    const prereqCheckboxes = ['prereq-github', 'prereq-render', 'prereq-anthropic'];
+    const setupCheckSection = document.querySelector('.setup-prereq-check');
+    
+    if (!setupCheckSection) return;
+    
+    function updateSetupCheckAppearance() {
+        const allChecked = prereqCheckboxes.every(id => {
+            const checkbox = document.getElementById(id);
+            return checkbox && checkbox.checked;
+        });
+        
+        if (allChecked) {
+            // All prerequisites complete - change to green
+            setupCheckSection.style.background = 'linear-gradient(135deg, #d1fae5, #a7f3d0)';
+            setupCheckSection.style.borderColor = '#10b981';
+            
+            // Update header text
+            const header = setupCheckSection.querySelector('h4');
+            if (header) {
+                header.innerHTML = '✅ Setup Complete!';
+            }
+            
+            // Add completion message if it doesn't exist
+            let completionMsg = setupCheckSection.querySelector('.setup-completion-msg');
+            if (!completionMsg) {
+                completionMsg = document.createElement('div');
+                completionMsg.className = 'setup-completion-msg';
+                completionMsg.innerHTML = '<p><strong>Perfect!</strong> You\'re ready to build your educational tool.</p>';
+                setupCheckSection.appendChild(completionMsg);
+            }
+            completionMsg.style.display = 'block';
+            
+        } else {
+            // Not all complete - keep original yellow/warning appearance
+            setupCheckSection.style.background = '';
+            setupCheckSection.style.borderColor = '';
+            
+            // Restore original header text
+            const header = setupCheckSection.querySelector('h4');
+            if (header) {
+                header.innerHTML = 'Quick Setup Check';
+            }
+            
+            // Hide completion message
+            const completionMsg = setupCheckSection.querySelector('.setup-completion-msg');
+            if (completionMsg) {
+                completionMsg.style.display = 'none';
+            }
+        }
+    }
+    
+    // Load saved states and add event listeners
+    prereqCheckboxes.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox) {
+            // Load saved state
+            const saved = localStorage.getItem(`workshop-prereq-${id}`);
+            if (saved === 'true') {
+                checkbox.checked = true;
+            }
+            
+            // Add change listener
+            checkbox.addEventListener('change', function() {
+                // Save state
+                localStorage.setItem(`workshop-prereq-${id}`, this.checked);
+                
+                // Update appearance
+                updateSetupCheckAppearance();
+                
+                // Add visual feedback to individual item
+                const item = this.closest('.prereq-item');
+                if (this.checked) {
+                    item.style.background = 'rgba(16, 185, 129, 0.1)';
+                    item.style.borderColor = '#10b981';
+                } else {
+                    item.style.background = '';
+                    item.style.borderColor = '';
+                }
+            });
+            
+            // Set initial state for individual items
+            if (checkbox.checked) {
+                const item = checkbox.closest('.prereq-item');
+                item.style.background = 'rgba(16, 185, 129, 0.1)';
+                item.style.borderColor = '#10b981';
+            }
+        }
+    });
+    
+    // Initial appearance update
+    updateSetupCheckAppearance();
+}
+
+// Screenshot Zoom Functionality
+function initializeScreenshotZoom() {
+    const screenshots = document.querySelectorAll('.step-image:not([data-placeholder])');
+    
+    screenshots.forEach(img => {
+        // Only add zoom if the image actually loads (not a placeholder)
+        img.addEventListener('load', function() {
+            this.style.cursor = 'zoom-in';
+            this.title = 'Click to zoom';
+            
+            this.addEventListener('click', function() {
+                showScreenshotModal(this.src, this.alt);
+            });
+        });
+        
+        // Check if image is already loaded
+        if (img.complete && img.naturalHeight !== 0) {
+            img.style.cursor = 'zoom-in';
+            img.title = 'Click to zoom';
+            
+            img.addEventListener('click', function() {
+                showScreenshotModal(this.src, this.alt);
+            });
+        }
+    });
+}
+
+function showScreenshotModal(imageSrc, imageAlt) {
+    // Create modal overlay
+    const modal = document.createElement('div');
+    modal.className = 'screenshot-modal';
+    modal.innerHTML = `
+        <div class="screenshot-modal-overlay">
+            <div class="screenshot-modal-content">
+                <div class="screenshot-modal-header">
+                    <h3>${imageAlt}</h3>
+                    <button class="screenshot-modal-close" title="Close (or press Escape)">&times;</button>
+                </div>
+                <div class="screenshot-modal-body">
+                    <img src="${imageSrc}" alt="${imageAlt}" class="zoomed-screenshot">
+                </div>
+                <div class="screenshot-modal-footer">
+                    <p>Click anywhere outside the image or press <kbd>Esc</kbd> to close</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Style the modal
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    // Animate in
+    setTimeout(() => {
+        modal.style.opacity = '1';
+    }, 10);
+    
+    // Close handlers
+    const closeBtn = modal.querySelector('.screenshot-modal-close');
+    const overlay = modal.querySelector('.screenshot-modal-overlay');
+    
+    const closeModal = () => {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            if (modal.parentNode) {
+                modal.remove();
+            }
+        }, 300);
+    };
+    
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            closeModal();
+        }
+    });
+    
+    // Escape key
+    const escHandler = (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+            document.removeEventListener('keydown', escHandler);
+        }
+    };
+    document.addEventListener('keydown', escHandler);
+    
+    // Prevent body scroll while modal is open
+    document.body.style.overflow = 'hidden';
+    
+    // Restore scroll when modal closes
+    modal.addEventListener('transitionend', () => {
+        if (modal.style.opacity === '0') {
+            document.body.style.overflow = '';
+        }
+    });
+}
+
 console.log(`
 🎯 Claude Code Workshop - Developer Console
 ==========================================
