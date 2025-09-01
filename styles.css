@@ -263,6 +263,76 @@
     line-height: 1.4;
 }
 
+/* Workshop Value Proposition Styles */
+.workshop-value-prop {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9ff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.workshop-value-prop h4 {
+    margin: 0 0 10px 0;
+    color: #2d3748;
+}
+
+.value-prop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.value-item {
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.workshop-unique-value {
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+}
+
+.workshop-unique-value h3 {
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+.unique-value-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.value-highlight h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.value-highlight p {
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+    opacity: 0.95;
+}
+
+.value-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8px;
+}
+
+.benefit {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;

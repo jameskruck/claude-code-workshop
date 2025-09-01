@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup functionality
     initializeSetupCheckers();
     
-    // AI Chat functionality now handled by ai-chat-widget.js
-    // initializeAIChat();
+    // AI Chat functionality - both embedded chat AND floating widget
+    initializeAIChat();
     
     // Form handlers
     initializeFormHandlers();
@@ -677,8 +677,7 @@ function trackDeploymentPromptCopy(prompt) {
     console.log('Deployment prompt copy tracked');
 }
 
-// AI Chat Functionality - DISABLED (using ai-chat-widget.js instead)
-/*
+// AI Chat Functionality - Embedded chat for Activity 2
 function initializeAIChat() {
     const chatInput = document.getElementById('chat-input');
     const sendButton = document.getElementById('send-chat');
@@ -923,7 +922,6 @@ function trackChatInteraction(userMessage, aiResponse) {
     
     console.log('Chat interaction tracked');
 }
-*/
 
 // Form Handlers
 function initializeFormHandlers() {

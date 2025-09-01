@@ -56,11 +56,29 @@
                             </div>
                             <div class="overview-item">
                                 <h4>🎯 Workshop Goals</h4>
-                                <p>By the end, you'll have a working educational tool deployed online</p>
+                                <p>By the end, you'll have YOUR OWN working educational tool deployed online with your own AI assistant</p>
                             </div>
                             <div class="overview-item">
-                                <h4>🤖 Meet Your AI Assistant</h4>
-                                <p>Test the AI chat widget (bottom-right) - it's specialized for educational tool development</p>
+                                <h4>🔑 Key Concept</h4>
+                                <p>You'll fork this workshop, add your own API key, and get your own powered version - completely independent!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="workshop-value-prop">
+                            <h4>💡 Why This Approach?</h4>
+                            <div class="value-prop-grid">
+                                <div class="value-item">
+                                    <strong>You Control Everything:</strong> Your own repository, your own API key, your own deployed version
+                                </div>
+                                <div class="value-item">
+                                    <strong>No Ongoing Costs:</strong> You control your usage and API spending
+                                </div>
+                                <div class="value-item">
+                                    <strong>Full Customization:</strong> Modify, extend, and adapt the workshop for your needs
+                                </div>
+                                <div class="value-item">
+                                    <strong>Learning by Doing:</strong> You'll understand exactly how everything works
+                                </div>
                             </div>
                         </div>
                         
@@ -104,20 +122,55 @@
                             <div class="flow-step">
                                 <div class="step-indicator">
                                     <div class="step-number">1</div>
-                                    <h4>Describe Your Challenge</h4>
+                                    <h4>Chat with Your AI Assistant</h4>
                                 </div>
                                 <div class="step-content">
-                                    <p>Use the floating AI assistant (🤖 bottom-right) to discuss:</p>
-                                    <div class="challenge-prompts">
-                                        <div class="prompt-example">
-                                            <strong>"I need help with..."</strong>
-                                            <ul>
-                                                <li>Students struggling to engage with case study discussions</li>
-                                                <li>Collecting meaningful feedback from large MBA classes</li>
-                                                <li>Tracking student participation in executive education</li>
-                                                <li>Managing group projects with remote participants</li>
-                                                <li>Or describe your specific challenge!</li>
-                                            </ul>
+                                    <div class="ai-chat-section">
+                                        <div class="chat-intro">
+                                            <h4>💬 Dedicated AI Chat for Tool Design</h4>
+                                            <p>This AI understands case-based learning, MBA programs, and business education challenges. Discuss your specific needs!</p>
+                                        </div>
+                                        
+                                        <div class="chat-suggestions">
+                                            <h5>Start the conversation with something like:</h5>
+                                            <div class="suggestion-buttons">
+                                                <button class="suggestion-btn" data-message="What educational tools would help MBA students collaborate better on case analyses?">
+                                                    💼 Case collaboration tools
+                                                </button>
+                                                <button class="suggestion-btn" data-message="Suggest simple tools that could save instructors time while improving student engagement in business courses.">
+                                                    ⏰ Time-saving instructor tools
+                                                </button>
+                                                <button class="suggestion-btn" data-message="What digital tools could enhance leadership skill development for executive education participants?">
+                                                    👥 Leadership development tools
+                                                </button>
+                                                <button class="suggestion-btn" data-message="I need ideas for tools that work well for both in-person and remote business education.">
+                                                    🌐 Hybrid learning tools
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chat-interface">
+                                            <div class="chat-messages" id="chat-messages">
+                                                <div class="ai-message">
+                                                    <div class="message-avatar">🤖</div>
+                                                    <div class="message-content">
+                                                        <p>Hello! I'm here to help you brainstorm educational tool ideas for business education. I understand case-based learning approaches, MBA programs, and the practical needs of business education.</p>
+                                                        <p>What kind of educational challenge would you like to solve with a simple digital tool?</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="chat-input-area">
+                                                <div class="input-wrapper">
+                                                    <textarea 
+                                                        id="chat-input" 
+                                                        placeholder="Describe your educational challenge or ask for tool ideas..."
+                                                        rows="2"
+                                                    ></textarea>
+                                                    <button id="send-chat" disabled>Send</button>
+                                                </div>
+                                                <div class="chat-status" id="chat-status"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
