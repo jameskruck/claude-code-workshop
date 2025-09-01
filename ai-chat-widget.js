@@ -14,6 +14,7 @@ class AIchatWidget {
         this.createWidget();
         this.attachEventListeners();
         this.loadChatHistory();
+        this.checkApiStatus();
         
         // Start minimized if user preference
         if (this.isMinimized) {
@@ -225,6 +226,12 @@ class AIchatWidget {
             });
 
             if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                
+                if (errorData.error === 'API key not configured') {
+                    throw new Error('API_KEY_MISSING');
+                }
+                
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
@@ -249,12 +256,28 @@ class AIchatWidget {
             // Remove typing indicator
             this.removeTypingIndicator();
 
-            // Show error message
-            this.addMessage('ai', 'Sorry, I\'m having trouble connecting right now. Please check your setup or try again in a moment.');
-
-            // Update status
-            chatStatus.textContent = 'Connection error. Please try again.';
-            chatStatus.className = 'chat-status error';
+            // Show specific error message based on error type
+            if (error.message === 'API_KEY_MISSING') {
+                this.addMessage('ai', `
+                    <div class="error-message">
+                        <h4>🔧 AI Chat Setup Required</h4>
+                        <p>The AI assistant needs to be configured with an API key to work.</p>
+                        <p><strong>For workshop hosts:</strong></p>
+                        <ol>
+                            <li>Get your API key from <a href="https://console.anthropic.com/" target="_blank">console.anthropic.com</a></li>
+                            <li>Add it as ANTHROPIC_API_KEY in your deployment environment</li>
+                            <li>Restart your server</li>
+                        </ol>
+                        <p><strong>For workshop participants:</strong> Please let the host know the AI chat needs to be configured.</p>
+                    </div>
+                `);
+                chatStatus.textContent = 'AI chat not configured - API key needed';
+                chatStatus.className = 'chat-status error';
+            } else {
+                this.addMessage('ai', 'Sorry, I\'m having trouble connecting right now. Please check your setup or try again in a moment.');
+                chatStatus.textContent = 'Connection error. Please try again.';
+                chatStatus.className = 'chat-status error';
+            }
         }
 
         // Clear status after a few seconds
@@ -382,6 +405,28 @@ class AIchatWidget {
         document.getElementById('chat-toggle').style.display = 'none';
         localStorage.setItem('aiChatMinimized', 'false');
         this.isMinimized = false;
+    }
+
+    async checkApiStatus() {
+        try {
+            const response = await fetch('/api/health');
+            if (response.ok) {
+                const data = await response.json();
+                if (!data.hasApiKey) {
+                    // Show setup message if API key is missing
+                    this.addMessage('ai', `
+                        <div class="setup-notice">
+                            <h4>⚠️ AI Chat Setup Needed</h4>
+                            <p>The AI assistant isn't configured yet. To enable AI chat, the workshop host needs to add an Anthropic API key.</p>
+                            <p><strong>Workshop hosts:</strong> Check the setup instructions or contact support for help configuring the API key.</p>
+                        </div>
+                    `);
+                }
+            }
+        } catch (error) {
+            console.log('Could not check API status:', error);
+            // Don't show error on initial load, just log it
+        }
     }
 
     close() {

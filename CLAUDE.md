@@ -96,6 +96,7 @@ The `loadWorkshopData()` function dynamically reads repository files to provide 
 
 ### User Instructions
 - **Always commit and push code when completing tasks** - After finishing any development work, commit changes and push to git repository
+- **AI Chat requires API key setup** - The workshop's core Activity 2 depends on working AI chat. Ensure ANTHROPIC_API_KEY is configured in environment
 
 ### Working with AI Chat
 The AI assistant is configured specifically for educational technology in business school contexts. It understands:

@@ -39,11 +39,33 @@ cp .env.example .env
 ```
 
 ### 3. Configuration
-Get your Anthropic API key from [console.anthropic.com](https://console.anthropic.com/) and add it to your `.env` file:
 
+**⚠️ IMPORTANT: AI Chat Setup Required**
+
+The workshop's AI assistant requires an Anthropic API key to work. Without this, participants won't be able to use the AI chat feature that's central to Activity 2.
+
+#### Get Your API Key:
+1. Go to [console.anthropic.com](https://console.anthropic.com/) 
+2. Sign up or log in with your Anthropic account
+3. Navigate to **Settings → API Keys**
+4. Click **"Create Key"** and copy the key (starts with `sk-ant-`)
+
+#### Add to Your Environment:
+Create a `.env` file in your project root:
+```bash
+# Copy from .env.example and update with your key
+cp .env.example .env
 ```
-ANTHROPIC_API_KEY=your_actual_api_key_here
+
+Edit `.env` and add your key:
 ```
+ANTHROPIC_API_KEY=sk-ant-your_actual_api_key_here
+```
+
+#### For Render Deployment:
+1. In your Render dashboard → your service → **Environment** tab
+2. Add variable: `ANTHROPIC_API_KEY` = your API key
+3. Click **"Save Changes"** (service will redeploy automatically)
 
 ### 4. Run the Workshop
 ```bash
