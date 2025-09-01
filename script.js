@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form handlers
     initializeFormHandlers();
     
+    // Custom prompt functionality for Activity 2
+    initializeCustomPromptHandling();
+    
     // Smooth animations
     initializeAnimations();
     
@@ -917,6 +920,109 @@ function initializeFormHandlers() {
 }
 
 // Animation and Visual Effects
+// Custom Prompt Handling for Activity 2
+function initializeCustomPromptHandling() {
+    const promptStorage = document.getElementById('custom-prompt-storage');
+    const saveButton = document.getElementById('save-custom-prompt');
+    const saveStatus = document.getElementById('prompt-save-status');
+    const promptDisplay = document.getElementById('saved-prompt-display');
+    const copySavedButton = document.getElementById('copy-saved-prompt');
+    
+    // Only initialize if elements exist (we're on activities page)
+    if (!promptStorage || !saveButton) return;
+    
+    // Load any previously saved prompt
+    loadSavedPrompt();
+    
+    // Save custom prompt to local storage
+    saveButton.addEventListener('click', function() {
+        const promptText = promptStorage.value.trim();
+        
+        if (!promptText) {
+            showSaveStatus('Please enter a prompt first!', 'error');
+            return;
+        }
+        
+        // Save to localStorage
+        localStorage.setItem('customClaudePrompt', promptText);
+        
+        // Update displays
+        updatePromptDisplay(promptText);
+        showSaveStatus('Prompt saved successfully! ✓', 'success');
+        
+        // Enable copy button
+        if (copySavedButton) {
+            copySavedButton.disabled = false;
+        }
+    });
+    
+    // Copy saved prompt functionality
+    if (copySavedButton) {
+        copySavedButton.addEventListener('click', function() {
+            const savedPrompt = localStorage.getItem('customClaudePrompt');
+            if (savedPrompt) {
+                copyToClipboard(savedPrompt);
+                showSaveStatus('Custom prompt copied to clipboard! ✓', 'success');
+            }
+        });
+    }
+    
+    // Handle fallback prompt copying
+    document.querySelectorAll('.copy-prompt-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const promptCode = this.parentElement.querySelector('code');
+            if (promptCode) {
+                copyToClipboard(promptCode.textContent);
+                this.textContent = 'Copied!';
+                setTimeout(() => {
+                    this.textContent = 'Copy';
+                }, 2000);
+            }
+        });
+    });
+    
+    function loadSavedPrompt() {
+        const savedPrompt = localStorage.getItem('customClaudePrompt');
+        if (savedPrompt) {
+            if (promptStorage) promptStorage.value = savedPrompt;
+            updatePromptDisplay(savedPrompt);
+            if (copySavedButton) copySavedButton.disabled = false;
+        }
+    }
+    
+    function updatePromptDisplay(promptText) {
+        if (promptDisplay) {
+            promptDisplay.innerHTML = `<div class="saved-prompt-text">${promptText}</div>`;
+        }
+    }
+    
+    function showSaveStatus(message, type) {
+        if (saveStatus) {
+            saveStatus.textContent = message;
+            saveStatus.className = `save-status ${type}`;
+            setTimeout(() => {
+                saveStatus.textContent = '';
+                saveStatus.className = 'save-status';
+            }, 3000);
+        }
+    }
+    
+    function copyToClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text);
+        } else {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        }
+    }
+}
+
 function initializeAnimations() {
     // Intersection Observer for scroll animations
     const observerOptions = {

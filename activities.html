@@ -91,161 +91,139 @@
                 <div class="activity-item">
                     <div class="activity-time">10 min</div>
                     <div class="activity-content">
-                        <h3>Activity 2: AI-Powered Idea Generation</h3>
-                        <p>Chat with AI to discover educational tool ideas tailored for business education</p>
+                        <h3>Activity 2: AI-Powered Tool Design</h3>
+                        <p>Collaborate with AI to design and get a custom Claude Code prompt for your specific educational challenge</p>
                         
-                        <div class="ai-chat-section">
-                            <div class="chat-intro">
-                                <h4>💬 Talk to Your AI Assistant</h4>
-                                <p>This AI understands case-based learning, MBA programs, and the unique needs of business education. Ask for ideas!</p>
-                            </div>
-                            
-                            <div class="chat-suggestions">
-                                <h5>Try asking:</h5>
-                                <div class="suggestion-buttons">
-                                    <button class="suggestion-btn" data-message="What educational tools would help MBA students collaborate better on case analyses?">
-                                        💼 Case collaboration tools
-                                    </button>
-                                    <button class="suggestion-btn" data-message="Suggest simple tools that could save instructors time while improving student engagement in business courses.">
-                                        ⏰ Time-saving instructor tools
-                                    </button>
-                                    <button class="suggestion-btn" data-message="What digital tools could enhance leadership skill development for executive education participants?">
-                                        👥 Leadership development tools
-                                    </button>
-                                    <button class="suggestion-btn" data-message="I need ideas for tools that work well for both in-person and remote business education.">
-                                        🌐 Hybrid learning tools
-                                    </button>
+                        <div class="ai-collaboration-flow">
+                            <div class="flow-step">
+                                <div class="step-indicator">
+                                    <div class="step-number">1</div>
+                                    <h4>Describe Your Challenge</h4>
                                 </div>
-                            </div>
-                            
-                            <div class="chat-interface">
-                                <div class="chat-messages" id="chat-messages">
-                                    <div class="ai-message">
-                                        <div class="message-avatar">🤖</div>
-                                        <div class="message-content">
-                                            <p>Hello! I'm here to help you brainstorm educational tool ideas for business education. I understand case-based learning approaches, MBA programs, and the practical needs of business education.</p>
-                                            <p>What kind of educational challenge would you like to solve with a simple digital tool?</p>
+                                <div class="step-content">
+                                    <p>Use the floating AI assistant (🤖 bottom-right) to discuss:</p>
+                                    <div class="challenge-prompts">
+                                        <div class="prompt-example">
+                                            <strong>"I need help with..."</strong>
+                                            <ul>
+                                                <li>Students struggling to engage with case study discussions</li>
+                                                <li>Collecting meaningful feedback from large MBA classes</li>
+                                                <li>Tracking student participation in executive education</li>
+                                                <li>Managing group projects with remote participants</li>
+                                                <li>Or describe your specific challenge!</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="chat-input-area">
-                                    <div class="input-wrapper">
-                                        <textarea 
-                                            id="chat-input" 
-                                            placeholder="Ask for educational tool ideas for business education..."
-                                            rows="2"
-                                        ></textarea>
-                                        <button id="send-chat" disabled>Send</button>
+                            </div>
+
+                            <div class="flow-step">
+                                <div class="step-indicator">
+                                    <div class="step-number">2</div>
+                                    <h4>Get Your Custom Prompt</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>After discussing your challenge, ask the AI:</p>
+                                    <div class="custom-prompt-request">
+                                        <div class="request-box">
+                                            <strong>Ask:</strong> "Based on our conversation, can you create a detailed Claude Code prompt that will help me build a tool to solve this specific problem?"
+                                        </div>
                                     </div>
-                                    <div class="chat-status" id="chat-status"></div>
+                                    <p>The AI will generate a custom prompt tailored to your exact needs - not a generic template!</p>
+                                </div>
+                            </div>
+
+                            <div class="flow-step">
+                                <div class="step-indicator">
+                                    <div class="step-number">3</div>
+                                    <h4>Copy & Save Your Prompt</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Copy the custom prompt the AI gives you:</p>
+                                    <div class="prompt-storage">
+                                        <h5>Your Custom Claude Code Prompt:</h5>
+                                        <textarea 
+                                            id="custom-prompt-storage" 
+                                            placeholder="Paste your custom Claude Code prompt here to save it for Activity 3..."
+                                            rows="6"
+                                        ></textarea>
+                                        <button id="save-custom-prompt" class="save-btn">Save My Prompt</button>
+                                        <div class="save-status" id="prompt-save-status"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="project-selection-section">
-                            <h4>Choose Your Project</h4>
-                            <p>Based on AI suggestions or your own idea, select what you'd like to build:</p>
-                        <div class="build-options">
-                            <div class="build-option" data-project="feedback">
-                                <h4>🔄 Student Feedback Collector</h4>
-                                <p>Simple form to gather course feedback with ratings and comments</p>
-                                <div class="project-features">
-                                    <span class="feature">Form submission</span>
-                                    <span class="feature">Star ratings</span>
-                                    <span class="feature">Results view</span>
-                                </div>
-                            </div>
-                            <div class="build-option" data-project="timer">
-                                <h4>⏰ Study Session Timer</h4>
-                                <p>Pomodoro-style timer with breaks and progress tracking</p>
-                                <div class="project-features">
-                                    <span class="feature">Countdown timer</span>
-                                    <span class="feature">Break reminders</span>
-                                    <span class="feature">Session history</span>
-                                </div>
-                            </div>
-                            <div class="build-option" data-project="quiz">
-                                <h4>Quick Quiz Builder</h4>
-                                <p>Create and take simple multiple-choice quizzes</p>
-                                <div class="project-features">
-                                    <span class="feature">Question builder</span>
-                                    <span class="feature">Score tracking</span>
-                                    <span class="feature">Results analysis</span>
-                                </div>
-                            </div>
-                            <div class="build-option" data-project="journal">
-                                <h4>📔 Learning Journal</h4>
-                                <p>Daily reflection tool with guided prompts</p>
-                                <div class="project-features">
-                                    <span class="feature">Daily entries</span>
-                                    <span class="feature">Reflection prompts</span>
-                                    <span class="feature">Progress view</span>
-                                </div>
+
+                        <div class="activity-progress">
+                            <h4>✅ Activity 2 Complete When:</h4>
+                            <div class="progress-checklist">
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="discussed-challenge"> Discussed my specific educational challenge with AI
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="got-custom-prompt"> Received a custom Claude Code prompt tailored to my needs
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="saved-prompt"> Saved my custom prompt for Activity 3
+                                </label>
                             </div>
                         </div>
-                        <div class="project-selection">
-                            <p><strong>Selected Project:</strong> <span id="selected-project">None selected</span></p>
-                        </div>
-                    </div>
                 </div>
                 </div>
 
                 <div class="activity-item">
-                    <div class="activity-time">15 min</div>
+                    <div class="activity-time">20 min</div>
                     <div class="activity-content">
-                        <h3>Activity 3: Build Your Tool</h3>
-                        <p>Use Claude Code to create your educational tool from start to finish</p>
+                        <h3>Activity 3: Build Your Custom Tool</h3>
+                        <p>Use Claude Code with your personalized prompt to create your educational tool</p>
                         
-                        <div class="setup-steps">
-                            <div class="setup-step">
+                        <div class="build-steps">
+                            <div class="build-step">
                                 <div class="step-number">1</div>
                                 <div class="build-step-content">
-                                    <h4>Access Claude Code</h4>
-                                    <p>Open <a href="https://claude.ai/code" target="_blank">claude.ai/code</a> in a new tab</p>
+                                    <h4>Open Claude Code</h4>
+                                    <p>Go to <a href="https://claude.ai/code" target="_blank">claude.ai/code</a> in a new tab</p>
                                 </div>
                             </div>
-                            <div class="setup-step">
+                            
+                            <div class="build-step">
                                 <div class="step-number">2</div>
                                 <div class="build-step-content">
-                                    <h4>Copy Your Starting Prompt</h4>
-                                    <div class="prompt-templates">
-                                        <div class="prompt-template" data-for="feedback">
-                                            <h5>Feedback Collector Prompt:</h5>
-                                            <div class="prompt-box">
-                                                <code>Create a student feedback collection web application. Include: a form with name, course, 5-star rating for overall satisfaction, 5-star rating for content quality, text area for comments, and a submit button. Also create a simple results page that shows all submitted feedback in a clean list. Use modern, clean styling with a professional look. Make it mobile-friendly.</code>
-                                                <button class="copy-prompt">Copy Prompt</button>
-                                            </div>
+                                    <h4>Use Your Custom Prompt</h4>
+                                    <div class="saved-prompt-area">
+                                        <h5>Your Saved Prompt from Activity 2:</h5>
+                                        <div class="prompt-display" id="saved-prompt-display">
+                                            <p class="no-prompt">No custom prompt saved yet. Complete Activity 2 first!</p>
                                         </div>
-                                        <div class="prompt-template" data-for="timer">
-                                            <h5>Study Timer Prompt:</h5>
-                                            <div class="prompt-box">
-                                                <code>Create a Pomodoro study timer web application. Include: 25-minute work timer, 5-minute break timer, start/pause/reset buttons, session counter, and a simple progress display. Add notification sounds when timers complete. Use clean, focused design that helps concentration. Make the timer large and easy to read.</code>
-                                                <button class="copy-prompt">Copy Prompt</button>
+                                        <button id="copy-saved-prompt" class="copy-btn" disabled>Copy My Custom Prompt</button>
+                                    </div>
+                                    
+                                    <div class="fallback-prompts">
+                                        <h5>Need a Starting Point? Try These:</h5>
+                                        <div class="simple-prompts">
+                                            <div class="simple-prompt">
+                                                <strong>Student Engagement Tool:</strong>
+                                                <code>Create a simple web tool where students can submit anonymous questions about today's topic, and instructors can view and respond to them in real-time. Make it clean and easy to use.</code>
+                                                <button class="copy-prompt-btn">Copy</button>
                                             </div>
-                                        </div>
-                                        <div class="prompt-template" data-for="quiz">
-                                            <h5>Quiz Builder Prompt:</h5>
-                                            <div class="prompt-box">
-                                                <code>Create a simple quiz application. Include: a way to add multiple-choice questions with 4 options each, a quiz-taking interface that shows one question at a time, immediate feedback on answers, final score display, and ability to retake the quiz. Use engaging colors and clear typography. Make it intuitive for both creating and taking quizzes.</code>
-                                                <button class="copy-prompt">Copy Prompt</button>
-                                            </div>
-                                        </div>
-                                        <div class="prompt-template" data-for="journal">
-                                            <h5>Learning Journal Prompt:</h5>
-                                            <div class="prompt-box">
-                                                <code>Create a daily learning journal web application. Include: date picker, reflection prompts (What did I learn today? What challenged me? What will I do differently?), text areas for responses, save entry button, and a view to see past entries by date. Use calming colors and readable fonts that encourage reflection.</code>
-                                                <button class="copy-prompt">Copy Prompt</button>
+                                            <div class="simple-prompt">
+                                                <strong>Quick Check-in Tool:</strong>
+                                                <code>Build a daily check-in form where students can rate their understanding (1-5 scale), energy level, and add one question or comment. Show summary results to help instructors adjust.</code>
+                                                <button class="copy-prompt-btn">Copy</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="setup-step">
+                            
+                            <div class="build-step">
                                 <div class="step-number">3</div>
                                 <div class="build-step-content">
-                                    <h4>Paste & Send</h4>
-                                    <p>Paste the prompt into Claude Code and hit enter to start building!</p>
+                                    <h4>Start Building!</h4>
+                                    <p>Paste your prompt into Claude Code and begin creating your tool!</p>
+                                    <div class="building-tips-quick">
+                                        <p><strong>💡 Pro tip:</strong> Start with "I want to build..." and then paste your prompt.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
