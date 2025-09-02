@@ -2178,11 +2178,27 @@ function checkPrereqCompletionState() {
     const prereqContainer = document.getElementById('prereq-check-container');
     const prereqSuccess = document.getElementById('prereq-success');
     
+    console.log('checkPrereqCompletionState called:', {
+        prereqGithub: !!prereqGithub,
+        prereqRender: !!prereqRender,
+        prereqAnthropic: !!prereqAnthropic,
+        prereqContainer: !!prereqContainer,
+        githubChecked: prereqGithub?.checked,
+        renderChecked: prereqRender?.checked,
+        anthropicChecked: prereqAnthropic?.checked
+    });
+    
     if (prereqGithub && prereqRender && prereqAnthropic && prereqContainer) {
         const allPrereqsComplete = prereqGithub.checked && prereqRender.checked && prereqAnthropic.checked;
         
+        console.log('All prereqs complete:', allPrereqsComplete);
+        console.log('Container current classes:', prereqContainer.className);
+        
         if (allPrereqsComplete) {
+            console.log('Adding completed class to container');
             prereqContainer.classList.add('completed');
+            console.log('Container classes after adding completed:', prereqContainer.className);
+            
             if (prereqSuccess) {
                 prereqSuccess.style.display = 'flex';
             }
@@ -2192,11 +2208,14 @@ function checkPrereqCompletionState() {
                 createCheckboxCelebration(prereqAnthropic);
             }, 200);
         } else {
+            console.log('Removing completed class from container');
             prereqContainer.classList.remove('completed');
             if (prereqSuccess) {
                 prereqSuccess.style.display = 'none';
             }
         }
+    } else {
+        console.log('Some prerequisite elements not found');
     }
 }
 
