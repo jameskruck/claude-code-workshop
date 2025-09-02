@@ -158,6 +158,9 @@ function initializeInteractiveElements() {
     // Screenshot click-to-zoom functionality
     initializeScreenshotZoom();
     
+    // GIF playback controls
+    initializeGifControls();
+    
     // Video placeholder interactions
     const videoPlaceholders = document.querySelectorAll('.video-placeholder');
     videoPlaceholders.forEach(placeholder => {
@@ -2194,6 +2197,78 @@ function checkPrereqCompletionState() {
                 prereqSuccess.style.display = 'none';
             }
         }
+    }
+}
+
+// GIF Playback Controls
+function initializeGifControls() {
+    const gifImages = document.querySelectorAll('.gif-image');
+    
+    gifImages.forEach(gif => {
+        const playBtn = gif.parentElement.querySelector('.gif-play-btn');
+        if (!playBtn) return;
+        
+        // Store original src for restarting
+        const originalSrc = gif.src;
+        
+        // Initial pause state - replace with static version or add overlay
+        updateGifState(gif, playBtn, true);
+        
+        // Add click handler
+        playBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isPaused = gif.getAttribute('data-paused') === 'true';
+            
+            if (isPaused) {
+                // Play: reload gif to restart animation
+                gif.src = '';
+                gif.src = originalSrc;
+                updateGifState(gif, playBtn, false);
+            } else {
+                // Pause: we can't truly pause gifs, but we can indicate paused state
+                updateGifState(gif, playBtn, true);
+            }
+        });
+        
+        // Also allow clicking on the gif itself
+        gif.addEventListener('click', (e) => {
+            e.preventDefault();
+            playBtn.click();
+        });
+        
+        // Add hover effects
+        const gifWrapper = gif.parentElement;
+        gifWrapper.addEventListener('mouseenter', () => {
+            const controls = gifWrapper.querySelector('.gif-controls');
+            controls.style.opacity = '1';
+        });
+        
+        gifWrapper.addEventListener('mouseleave', () => {
+            const controls = gifWrapper.querySelector('.gif-controls');
+            const isPaused = gif.getAttribute('data-paused') === 'true';
+            controls.style.opacity = isPaused ? '0.9' : '0.7';
+        });
+    });
+}
+
+function updateGifState(gif, playBtn, isPaused) {
+    gif.setAttribute('data-paused', isPaused);
+    
+    if (isPaused) {
+        playBtn.innerHTML = '▶️ Click to play';
+        playBtn.title = 'Click to play GIF';
+    } else {
+        playBtn.innerHTML = '⏸️ Playing...';
+        playBtn.title = 'Click to restart GIF';
+        
+        // Auto-return to paused state after a delay (simulate gif completion)
+        setTimeout(() => {
+            if (gif.getAttribute('data-paused') === 'false') {
+                updateGifState(gif, playBtn, true);
+            }
+        }, 5000); // Adjust based on your GIF lengths
     }
 }
 

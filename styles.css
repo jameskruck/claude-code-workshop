@@ -2623,6 +2623,72 @@ main {
     line-height: 1.4;
 }
 
+/* GIF Controls */
+.gif-container {
+    position: relative;
+}
+
+.gif-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gif-image[data-paused="true"] {
+    filter: grayscale(20%) brightness(0.9);
+    transition: filter 0.3s ease;
+}
+
+.gif-image[data-paused="false"] {
+    filter: none;
+}
+
+.gif-controls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.gif-wrapper:hover .gif-controls {
+    opacity: 1;
+}
+
+.gif-play-btn {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.gif-play-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.gif-image[data-paused="false"] + .gif-controls .gif-play-btn {
+    background: rgba(197, 183, 131, 0.9);
+    color: #2c2c2c;
+}
+
+.gif-image[data-paused="false"] + .gif-controls .gif-play-btn:hover {
+    background: rgba(197, 183, 131, 1);
+}
+
 /* Enhanced Quick Setup Check */
 .setup-prereq-check {
     background: linear-gradient(135deg, #fff9e6 0%, #fef5e6 100%);
