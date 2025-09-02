@@ -6,6 +6,23 @@ This file provides guidance to Claude Code when working with code in this reposi
 
 This is an interactive workshop application for Learning Experience Designers at Ivey Business School. The workshop teaches participants how to build educational tools using Claude Code and AI assistance. The application features an AI chat assistant specialized in educational technology, guided activities, and hands-on building experiences.
 
+## Recent Updates (2025-09-01)
+
+### Key Changes Made
+- **Fixed Claude Code Setup**: Updated all references from non-existent web interface to correct CLI installation process
+- **Corrected Pricing**: Updated "free" references to accurate Claude Pro/Max subscription requirements ($20-40/month)
+- **Enhanced Navigation**: Fixed multi-page navigation JavaScript that was interfering with normal page transitions
+- **Improved Activity Flow**: Removed contradictory content in Activity 3 that offered generic templates after custom prompt creation
+- **Added Screenshot Zoom**: Implemented click-to-zoom functionality for setup screenshots with professional modal interface
+- **Interactive Setup Check**: Added dynamic background color change (yellow→green) when all prerequisites are completed
+- **Streamlined AI Responses**: Updated system prompts to eliminate "As an AI assistant" language patterns
+- **Fixed Activity 4 Context**: Updated deployment activity to acknowledge prior experience from workshop deployment
+- **Added Progress Persistence**: All interactive elements now save state to localStorage for session continuity
+
+### Contact Information
+- **Workshop Questions**: `jkruck@ivey.ca` (corrected from previous typo)
+- **Technical Support**: Available during workshop sessions
+
 ## Commands
 
 ### Development Commands
