@@ -457,10 +457,13 @@ class AIchatWidget {
 document.addEventListener('DOMContentLoaded', function() {
     // Wait a bit for other scripts to load
     setTimeout(() => {
-        // Only create floating widget if there's no embedded chat on this page
-        const embeddedChat = document.getElementById('chat-input') || document.getElementById('chat-messages');
-        if (!embeddedChat) {
-            window.aiChatWidget = new AIchatWidget();
+        // Check if widget already exists to prevent duplicates
+        if (document.getElementById('ai-chat-widget')) {
+            console.log('AI chat widget already exists, skipping');
+            return;
         }
+        
+        console.log('Creating floating AI chat widget');
+        window.aiChatWidget = new AIchatWidget();
     }, 100);
 });

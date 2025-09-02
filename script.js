@@ -657,10 +657,20 @@ function initializeAIChat() {
     const chatStatus = document.getElementById('chat-status');
     const suggestionButtons = document.querySelectorAll('.suggestion-btn');
     
+    console.log('Initializing embedded AI chat:', {
+        chatInput: !!chatInput,
+        sendButton: !!sendButton,
+        chatMessages: !!chatMessages,
+        currentPage: window.location.pathname
+    });
+    
     // Only initialize if embedded chat elements exist (activities.html)
     if (!chatInput || !sendButton || !chatMessages) {
+        console.log('Embedded chat elements not found, skipping initialization');
         return;
     }
+    
+    console.log('Embedded chat initialized successfully');
     
     // Enable/disable send button based on input
     chatInput?.addEventListener('input', function() {
