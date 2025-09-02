@@ -4016,6 +4016,16 @@ main {
     font-size: 0.85rem;
 }
 
+.account-action {
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.account-info {
+    flex-grow: 1;
+    min-width: 0; /* Allow text to truncate if needed */
+}
+
 .setup-button {
     background: var(--ivey-dark-green);
     color: var(--ivey-white);
