@@ -700,21 +700,25 @@
 .workshop-unique-value {
     margin: 30px 0;
     padding: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: var(--ivey-white);
+    color: var(--ivey-dark-gray);
+    border: 2px solid var(--ivey-gold);
     border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(197, 183, 131, 0.15);
 }
 
 .workshop-unique-value h3 {
     margin: 0 0 15px 0;
     text-align: center;
+    color: var(--ivey-dark-green);
+    font-weight: 600;
 }
 
 .unique-value-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(197, 183, 131, 0.05);
     padding: 20px;
     border-radius: 8px;
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(197, 183, 131, 0.2);
 }
 
 .value-highlight h4 {

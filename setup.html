@@ -61,7 +61,7 @@
             <div class="setup-overview">
                 <div class="overview-header">
                     <h3>What You'll Accomplish</h3>
-                    <p>Just 3 simple steps to get ready:</p>
+                    <p>Just 4 simple steps to get ready:</p>
                 </div>
                 <div class="overview-steps">
                     <div class="overview-step">
@@ -74,15 +74,22 @@
                     <div class="overview-step">
                         <div class="overview-number">2</div>
                         <div class="overview-content">
-                            <h4>Fork & Deploy Your Own Workshop</h4>
-                            <p>Get your personal copy running on Render with your AI assistant</p>
+                            <h4>Get Your API Key</h4>
+                            <p>Create an Anthropic API key to power your AI chat assistant</p>
                         </div>
                     </div>
                     <div class="overview-step">
                         <div class="overview-number">3</div>
                         <div class="overview-content">
-                            <h4>Verify Claude Code Access</h4>
-                            <p>Make sure you can log into Claude Code</p>
+                            <h4>Fork & Deploy Your Workshop</h4>
+                            <p>Get your personal copy running on Render with your AI assistant</p>
+                        </div>
+                    </div>
+                    <div class="overview-step">
+                        <div class="overview-number">4</div>
+                        <div class="overview-content">
+                            <h4>Install Claude Code</h4>
+                            <p>Set up the AI development tool for building your educational tool</p>
                         </div>
                     </div>
                 </div>
@@ -180,6 +187,49 @@
                     <div class="setup-step-card" role="listitem">
                         <div class="step-header">
                             <div class="step-number">2</div>
+                            <h4>Get Your Anthropic API Key</h4>
+                            <div class="step-time">3 minutes</div>
+                        </div>
+                        <div class="step-content">
+                            <p>Create your API key to power the AI chat functionality in your workshop:</p>
+                            
+                            <div class="cognitive-helper-box priority">
+                                <h5>⚡ Essential Step</h5>
+                                <p><strong>Your workshop won't work without this!</strong> The AI chat assistant requires an API key to function. This is what makes your workshop interactive.</p>
+                            </div>
+                            
+                            <div class="step-instructions">
+                                <h5>Getting Your API Key:</h5>
+                                <ol>
+                                    <li>Go to <a href="https://console.anthropic.com/" target="_blank" aria-label="Open Anthropic Console (opens in new tab)">console.anthropic.com</a></li>
+                                    <li>Sign in with the Anthropic account you just created</li>
+                                    <li>Click on <strong>"API Keys"</strong> in the left sidebar</li>
+                                    <li>Click <strong>"Create Key"</strong> button</li>
+                                    <li>Give it a name like "Workshop API Key"</li>
+                                    <li>Copy the key (starts with <code>sk-ant-</code>)</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="cognitive-helper-box">
+                                <h5>💡 Important Notes</h5>
+                                <p><strong>Save your key somewhere safe!</strong> You won't be able to see it again after you close the page. You'll need it for the next step when deploying your workshop.</p>
+                            </div>
+                            
+                            <div class="step-note">
+                                <strong>💳 Billing Required:</strong> Anthropic requires a payment method on file to generate API keys. You control usage costs - typical workshop usage costs under $1.
+                            </div>
+                            
+                            <div class="completion-check" role="group" aria-label="API key completion check">
+                                <input type="checkbox" id="api-key-complete" aria-describedby="api-key-complete-help">
+                                <label for="api-key-complete">✓ I have my Anthropic API key saved</label>
+                                <div id="api-key-complete-help" class="sr-only">Check this box when you have created and saved your Anthropic API key</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setup-step-card" role="listitem">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
                             <h4>Fork & Deploy Your Workshop</h4>
                             <div class="step-time">5 minutes</div>
                         </div>
@@ -197,7 +247,7 @@
                                     <li><strong>Add your API key:</strong> In Environment Variables, add:
                                         <div class="code-block">
                                             <strong>Key:</strong> ANTHROPIC_API_KEY<br>
-                                            <strong>Value:</strong> sk-ant-your-key-here
+                                            <strong>Value:</strong> <em>paste your API key from Step 2</em>
                                         </div>
                                     </li>
                                     <li><strong>Deploy:</strong> Click "Create Web Service" and wait ~3 minutes</li>
@@ -261,7 +311,7 @@
 
                     <div class="setup-step-card" role="listitem">
                         <div class="step-header">
-                            <div class="step-number">3</div>
+                            <div class="step-number">4</div>
                             <h4>Install Claude Code</h4>
                             <div class="step-time">5 minutes</div>
                         </div>
@@ -339,7 +389,7 @@
 
             <div class="setup-final-checklist">
                 <h3>You're Ready When</h3>
-                <p>Complete these 3 simple steps and you'll be set for an amazing workshop experience:</p>
+                <p>Complete these 4 simple steps and you'll be set for an amazing workshop experience:</p>
                 
                 <div class="final-checks">
                     <div class="final-check-item completion-check">
@@ -347,6 +397,14 @@
                         <label for="final-accounts-complete">
                             <h4>All Accounts Created</h4>
                             <p>GitHub, Render, and Anthropic accounts are active</p>
+                        </label>
+                    </div>
+                    
+                    <div class="final-check-item completion-check">
+                        <input type="checkbox" id="final-api-key-complete">
+                        <label for="final-api-key-complete">
+                            <h4>API Key Created</h4>
+                            <p>Anthropic API key created and saved securely for deployment</p>
                         </label>
                     </div>
                     
