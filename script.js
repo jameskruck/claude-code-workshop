@@ -1842,6 +1842,9 @@ function initializePrereqCheck() {
             // All prerequisites complete - change to green
             setupCheckSection.style.background = 'linear-gradient(135deg, #d1fae5, #a7f3d0)';
             setupCheckSection.style.borderColor = '#10b981';
+            setupCheckSection.style.boxShadow = '0 4px 20px rgba(16, 185, 129, 0.25)';
+            setupCheckSection.style.transform = 'translateY(-2px)';
+            setupCheckSection.style.transition = 'all 0.3s ease';
             
             // Update header text
             const header = setupCheckSection.querySelector('h4');
@@ -1856,6 +1859,13 @@ function initializePrereqCheck() {
                 completionMsg.className = 'setup-completion-msg';
                 completionMsg.innerHTML = '<p><strong>Perfect!</strong> You\'re ready to build your educational tool.</p>';
                 setupCheckSection.appendChild(completionMsg);
+                
+                // Create celebration effect for the entire container
+                setTimeout(() => {
+                    if (document.getElementById('prereq-anthropic')) {
+                        createCheckboxCelebration(document.getElementById('prereq-anthropic'));
+                    }
+                }, 300);
             }
             completionMsg.style.display = 'block';
             
@@ -1863,6 +1873,9 @@ function initializePrereqCheck() {
             // Not all complete - keep original yellow/warning appearance
             setupCheckSection.style.background = '';
             setupCheckSection.style.borderColor = '';
+            setupCheckSection.style.boxShadow = '';
+            setupCheckSection.style.transform = '';
+            setupCheckSection.style.transition = '';
             
             // Restore original header text
             const header = setupCheckSection.querySelector('h4');
@@ -1882,16 +1895,21 @@ function initializePrereqCheck() {
     prereqCheckboxes.forEach(id => {
         const checkbox = document.getElementById(id);
         if (checkbox) {
-            // Load saved state
-            const saved = localStorage.getItem(`workshop-prereq-${id}`);
+            // Load saved state (use consistent localStorage keys with enhanced checkboxes)
+            const saved = localStorage.getItem(`checkbox-${id}`);
             if (saved === 'true') {
                 checkbox.checked = true;
             }
             
             // Add change listener
             checkbox.addEventListener('change', function() {
-                // Save state
-                localStorage.setItem(`workshop-prereq-${id}`, this.checked);
+                // Save state (use consistent localStorage keys)
+                localStorage.setItem(`checkbox-${id}`, this.checked);
+                
+                // Add celebration effect for individual checkbox
+                if (this.checked) {
+                    createCheckboxCelebration(this);
+                }
                 
                 // Update appearance
                 updateSetupCheckAppearance();
@@ -2068,8 +2086,8 @@ function initializeEnhancedCheckboxes() {
             // Check for final workshop ready state
             checkWorkshopReadyState();
             
-            // Check for prereq completion state (activities page)
-            checkPrereqCompletionState();
+            // Prereq completion is handled by initializePrereqCheck()
+            // checkPrereqCompletionState();
         });
         
         // Add hover effects
@@ -2089,8 +2107,8 @@ function initializeEnhancedCheckboxes() {
     // Initial check for workshop ready state
     checkWorkshopReadyState();
     
-    // Initial check for prereq completion state
-    checkPrereqCompletionState();
+    // Prereq completion is handled by initializePrereqCheck()
+    // checkPrereqCompletionState();
 }
 
 function createCheckboxCelebration(checkbox) {
