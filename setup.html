@@ -24,7 +24,7 @@
             </div>
         </header>
 
-        <nav class="workshop-nav">
+        <nav class="workshop-nav" role="navigation" aria-label="Workshop navigation">
             <div class="nav-items">
                 <a href="index.html" class="nav-item">Overview</a>
                 <a href="setup.html" class="nav-item active">Pre-Workshop Setup</a>
@@ -40,8 +40,12 @@
                 <p class="section-subtitle">Complete these steps ahead of time so we can focus on building during our live session</p>
             </div>
 
-            <div class="setup-time-estimate">
+            <div class="setup-time-estimate cognitive-helper">
                 <div class="time-badge">⏱️ 10-15 minutes total</div>
+                <div class="difficulty-indicator">
+                    <span class="difficulty-badge easy">📱 Beginner Friendly</span>
+                    <span class="tech-level">No coding required - just account creation!</span>
+                </div>
                 <p>Create your accounts and install Claude Code beforehand - we'll do all the building together during the workshop!</p>
             </div>
 
@@ -92,8 +96,8 @@
                     <p>Just create these accounts - that's it! We'll do everything else together during the workshop.</p>
                 </div>
 
-                <div class="setup-steps">
-                    <div class="setup-step-card">
+                <div class="setup-steps" role="list" aria-label="Pre-workshop setup steps">
+                    <div class="setup-step-card" role="listitem">
                         <div class="step-header">
                             <div class="step-number">1</div>
                             <h4>Create Your Accounts</h4>
@@ -117,17 +121,17 @@
                                 
                                 <div class="visual-section">
                                     <h5>📸 Step-by-Step Screenshots</h5>
-                                    <div class="screenshot-gallery">
+                                    <div class="screenshot-gallery" role="group" aria-label="Step-by-step screenshots">
                                         <div class="screenshot-item">
-                                            <img src="images/setup-steps/github-signup-page.png" alt="GitHub signup page" class="step-image">
+                                            <img src="images/setup-steps/github-signup-page.png" alt="GitHub signup page with Sign up button highlighted, showing email and password input fields" class="step-image">
                                             <div class="image-caption">GitHub signup page - Click "Sign up"</div>
                                         </div>
                                         <div class="screenshot-item">
-                                            <img src="images/setup-steps/render-signup-page.png" alt="Render signup page" class="step-image">
+                                            <img src="images/setup-steps/render-signup-page.png" alt="Render registration page showing Create account form with email, name, and password fields" class="step-image">
                                             <div class="image-caption">Render signup page - "Create account"</div>
                                         </div>
                                         <div class="screenshot-item">
-                                            <img src="images/setup-steps/anthropic-signup-page.png" alt="Anthropic console signup" class="step-image" data-placeholder="Anthropic console signup">
+                                            <img src="images/setup-steps/anthropic create account.png" alt="Anthropic Console signup page with account creation form and authentication options" class="step-image">
                                             <div class="image-caption">Anthropic Console - Create account</div>
                                         </div>
                                     </div>
@@ -141,7 +145,7 @@
                                         <p>For storing and sharing your code</p>
                                     </div>
                                     <div class="account-action">
-                                        <a href="https://github.com/signup" target="_blank" class="setup-button">Sign Up</a>
+                                        <a href="https://github.com/signup" target="_blank" class="setup-button" aria-label="Sign up for GitHub account (opens in new tab)">Sign Up</a>
                                     </div>
                                 </div>
                                 
@@ -151,7 +155,7 @@
                                         <p>For hosting your tools online</p>
                                     </div>
                                     <div class="account-action">
-                                        <a href="https://render.com/register" target="_blank" class="setup-button">Sign Up</a>
+                                        <a href="https://render.com/register" target="_blank" class="setup-button" aria-label="Sign up for Render account (opens in new tab)">Sign Up</a>
                                     </div>
                                 </div>
                                 
@@ -161,19 +165,19 @@
                                         <p>For Claude Code access (requires paid subscription)</p>
                                     </div>
                                     <div class="account-action">
-                                        <a href="https://console.anthropic.com/" target="_blank" class="setup-button">Sign Up</a>
+                                        <a href="https://console.anthropic.com/" target="_blank" class="setup-button" aria-label="Sign up for Anthropic Console account (opens in new tab)">Sign Up</a>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="completion-check">
+                            <div class="completion-check" role="group" aria-label="Completion check">
                                 <input type="checkbox" id="accounts-complete">
                                 <label for="accounts-complete">✓ All three accounts created</label>
                             </div>
                         </div>
                     </div>
 
-                    <div class="setup-step-card">
+                    <div class="setup-step-card" role="listitem">
                         <div class="step-header">
                             <div class="step-number">2</div>
                             <h4>Fork & Deploy Your Workshop</h4>
@@ -183,6 +187,10 @@
                             <p>Get your personal copy of the workshop running with your AI assistant:</p>
                             
                             <div class="step-instructions">
+                                <div class="cognitive-helper-box">
+                                    <h5>🧠 Don't worry if this feels overwhelming!</h5>
+                                    <p><strong>You're not alone:</strong> We'll help you through any technical issues during the workshop. Focus on creating the accounts - that's the most important part.</p>
+                                </div>
                                 <ol>
                                     <li><strong>Fork this repository:</strong> Go to <a href="https://github.com/jameskruck/claude-code-workshop" target="_blank">this GitHub repo</a> and click "Fork" to create your own copy</li>
                                     <li><strong>Deploy to Render:</strong> Go to <a href="https://render.com" target="_blank">render.com</a> → "New +" → "Web Service" → Connect your forked repo</li>
@@ -199,10 +207,10 @@
                             <div class="step-visual-guide">
                                 <div class="visual-section">
                                     <h5>📸 Step-by-Step Screenshots</h5>
-                                    <div class="screenshot-gallery">
+                                    <div class="screenshot-gallery" role="group" aria-label="Step-by-step screenshots">
                                         <div class="screenshot-item gif-container">
                                             <div class="gif-wrapper">
-                                                <img src="images/setup-steps/github-fork-button.gif" alt="GitHub fork button" class="step-image gif-image" data-paused="true">
+                                                <img src="images/setup-steps/github-fork-button.gif" alt="Animated GIF showing GitHub repository page with Fork button in top-right corner being clicked to create personal copy" class="step-image gif-image" data-paused="true">
                                                 <div class="gif-controls">
                                                     <button class="gif-play-btn" title="Click to play/pause">▶️ Click to play</button>
                                                 </div>
@@ -211,7 +219,7 @@
                                         </div>
                                         <div class="screenshot-item gif-container">
                                             <div class="gif-wrapper">
-                                                <img src="images/setup-steps/render-new-service.gif" alt="Render new service" class="step-image gif-image" data-paused="true">
+                                                <img src="images/setup-steps/render-new-service.gif" alt="Animated GIF showing Render dashboard with New button being clicked to reveal dropdown menu, then Web Service option selected" class="step-image gif-image" data-paused="true">
                                                 <div class="gif-controls">
                                                     <button class="gif-play-btn" title="Click to play/pause">▶️ Click to play</button>
                                                 </div>
@@ -220,7 +228,7 @@
                                         </div>
                                         <div class="screenshot-item gif-container">
                                             <div class="gif-wrapper">
-                                                <img src="images/setup-steps/render-connect-repo.gif" alt="Render connect repository" class="step-image gif-image" data-paused="true">
+                                                <img src="images/setup-steps/render-connect-repo.gif" alt="Animated GIF demonstrating GitHub repository connection process in Render, showing repository selection and authorization steps" class="step-image gif-image" data-paused="true">
                                                 <div class="gif-controls">
                                                     <button class="gif-play-btn" title="Click to play/pause">▶️ Click to play</button>
                                                 </div>
@@ -229,7 +237,7 @@
                                         </div>
                                         <div class="screenshot-item gif-container">
                                             <div class="gif-wrapper">
-                                                <img src="images/setup-steps/render-env-variables.gif" alt="Render environment variables" class="step-image gif-image" data-paused="true">
+                                                <img src="images/setup-steps/render-env-variables.gif" alt="Animated GIF showing Environment Variables section in Render with ANTHROPIC_API_KEY being added and configured" class="step-image gif-image" data-paused="true">
                                                 <div class="gif-controls">
                                                     <button class="gif-play-btn" title="Click to play/pause">▶️ Click to play</button>
                                                 </div>
@@ -244,14 +252,14 @@
                                 <strong>Why your own copy?</strong> This gives you a personalized workshop you can keep, customize, and share. The AI assistant will work with YOUR API key, so all responses are private to you!
                             </div>
                             
-                            <div class="completion-check">
+                            <div class="completion-check" role="group" aria-label="Completion check">
                                 <input type="checkbox" id="workshop-deployed-complete">
                                 <label for="workshop-deployed-complete">✓ My workshop is deployed and AI chat works</label>
                             </div>
                         </div>
                     </div>
 
-                    <div class="setup-step-card">
+                    <div class="setup-step-card" role="listitem">
                         <div class="step-header">
                             <div class="step-number">3</div>
                             <h4>Install Claude Code</h4>
@@ -268,6 +276,10 @@
                                     <li>4GB+ RAM</li>
                                 </ul>
                                 
+                                <div class="cognitive-helper-box">
+                                    <h5>💡 New to command line tools?</h5>
+                                    <p>The "terminal" or "command prompt" is just a text-based way to talk to your computer. Don't worry - we'll help you find it during the workshop if needed!</p>
+                                </div>
                                 <h5>Installation Steps:</h5>
                                 <ol>
                                     <li>Open your terminal/command prompt</li>
@@ -281,17 +293,17 @@
                             <div class="step-visual-guide">
                                 <div class="visual-section">
                                     <h5>📸 Claude Code Setup Screenshots</h5>
-                                    <div class="screenshot-gallery">
+                                    <div class="screenshot-gallery" role="group" aria-label="Step-by-step screenshots">
                                         <div class="screenshot-item">
-                                            <img src="images/setup-steps/claude code install command.png" alt="Claude Code install command" class="step-image">
+                                            <img src="images/setup-steps/claude code install command.png" alt="Terminal window showing npm install -g @anthropic-ai/claude-code command with installation progress and success confirmation" class="step-image">
                                             <div class="image-caption">Terminal: npm install -g @anthropic-ai/claude-code</div>
                                         </div>
                                         <div class="screenshot-item">
-                                            <img src="images/setup-steps/claude code login.png" alt="Claude Code login prompt" class="step-image">
+                                            <img src="images/setup-steps/claude code login.png" alt="Terminal showing claude command launched with authentication prompt and instructions to sign in with Anthropic account" class="step-image">
                                             <div class="image-caption">Type 'claude' and sign in with your Anthropic account</div>
                                         </div>
                                         <div class="screenshot-item">
-                                            <img src="images/setup-steps/claude doctor success.png" alt="Claude doctor command success" class="step-image">
+                                            <img src="images/setup-steps/claude doctor success.png" alt="Terminal showing claude doctor command output with green checkmarks confirming successful installation and authentication" class="step-image">
                                             <div class="image-caption">Run 'claude doctor' to verify setup</div>
                                         </div>
                                     </div>
@@ -299,6 +311,10 @@
                             </div>
                             
                             <div class="step-content">
+                                <div class="cognitive-helper-box priority">
+                                    <h5>⚡ Priority Reminder</h5>
+                                    <p><strong>Most important:</strong> Having your accounts ready! If Claude Code installation feels too technical right now, skip it - we'll help you install during the workshop.</p>
+                                </div>
                                 <div class="step-note">
                                     <strong>Need help with installation?</strong> We'll help you install during the workshop if you run into any issues. The important thing is having your accounts ready!
                                 </div>
@@ -312,7 +328,7 @@
                                 </div>
                             </div>
                             
-                            <div class="completion-check">
+                            <div class="completion-check" role="group" aria-label="Completion check">
                                 <input type="checkbox" id="claude-access-complete">
                                 <label for="claude-access-complete">✓ I have Claude Code installed and can authenticate</label>
                             </div>

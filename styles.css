@@ -4097,6 +4097,250 @@ main {
     gap: 0.5rem;
 }
 
+/* ========================================
+   ACCESSIBILITY & COGNITIVE LOAD STYLES
+   ======================================== */
+
+/* Cognitive Helper Boxes */
+.cognitive-helper-box {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 2px solid #f59e0b;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(245, 158, 11, 0.1);
+}
+
+.cognitive-helper-box.priority {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border-color: #ef4444;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.1);
+}
+
+.cognitive-helper-box h5 {
+    color: #92400e;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cognitive-helper-box.priority h5 {
+    color: #dc2626;
+}
+
+.cognitive-helper-box p {
+    color: #78350f;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.cognitive-helper-box.priority p {
+    color: #991b1b;
+}
+
+/* Difficulty Indicators */
+.difficulty-indicator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.difficulty-badge {
+    background: #10b981;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.difficulty-badge.easy {
+    background: #10b981;
+}
+
+.difficulty-badge.medium {
+    background: #f59e0b;
+}
+
+.difficulty-badge.hard {
+    background: #ef4444;
+}
+
+.tech-level {
+    color: #6b7280;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Enhanced Focus Indicators for Keyboard Navigation */
+.keyboard-navigation button:focus,
+.keyboard-navigation input:focus,
+.keyboard-navigation textarea:focus,
+.keyboard-navigation select:focus,
+.keyboard-navigation a:focus,
+.keyboard-navigation .clickable:focus,
+.keyboard-navigation [tabindex]:focus {
+    outline: 3px solid #4f46e5 !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1) !important;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .cognitive-helper-box {
+        background: #ffffff;
+        border-width: 3px;
+    }
+    
+    .difficulty-badge {
+        border: 2px solid currentColor;
+        font-weight: bold;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .slideIn,
+    .animate-in {
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Enhanced Error States */
+.error-message {
+    background: #fee2e2;
+    border: 2px solid #ef4444;
+    color: #dc2626;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+.success-message {
+    background: #d1fae5;
+    border: 2px solid #10b981;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+/* Enhanced Form Validation */
+input:invalid {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.1) !important;
+}
+
+input:valid {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.1) !important;
+}
+
+/* Cognitive Load Helpers for Complex Instructions */
+.step-instructions ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+.step-instructions ol li {
+    counter-increment: step-counter;
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border-left: 4px solid #c5b783;
+    border-radius: 0 4px 4px 0;
+    position: relative;
+}
+
+.step-instructions ol li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #c5b783;
+    color: #2c2c2c;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Progress Indicators */
+.progress-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    background: #f0f9ff;
+    border: 1px solid #0ea5e9;
+    border-radius: 6px;
+}
+
+.progress-indicator .icon {
+    color: #0ea5e9;
+    font-size: 1.1rem;
+}
+
+.progress-indicator .text {
+    color: #0c4a6e;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 /* Video Placeholder Styling */
 .video-placeholder {
     background: #2c2c2c;

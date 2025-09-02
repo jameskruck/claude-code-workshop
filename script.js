@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth animations
     initializeAnimations();
     
+    // Accessibility features
+    initializeAccessibility();
+    
     console.log('Workshop initialization complete');
 });
 
@@ -1149,6 +1152,298 @@ function initializeAnimations() {
     
     // Progress tracking
     trackWorkshopProgress();
+}
+
+// Accessibility Functions
+function initializeAccessibility() {
+    console.log('Initializing accessibility features...');
+    
+    // Add skip link
+    addSkipLink();
+    
+    // Keyboard navigation
+    initializeKeyboardNavigation();
+    
+    // Focus management
+    initializeFocusManagement();
+    
+    // Screen reader announcements
+    initializeScreenReaderSupport();
+    
+    // Reduced motion preferences
+    initializeMotionPreferences();
+    
+    console.log('Accessibility features initialized');
+}
+
+function addSkipLink() {
+    const skipLink = document.createElement('a');
+    skipLink.href = '#main-content';
+    skipLink.className = 'skip-link';
+    skipLink.textContent = 'Skip to main content';
+    skipLink.setAttribute('aria-label', 'Skip to main content');
+    
+    // Add skip link styles if not already present
+    if (!document.querySelector('style[data-accessibility]')) {
+        const style = document.createElement('style');
+        style.setAttribute('data-accessibility', 'true');
+        style.textContent = `
+            .skip-link {
+                position: absolute;
+                top: -40px;
+                left: 6px;
+                background: #000;
+                color: #fff;
+                padding: 8px;
+                text-decoration: none;
+                z-index: 10000;
+                border-radius: 4px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            .skip-link:focus {
+                top: 6px;
+            }
+            .sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            }
+            .keyboard-focus {
+                outline: 3px solid #4f46e5 !important;
+                outline-offset: 2px !important;
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .animate-in {
+                    animation: none !important;
+                    transform: none !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    document.body.insertBefore(skipLink, document.body.firstChild);
+    
+    // Add main content ID if not present
+    const main = document.querySelector('main');
+    if (main && !main.id) {
+        main.id = 'main-content';
+    }
+}
+
+function initializeKeyboardNavigation() {
+    // Tab navigation for interactive elements
+    const interactiveElements = document.querySelectorAll(
+        'button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])'
+    );
+    
+    // Make sure all interactive elements are accessible
+    interactiveElements.forEach((el, index) => {
+        if (!el.hasAttribute('tabindex')) {
+            el.setAttribute('tabindex', '0');
+        }
+        
+        // Add keyboard event listeners
+        el.addEventListener('keydown', handleKeyboardInteraction);
+    });
+    
+    // Modal and drawer keyboard handling
+    document.addEventListener('keydown', function(e) {
+        // Escape key closes modals
+        if (e.key === 'Escape') {
+            const openModal = document.querySelector('.modal:not([style*="display: none"])');
+            if (openModal) {
+                closeModal(openModal);
+                e.preventDefault();
+            }
+        }
+        
+        // Arrow key navigation for tool cards and activity items
+        if (['ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+            handleArrowKeyNavigation(e);
+        }
+    });
+}
+
+function handleKeyboardInteraction(e) {
+    const element = e.target;
+    
+    // Enter and Space activate buttons and links
+    if (e.key === 'Enter' || e.key === ' ') {
+        if (element.tagName === 'BUTTON') {
+            element.click();
+            e.preventDefault();
+        } else if (element.classList.contains('clickable') || element.hasAttribute('onclick')) {
+            element.click();
+            e.preventDefault();
+        }
+    }
+}
+
+function handleArrowKeyNavigation(e) {
+    const focusedElement = document.activeElement;
+    const navigableContainers = [
+        '.tools-showcase',
+        '.activity-timeline',
+        '.resource-categories',
+        '.account-grid',
+        '.screenshot-gallery'
+    ];
+    
+    const container = focusedElement.closest(navigableContainers.join(', '));
+    if (!container) return;
+    
+    const items = container.querySelectorAll('[tabindex="0"], button, a[href]');
+    const currentIndex = Array.from(items).indexOf(focusedElement);
+    
+    if (currentIndex === -1) return;
+    
+    let nextIndex = currentIndex;
+    
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        nextIndex = (currentIndex + 1) % items.length;
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        nextIndex = (currentIndex - 1 + items.length) % items.length;
+    }
+    
+    if (nextIndex !== currentIndex) {
+        items[nextIndex].focus();
+        e.preventDefault();
+    }
+}
+
+function initializeFocusManagement() {
+    // Visual focus indicators
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+            document.body.classList.add('keyboard-navigation');
+        }
+    });
+    
+    document.addEventListener('mousedown', function() {
+        document.body.classList.remove('keyboard-navigation');
+    });
+    
+    // Focus trapping for modals
+    document.addEventListener('focusin', function(e) {
+        const modal = e.target.closest('.modal');
+        if (modal && modal.style.display !== 'none') {
+            trapFocus(modal, e);
+        }
+    });
+}
+
+function initializeScreenReaderSupport() {
+    // Live region for dynamic content
+    const liveRegion = document.createElement('div');
+    liveRegion.setAttribute('aria-live', 'polite');
+    liveRegion.setAttribute('aria-atomic', 'true');
+    liveRegion.className = 'sr-only';
+    liveRegion.id = 'accessibility-announcements';
+    document.body.appendChild(liveRegion);
+    
+    // Announce page changes
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                const announcement = getContentAnnouncement(mutation);
+                if (announcement) {
+                    announceToScreenReader(announcement);
+                }
+            }
+        });
+    });
+    
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+function announceToScreenReader(message) {
+    const liveRegion = document.getElementById('accessibility-announcements');
+    if (liveRegion) {
+        liveRegion.textContent = message;
+        // Clear after announcement
+        setTimeout(() => {
+            liveRegion.textContent = '';
+        }, 1000);
+    }
+}
+
+function getContentAnnouncement(mutation) {
+    // Check for successful form submissions, errors, or status changes
+    const addedNode = mutation.addedNodes[0];
+    if (addedNode && addedNode.nodeType === Node.ELEMENT_NODE) {
+        if (addedNode.classList.contains('success-message')) {
+            return 'Success message displayed';
+        } else if (addedNode.classList.contains('error-message')) {
+            return 'Error message displayed';
+        } else if (addedNode.classList.contains('loading')) {
+            return 'Content loading';
+        }
+    }
+    return null;
+}
+
+function initializeMotionPreferences() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    
+    function handleMotionPreference(mediaQuery) {
+        if (mediaQuery.matches) {
+            document.body.classList.add('reduced-motion');
+            // Disable animations
+            const animatedElements = document.querySelectorAll('[class*="animate"]');
+            animatedElements.forEach(el => {
+                el.style.animation = 'none';
+                el.style.transition = 'none';
+            });
+        } else {
+            document.body.classList.remove('reduced-motion');
+        }
+    }
+    
+    handleMotionPreference(prefersReducedMotion);
+    prefersReducedMotion.addListener(handleMotionPreference);
+}
+
+function closeModal(modal) {
+    modal.style.display = 'none';
+    // Restore focus to the element that opened the modal
+    const trigger = modal.dataset.trigger;
+    if (trigger) {
+        const triggerElement = document.querySelector(`[data-modal-trigger="${trigger}"]`);
+        if (triggerElement) {
+            triggerElement.focus();
+        }
+    }
+}
+
+function trapFocus(modal, e) {
+    const focusableElements = modal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+    
+    if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+            lastFocusable.focus();
+            e.preventDefault();
+        }
+    } else {
+        if (document.activeElement === lastFocusable) {
+            firstFocusable.focus();
+            e.preventDefault();
+        }
+    }
 }
 
 // Utility Functions

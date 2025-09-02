@@ -23,7 +23,7 @@
             </div>
         </header>
 
-        <nav class="workshop-nav">
+        <nav class="workshop-nav" role="navigation" aria-label="Workshop navigation">
             <div class="nav-items">
                 <a href="index.html" class="nav-item">Overview</a>
                 <a href="setup.html" class="nav-item">Pre-Workshop Setup</a>
@@ -40,9 +40,9 @@
             </div>
 
 
-            <div class="activity-timeline">
+            <div class="activity-timeline" role="list" aria-label="Workshop activities">
 
-                <div class="activity-item">
+                <div class="activity-item" role="listitem">
                     <div class="activity-time">5 min</div>
                     <div class="activity-content">
                         <h3>Activity 1: Workshop Kickoff</h3>
@@ -90,18 +90,21 @@
                                 </div>
                             </div>
                             
-                            <div class="prereq-checklist">
-                                <div class="prereq-item completion-check">
-                                    <input type="checkbox" id="prereq-github">
+                            <div class="prereq-checklist" role="group" aria-label="Prerequisites checklist">
+                                <div class="prereq-item completion-check" role="group">
+                                    <input type="checkbox" id="prereq-github" aria-describedby="prereq-github-help">
                                     <label for="prereq-github">✓ GitHub account created</label>
+                                <div id="prereq-github-help" class="sr-only">Check if you have created a GitHub account</div>
                                 </div>
-                                <div class="prereq-item completion-check">
-                                    <input type="checkbox" id="prereq-render">
+                                <div class="prereq-item completion-check" role="group">
+                                    <input type="checkbox" id="prereq-render" aria-describedby="prereq-render-help">
                                     <label for="prereq-render">✓ Render account created</label>
+                                <div id="prereq-render-help" class="sr-only">Check if you have created a Render hosting account</div>
                                 </div>
-                                <div class="prereq-item completion-check">
-                                    <input type="checkbox" id="prereq-anthropic">
+                                <div class="prereq-item completion-check" role="group">
+                                    <input type="checkbox" id="prereq-anthropic" aria-describedby="prereq-anthropic-help">
                                     <label for="prereq-anthropic">✓ Claude Code access verified</label>
+                                <div id="prereq-anthropic-help" class="sr-only">Check if you can access Claude Code with your Anthropic account</div>
                                 </div>
                             </div>
                             
@@ -120,7 +123,7 @@
                     </div>
                 </div>
 
-                <div class="activity-item">
+                <div class="activity-item" role="listitem">
                     <div class="activity-time">15 min</div>
                     <div class="activity-content">
                         <h3>Activity 2: AI-Powered Tool Design</h3>
@@ -252,7 +255,7 @@
                 </div>
                 </div>
 
-                <div class="activity-item">
+                <div class="activity-item" role="listitem">
                     <div class="activity-time">25 min</div>
                     <div class="activity-content">
                         <h3>Activity 3: Build Your Custom Tool</h3>
@@ -301,7 +304,7 @@
                     </div>
                 </div>
 
-                <div class="activity-item">
+                <div class="activity-item" role="listitem">
                     <div class="activity-time">20 min</div>
                     <div class="activity-content">
                         <h3>Activity 4: Deploy Your Tool</h3>
@@ -419,7 +422,7 @@
                     </div>
                 </div>
 
-                <div class="activity-item">
+                <div class="activity-item" role="listitem">
                     <div class="activity-time">10 min</div>
                     <div class="activity-content">
                         <h3>Activity 5: Polish & Plan Next</h3>

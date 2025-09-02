@@ -24,7 +24,8 @@
       "Bash(move error.png imagessetup-stepserror-duplicate-buttons.png)",
       "Bash(dir)",
       "Bash(dir images)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(powershell:*)"
     ],
     "deny": [],
     "ask": []
