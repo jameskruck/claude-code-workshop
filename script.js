@@ -1102,34 +1102,7 @@ function initializeActivityProgressTracking() {
         checkActivity2Completion();
     }
     
-    // Track Activity 5 (building checklist)
-    const activity5Checkboxes = ['basic-functionality', 'clean-styling', 'easy-to-use', 'custom-improvement', 'mobile-tested'];
-    
-    activity5Checkboxes.forEach(id => {
-        const checkbox = document.getElementById(id);
-        if (checkbox) {
-            // Load saved state
-            const saved = localStorage.getItem(`activity-5-${id}`);
-            if (saved === 'true') {
-                checkbox.checked = true;
-            }
-            
-            checkbox.addEventListener('change', function() {
-                // Save state
-                localStorage.setItem(`activity-5-${id}`, this.checked);
-                
-                // Visual feedback
-                const label = this.closest('.checklist-item');
-                if (this.checked) {
-                    label.style.background = '#f0f9ff';
-                    label.style.borderColor = '#10b981';
-                } else {
-                    label.style.background = '';
-                    label.style.borderColor = '';
-                }
-            });
-        }
-    });
+    // Building checklist removed - no longer needed
     
     window.checkActivity2Completion = function() {
         const activity2Checkboxes = ['discussed-challenge', 'got-custom-prompt', 'saved-prompt'];
