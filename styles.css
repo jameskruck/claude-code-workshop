@@ -2611,6 +2611,18 @@ main {
     align-items: center;
 }
 
+/* Code Block Styling */
+.code-block {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
 .setup-summary-card {
     background: linear-gradient(135deg, #c5b783 0%, #b8a56f 100%);
     color: #2c2c2c;

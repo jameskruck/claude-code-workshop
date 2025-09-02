@@ -2138,13 +2138,14 @@ function createCheckboxCelebration(checkbox) {
 }
 
 function checkWorkshopReadyState() {
-    // Check if both final checkboxes are checked
+    // Check if all three final checkboxes are checked
     const finalAccountsComplete = document.getElementById('final-accounts-complete');
+    const finalWorkshopDeployed = document.getElementById('final-workshop-deployed');
     const finalClaudeComplete = document.getElementById('final-claude-complete');
     const workshopReady = document.getElementById('workshop-ready');
     
-    if (finalAccountsComplete && finalClaudeComplete && workshopReady) {
-        const allComplete = finalAccountsComplete.checked && finalClaudeComplete.checked;
+    if (finalAccountsComplete && finalWorkshopDeployed && finalClaudeComplete && workshopReady) {
+        const allComplete = finalAccountsComplete.checked && finalWorkshopDeployed.checked && finalClaudeComplete.checked;
         
         if (allComplete) {
             workshopReady.style.display = 'block';

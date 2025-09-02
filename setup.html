@@ -57,7 +57,7 @@
             <div class="setup-overview">
                 <div class="overview-header">
                     <h3>What You'll Accomplish</h3>
-                    <p>Just 2 simple steps to get ready:</p>
+                    <p>Just 3 simple steps to get ready:</p>
                 </div>
                 <div class="overview-steps">
                     <div class="overview-step">
@@ -70,7 +70,14 @@
                     <div class="overview-step">
                         <div class="overview-number">2</div>
                         <div class="overview-content">
-                            <h4>Access Claude Code</h4>
+                            <h4>Fork & Deploy Your Own Workshop</h4>
+                            <p>Get your personal copy running on Render with your AI assistant</p>
+                        </div>
+                    </div>
+                    <div class="overview-step">
+                        <div class="overview-number">3</div>
+                        <div class="overview-content">
+                            <h4>Verify Claude Code Access</h4>
                             <p>Make sure you can log into Claude Code</p>
                         </div>
                     </div>
@@ -169,6 +176,41 @@
                     <div class="setup-step-card">
                         <div class="step-header">
                             <div class="step-number">2</div>
+                            <h4>Fork & Deploy Your Workshop</h4>
+                            <div class="step-time">5 minutes</div>
+                        </div>
+                        <div class="step-content">
+                            <p>Get your personal copy of the workshop running with your AI assistant:</p>
+                            
+                            <div class="step-instructions">
+                                <ol>
+                                    <li><strong>Fork this repository:</strong> Go to <a href="https://github.com/jameskruck/claude-code-workshop" target="_blank">this GitHub repo</a> and click "Fork" to create your own copy</li>
+                                    <li><strong>Deploy to Render:</strong> Go to <a href="https://render.com" target="_blank">render.com</a> → "New +" → "Web Service" → Connect your forked repo</li>
+                                    <li><strong>Add your API key:</strong> In Environment Variables, add:
+                                        <div class="code-block">
+                                            <strong>Key:</strong> ANTHROPIC_API_KEY<br>
+                                            <strong>Value:</strong> sk-ant-your-key-here
+                                        </div>
+                                    </li>
+                                    <li><strong>Deploy:</strong> Click "Create Web Service" and wait ~3 minutes</li>
+                                    <li><strong>Test your workshop:</strong> Visit your URL and try the AI chat!</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="step-note">
+                                <strong>Why your own copy?</strong> This gives you a personalized workshop you can keep, customize, and share. The AI assistant will work with YOUR API key, so all responses are private to you!
+                            </div>
+                            
+                            <div class="completion-check">
+                                <input type="checkbox" id="workshop-deployed-complete">
+                                <label for="workshop-deployed-complete">✓ My workshop is deployed and AI chat works</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setup-step-card">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
                             <h4>Install Claude Code</h4>
                             <div class="step-time">5 minutes</div>
                         </div>
@@ -216,7 +258,7 @@
 
             <div class="setup-final-checklist">
                 <h3>You're Ready When</h3>
-                <p>Complete these 2 simple steps and you'll be set for an amazing workshop experience:</p>
+                <p>Complete these 3 simple steps and you'll be set for an amazing workshop experience:</p>
                 
                 <div class="final-checks">
                     <div class="final-check-item completion-check">
@@ -224,6 +266,14 @@
                         <label for="final-accounts-complete">
                             <h4>All Accounts Created</h4>
                             <p>GitHub, Render, and Anthropic accounts are active</p>
+                        </label>
+                    </div>
+                    
+                    <div class="final-check-item completion-check">
+                        <input type="checkbox" id="final-workshop-deployed">
+                        <label for="final-workshop-deployed">
+                            <h4>Your Workshop Deployed</h4>
+                            <p>Your personal workshop copy is live on Render with working AI chat</p>
                         </label>
                     </div>
                     
