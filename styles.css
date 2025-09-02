@@ -1,11 +1,30 @@
+/* ========================================
+   IVEY BUSINESS SCHOOL BRAND VARIABLES
+   ======================================== */
+
+:root {
+    /* Ivey Brand Colors */
+    --ivey-dark-green: #034638;
+    --ivey-deep-purple: #582C83;
+    --ivey-gold: #c5b783;
+    --ivey-white: #ffffff;
+    --ivey-dark-gray: #464646;
+    
+    /* Extended Palette */
+    --ivey-green-light: #065f46;
+    --ivey-green-hover: #022d26;
+    --ivey-gold-light: #d4c896;
+    --ivey-gold-dark: #b5a372;
+}
+
 /* Activity Completion & Enhanced UX Styles */
 .activity-completion {
     margin-top: 20px;
     padding: 15px;
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, var(--ivey-dark-green), var(--ivey-green-light));
     color: white;
     border-radius: 8px;
-    border: 2px solid #10b981;
+    border: 2px solid var(--ivey-dark-green);
 }
 
 .completion-message h5 {
@@ -180,9 +199,10 @@
 }
 
 .save-status.success {
-    background: #d1fae5;
-    color: #065f46;
-    border: 1px solid #a7f3d0;
+    background: var(--ivey-dark-green);
+    color: var(--ivey-white);
+    border: 1px solid var(--ivey-green-light);
+    font-weight: 500;
 }
 
 .save-status.error {
@@ -195,14 +215,15 @@
 .activity-success {
     margin-top: 20px;
     padding: 20px;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: linear-gradient(135deg, var(--ivey-dark-green), var(--ivey-green-light));
     border-radius: 8px;
-    border: 2px solid #c5b783;
+    border: 2px solid var(--ivey-dark-green);
+    color: var(--ivey-white);
 }
 
 .activity-success h4 {
     margin: 0 0 15px 0;
-    color: #2c2c2c;
+    color: var(--ivey-white);
     font-weight: 600;
 }
 
@@ -840,9 +861,9 @@ header {
 
 .nav-item:hover,
 .nav-item.active {
-    color: #2c2c2c;
-    background: #ffffff;
-    border-bottom-color: #c5b783;
+    color: var(--ivey-white);
+    background: var(--ivey-dark-green);
+    border-bottom-color: var(--ivey-gold);
 }
 
 /* Main Content */
@@ -2703,9 +2724,9 @@ main {
 }
 
 .setup-prereq-check.completed {
-    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-    border-color: #10b981;
-    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+    background: linear-gradient(135deg, rgba(3, 70, 56, 0.1) 0%, rgba(6, 95, 70, 0.2) 100%);
+    border-color: var(--ivey-dark-green);
+    box-shadow: 0 4px 20px rgba(3, 70, 56, 0.25);
     transform: translateY(-2px);
 }
 
@@ -3992,18 +4013,20 @@ main {
 }
 
 .setup-button {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-dark-green);
+    color: var(--ivey-white);
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-weight: 600;
     font-size: 0.875rem;
     transition: background-color 0.3s ease;
+    border: 1px solid var(--ivey-dark-green);
 }
 
 .setup-button:hover {
-    background: #b8a56f;
+    background: var(--ivey-green-hover);
+    border-color: var(--ivey-green-hover);
 }
 
 .completion-check {
@@ -4162,7 +4185,7 @@ main {
 }
 
 .difficulty-badge.easy {
-    background: #10b981;
+    background: var(--ivey-dark-green);
 }
 
 .difficulty-badge.medium {
@@ -4264,12 +4287,13 @@ main {
 }
 
 .success-message {
-    background: #d1fae5;
-    border: 2px solid #10b981;
-    color: #065f46;
+    background: linear-gradient(135deg, rgba(3, 70, 56, 0.1) 0%, rgba(6, 95, 70, 0.15) 100%);
+    border: 2px solid var(--ivey-dark-green);
+    color: var(--ivey-dark-green);
     padding: 1rem;
     border-radius: 6px;
     margin: 1rem 0;
+    font-weight: 500;
 }
 
 /* Enhanced Form Validation */

@@ -42,7 +42,7 @@ function copyPromptToClipboard(button, text) {
     navigator.clipboard.writeText(text).then(() => {
         const originalText = button.textContent;
         button.textContent = '✓ Copied!';
-        button.style.backgroundColor = '#10b981';
+        button.style.backgroundColor = '#034638';
         button.style.color = 'white';
         
         setTimeout(() => {
@@ -2109,7 +2109,7 @@ function initializePrereqCheck() {
         if (allChecked) {
             // All prerequisites complete - change to green
             setupCheckSection.style.background = 'linear-gradient(135deg, #d1fae5, #a7f3d0)';
-            setupCheckSection.style.borderColor = '#10b981';
+            setupCheckSection.style.borderColor = '#034638';
             setupCheckSection.style.boxShadow = '0 4px 20px rgba(16, 185, 129, 0.25)';
             setupCheckSection.style.transform = 'translateY(-2px)';
             setupCheckSection.style.transition = 'all 0.3s ease';
@@ -2186,7 +2186,7 @@ function initializePrereqCheck() {
                 const item = this.closest('.prereq-item');
                 if (this.checked) {
                     item.style.background = 'rgba(16, 185, 129, 0.1)';
-                    item.style.borderColor = '#10b981';
+                    item.style.borderColor = '#034638';
                 } else {
                     item.style.background = '';
                     item.style.borderColor = '';
@@ -2197,7 +2197,7 @@ function initializePrereqCheck() {
             if (checkbox.checked) {
                 const item = checkbox.closest('.prereq-item');
                 item.style.background = 'rgba(16, 185, 129, 0.1)';
-                item.style.borderColor = '#10b981';
+                item.style.borderColor = '#034638';
             }
         }
     });
@@ -2396,7 +2396,7 @@ function createCheckboxCelebration(checkbox) {
             font-size: 16px;
             pointer-events: none;
             z-index: 1000;
-            color: #10b981;
+            color: #034638;
             font-weight: bold;
         `;
         
