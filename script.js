@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup functionality
     initializeSetupCheckers();
     
-    // AI Chat functionality - both embedded chat AND floating widget
+    // AI Chat functionality - embedded chat (only on activities.html)
     initializeAIChat();
     
     // Form handlers
@@ -656,6 +656,11 @@ function initializeAIChat() {
     const chatMessages = document.getElementById('chat-messages');
     const chatStatus = document.getElementById('chat-status');
     const suggestionButtons = document.querySelectorAll('.suggestion-btn');
+    
+    // Only initialize if embedded chat elements exist (activities.html)
+    if (!chatInput || !sendButton || !chatMessages) {
+        return;
+    }
     
     // Enable/disable send button based on input
     chatInput?.addEventListener('input', function() {
@@ -2046,6 +2051,9 @@ function initializeEnhancedCheckboxes() {
             } else {
                 container.classList.remove('checked');
             }
+            
+            // Check for final workshop ready state
+            checkWorkshopReadyState();
         });
         
         // Add hover effects
@@ -2061,6 +2069,9 @@ function initializeEnhancedCheckboxes() {
             }
         });
     });
+    
+    // Initial check for workshop ready state
+    checkWorkshopReadyState();
 }
 
 function createCheckboxCelebration(checkbox) {
@@ -2114,6 +2125,29 @@ function createCheckboxCelebration(checkbox) {
     setTimeout(() => {
         checkbox.style.boxShadow = '';
     }, 600);
+}
+
+function checkWorkshopReadyState() {
+    // Check if both final checkboxes are checked
+    const finalAccountsComplete = document.getElementById('final-accounts-complete');
+    const finalClaudeComplete = document.getElementById('final-claude-complete');
+    const workshopReady = document.getElementById('workshop-ready');
+    
+    if (finalAccountsComplete && finalClaudeComplete && workshopReady) {
+        const allComplete = finalAccountsComplete.checked && finalClaudeComplete.checked;
+        
+        if (allComplete) {
+            workshopReady.style.display = 'block';
+            workshopReady.style.animation = 'slideIn 0.5s ease-out';
+            
+            // Add extra celebration for completing everything
+            setTimeout(() => {
+                createCheckboxCelebration(finalClaudeComplete);
+            }, 300);
+        } else {
+            workshopReady.style.display = 'none';
+        }
+    }
 }
 
 console.log(`

@@ -457,6 +457,10 @@ class AIchatWidget {
 document.addEventListener('DOMContentLoaded', function() {
     // Wait a bit for other scripts to load
     setTimeout(() => {
-        window.aiChatWidget = new AIchatWidget();
+        // Only create floating widget if there's no embedded chat on this page
+        const embeddedChat = document.getElementById('chat-input') || document.getElementById('chat-messages');
+        if (!embeddedChat) {
+            window.aiChatWidget = new AIchatWidget();
+        }
     }, 100);
 });

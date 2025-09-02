@@ -2563,6 +2563,31 @@ main {
     }
 }
 
+/* Final Checklist Special Styling */
+.final-check-item.completion-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.final-check-item.completion-check label {
+    display: block;
+    cursor: pointer;
+}
+
+.final-check-item.completion-check label h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.final-check-item.completion-check label p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
 .setup-summary-card {
     background: linear-gradient(135deg, #c5b783 0%, #b8a56f 100%);
     color: #2c2c2c;
