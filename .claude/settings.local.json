@@ -21,7 +21,10 @@
       "Read(C:\\Users\\james\\OneDrive\\Documents2\\GitHub\\educational-prompts-hub/**)",
       "WebSearch",
       "Bash(findstr:*)",
-      "Bash(move error.png imagessetup-stepserror-duplicate-buttons.png)"
+      "Bash(move error.png imagessetup-stepserror-duplicate-buttons.png)",
+      "Bash(dir)",
+      "Bash(dir images)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []
