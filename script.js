@@ -2188,53 +2188,10 @@ function checkWorkshopReadyState() {
     }
 }
 
+// This function is no longer used - prerequisite checking is handled by initializePrereqCheck()
 function checkPrereqCompletionState() {
-    // Check if all prerequisite checkboxes are checked (activities page)
-    const prereqGithub = document.getElementById('prereq-github');
-    const prereqRender = document.getElementById('prereq-render');
-    const prereqAnthropic = document.getElementById('prereq-anthropic');
-    const prereqContainer = document.getElementById('prereq-check-container');
-    const prereqSuccess = document.getElementById('prereq-success');
-    
-    console.log('checkPrereqCompletionState called:', {
-        prereqGithub: !!prereqGithub,
-        prereqRender: !!prereqRender,
-        prereqAnthropic: !!prereqAnthropic,
-        prereqContainer: !!prereqContainer,
-        githubChecked: prereqGithub?.checked,
-        renderChecked: prereqRender?.checked,
-        anthropicChecked: prereqAnthropic?.checked
-    });
-    
-    if (prereqGithub && prereqRender && prereqAnthropic && prereqContainer) {
-        const allPrereqsComplete = prereqGithub.checked && prereqRender.checked && prereqAnthropic.checked;
-        
-        console.log('All prereqs complete:', allPrereqsComplete);
-        console.log('Container current classes:', prereqContainer.className);
-        
-        if (allPrereqsComplete) {
-            console.log('Adding completed class to container');
-            prereqContainer.classList.add('completed');
-            console.log('Container classes after adding completed:', prereqContainer.className);
-            
-            if (prereqSuccess) {
-                prereqSuccess.style.display = 'flex';
-            }
-            
-            // Add celebration effect when all prerequisites complete
-            setTimeout(() => {
-                createCheckboxCelebration(prereqAnthropic);
-            }, 200);
-        } else {
-            console.log('Removing completed class from container');
-            prereqContainer.classList.remove('completed');
-            if (prereqSuccess) {
-                prereqSuccess.style.display = 'none';
-            }
-        }
-    } else {
-        console.log('Some prerequisite elements not found');
-    }
+    // Functionality moved to initializePrereqCheck() for better consolidation
+    return;
 }
 
 // GIF Playback Controls
