@@ -81,9 +81,14 @@
                             </div>
                         </div>
                         
-                        <div class="setup-prereq-check">
-                            <h4>Quick Setup Check</h4>
-                            <p>Ensure you completed the <a href="setup.html">Pre-Workshop Setup</a>. If not, we'll help you catch up:</p>
+                        <div class="setup-prereq-check" id="prereq-check-container">
+                            <div class="prereq-header">
+                                <div class="prereq-icon">✓</div>
+                                <div class="prereq-content">
+                                    <h4>Quick Setup Check</h4>
+                                    <p>Ensure you completed the <a href="setup.html">Pre-Workshop Setup</a>. If not, we'll help you catch up:</p>
+                                </div>
+                            </div>
                             
                             <div class="prereq-checklist">
                                 <div class="prereq-item completion-check">
@@ -102,6 +107,14 @@
                             
                             <div class="setup-help">
                                 <p><strong>Missing accounts?</strong> No problem! We'll help you set up during the workshop.</p>
+                            </div>
+                            
+                            <div class="prereq-success-message" id="prereq-success" style="display: none;">
+                                <div class="success-icon">🎉</div>
+                                <div class="success-text">
+                                    <strong>Perfect! You're all set!</strong>
+                                    <p>All prerequisites completed - you're ready to dive into building amazing educational tools!</p>
+                                </div>
                             </div>
                         </div>
                     </div>

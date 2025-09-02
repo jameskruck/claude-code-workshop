@@ -2064,6 +2064,9 @@ function initializeEnhancedCheckboxes() {
             
             // Check for final workshop ready state
             checkWorkshopReadyState();
+            
+            // Check for prereq completion state (activities page)
+            checkPrereqCompletionState();
         });
         
         // Add hover effects
@@ -2082,6 +2085,9 @@ function initializeEnhancedCheckboxes() {
     
     // Initial check for workshop ready state
     checkWorkshopReadyState();
+    
+    // Initial check for prereq completion state
+    checkPrereqCompletionState();
 }
 
 function createCheckboxCelebration(checkbox) {
@@ -2157,6 +2163,36 @@ function checkWorkshopReadyState() {
             }, 300);
         } else {
             workshopReady.style.display = 'none';
+        }
+    }
+}
+
+function checkPrereqCompletionState() {
+    // Check if all prerequisite checkboxes are checked (activities page)
+    const prereqGithub = document.getElementById('prereq-github');
+    const prereqRender = document.getElementById('prereq-render');
+    const prereqAnthropic = document.getElementById('prereq-anthropic');
+    const prereqContainer = document.getElementById('prereq-check-container');
+    const prereqSuccess = document.getElementById('prereq-success');
+    
+    if (prereqGithub && prereqRender && prereqAnthropic && prereqContainer) {
+        const allPrereqsComplete = prereqGithub.checked && prereqRender.checked && prereqAnthropic.checked;
+        
+        if (allPrereqsComplete) {
+            prereqContainer.classList.add('completed');
+            if (prereqSuccess) {
+                prereqSuccess.style.display = 'flex';
+            }
+            
+            // Add celebration effect when all prerequisites complete
+            setTimeout(() => {
+                createCheckboxCelebration(prereqAnthropic);
+            }, 200);
+        } else {
+            prereqContainer.classList.remove('completed');
+            if (prereqSuccess) {
+                prereqSuccess.style.display = 'none';
+            }
         }
     }
 }
