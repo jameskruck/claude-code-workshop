@@ -4,8 +4,8 @@
 class AIchatWidget {
     constructor() {
         this.isOpen = false;
-        // Start visible by default - don't restore minimized state for now
-        this.isMinimized = false;
+        // Start minimized by default for less intrusive experience
+        this.isMinimized = true;
         this.chatHistory = [];
         this.init();
     }
@@ -16,7 +16,7 @@ class AIchatWidget {
         this.loadChatHistory();
         this.checkApiStatus();
         
-        // Start minimized if user preference
+        // Start minimized by default for better UX
         if (this.isMinimized) {
             this.minimize();
         }
@@ -75,7 +75,7 @@ class AIchatWidget {
             <div class="chat-toggle" id="chat-toggle" style="display: none;">
                 <button class="toggle-btn">
                     <span class="ai-emoji">🤖</span>
-                    <span class="toggle-text">AI Assistant</span>
+                    <span class="toggle-text">Need a hand?</span>
                 </button>
             </div>
         `;
