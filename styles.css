@@ -2588,6 +2588,29 @@ main {
     opacity: 0.8;
 }
 
+/* Prerequisites Checklist Styling */
+.prereq-item.completion-check {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+}
+
+.prereq-item.completion-check input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.75rem;
+}
+
+.prereq-item.completion-check label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
 .setup-summary-card {
     background: linear-gradient(135deg, #c5b783 0%, #b8a56f 100%);
     color: #2c2c2c;
