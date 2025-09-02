@@ -74,8 +74,8 @@
 }
 
 .step-number {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -89,7 +89,7 @@
 
 .step-indicator h4 {
     margin: 0;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-weight: 600;
     font-size: 1.1em;
 }
@@ -133,7 +133,7 @@
 
 .prompt-storage h5 {
     margin: 0 0 12px 0;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-weight: 600;
     font-size: 1.1em;
 }
@@ -165,8 +165,8 @@
 }
 
 .save-btn {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     border: 2px solid #c5b783;
     padding: 12px 24px;
     border-radius: 6px;
@@ -252,7 +252,7 @@
 
 .marker-text {
     flex: 1;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-weight: 500;
 }
 
@@ -279,7 +279,7 @@
 
 .screenshot-modal-header h3 {
     margin: 0;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-weight: 600;
     font-size: 1.2em;
 }
@@ -302,7 +302,7 @@
 
 .screenshot-modal-close:hover {
     background: rgba(0, 0, 0, 0.1);
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
 }
 
 .screenshot-modal-body {
@@ -749,7 +749,7 @@
 body {
     font-family: 'Benton Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     background: #ffffff;
     min-height: 100vh;
 }
@@ -790,8 +790,8 @@ header {
 
 .logo-icon {
     font-size: 0.8rem;
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     width: 48px;
     height: 48px;
     display: flex;
@@ -804,7 +804,7 @@ header {
 
 .header-text h1 {
     font-size: 1.75rem;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin: 0;
     font-weight: 700;
     letter-spacing: -0.025em;
@@ -824,8 +824,8 @@ header {
 }
 
 .workshop-duration {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.875rem;
@@ -874,7 +874,7 @@ main {
 
 /* Workshop Sections */
 /* Removed old section-switching CSS - no longer needed with separate HTML files */
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
     font-weight: bold;
@@ -895,7 +895,7 @@ main {
 
 .section-header h2 {
     font-size: 2.25rem;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
@@ -938,7 +938,7 @@ main {
 
 .tool-card h3 {
     font-size: 1.5rem;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -958,7 +958,7 @@ main {
 
 .feature-tag {
     background: #f8f9fa;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
     font-size: 0.8rem;
@@ -999,7 +999,7 @@ main {
 
 .learning-objectives h3 {
     font-size: 1.5rem;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -1017,8 +1017,8 @@ main {
 }
 
 .objective-number {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -1032,7 +1032,7 @@ main {
 
 .objective-content h4 {
     font-size: 1.1rem;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -1063,8 +1063,8 @@ main {
 }
 
 .activity-time {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-weight: 600;
@@ -1081,7 +1081,7 @@ main {
 
 .activity-content h3 {
     font-size: 1.3rem;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -1098,8 +1098,8 @@ main {
 }
 
 .activity-link {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 4px;
@@ -1127,7 +1127,7 @@ main {
 }
 
 .example-box h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -1164,7 +1164,7 @@ main {
 }
 
 .build-inspiration h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -1185,7 +1185,7 @@ main {
     align-items: center;
     gap: 0.5rem;
     background: #ffffff;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     padding: 0.75rem 1rem;
     text-decoration: none;
     border: 2px solid #e1e5e9;
@@ -1233,7 +1233,7 @@ main {
 }
 
 .build-option h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -1252,7 +1252,7 @@ main {
 
 .feature {
     background: #e1e5e9;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     padding: 0.25rem 0.5rem;
     border-radius: 12px;
     font-size: 0.75rem;
@@ -1269,7 +1269,7 @@ main {
 
 .project-selection p {
     margin: 0;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-weight: 500;
 }
 
@@ -1286,7 +1286,7 @@ main {
 }
 
 .brainstorm-section h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -1323,7 +1323,7 @@ main {
 }
 
 .resource-category h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
@@ -1345,7 +1345,7 @@ main {
 }
 
 .resource-list li a:hover {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     border-bottom-color: #c5b783;
 }
 
@@ -1357,7 +1357,7 @@ main {
 }
 
 .quick-reference h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
@@ -1369,7 +1369,7 @@ main {
 }
 
 .prompt-example h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -1380,7 +1380,7 @@ main {
     border-radius: 4px;
     font-family: 'Monaco', 'Consolas', monospace;
     font-size: 0.9rem;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     display: block;
     border-left: 4px solid #c5b783;
     line-height: 1.4;
@@ -1423,7 +1423,7 @@ main {
 }
 
 .video-placeholder h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -1456,8 +1456,8 @@ main {
 }
 
 .step-number {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -1474,7 +1474,7 @@ main {
 }
 
 .next-step-content h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -1485,8 +1485,8 @@ main {
 }
 
 .step-link {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 4px;
@@ -1510,7 +1510,7 @@ main {
 
 .idea-tag {
     background: #ffffff;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
     font-size: 0.8rem;
@@ -1564,7 +1564,7 @@ main {
 }
 
 .support-section h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1.5rem;
     font-weight: 600;
     text-align: center;
@@ -1584,7 +1584,7 @@ main {
 }
 
 .support-option h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -1596,8 +1596,8 @@ main {
 }
 
 .support-option code {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-family: 'Monaco', 'Consolas', monospace;
@@ -1713,8 +1713,8 @@ main {
 }
 
 .step-number {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -1731,7 +1731,7 @@ main {
 }
 
 .build-step-content h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -1761,7 +1761,7 @@ main {
 }
 
 .prompt-template h5 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -1780,7 +1780,7 @@ main {
     font-family: 'Monaco', 'Consolas', monospace;
     font-size: 0.85rem;
     line-height: 1.5;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     background: none;
     margin: 0;
     border: none;
@@ -1790,8 +1790,8 @@ main {
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -1827,7 +1827,7 @@ main {
 }
 
 .tip-section h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -1885,7 +1885,7 @@ main {
 }
 
 .progress-tracker h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -1907,7 +1907,7 @@ main {
 }
 
 .checklist-item:hover {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
 }
 
 .checklist-item input[type="checkbox"] {
@@ -1936,7 +1936,7 @@ main {
 }
 
 .deploy-option h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -1984,7 +1984,7 @@ main {
 }
 
 .chat-intro h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -1999,7 +1999,7 @@ main {
 }
 
 .chat-suggestions h5 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -2019,7 +2019,7 @@ main {
     transition: all 0.2s;
     text-align: left;
     font-size: 0.9rem;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-family: inherit;
 }
 
@@ -2064,7 +2064,7 @@ main {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #c5b783;
+    background: var(--ivey-gold);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2089,8 +2089,8 @@ main {
 }
 
 .user-message .message-content {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     padding: 1rem;
     border-radius: 12px 0 12px 12px;
 }
@@ -2115,7 +2115,7 @@ main {
 }
 
 .message-content strong {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
 }
 
 .user-message .message-content strong {
@@ -2153,8 +2153,8 @@ main {
 }
 
 #send-chat {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
@@ -2213,7 +2213,7 @@ main {
 .typing-dots span {
     width: 6px;
     height: 6px;
-    background: #c5b783;
+    background: var(--ivey-gold);
     border-radius: 50%;
     animation: typingDot 1.4s infinite;
 }
@@ -2242,7 +2242,7 @@ main {
 }
 
 .project-selection-section h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -2261,7 +2261,7 @@ main {
 }
 
 .next-project-planning h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1.5rem;
     font-weight: 600;
     text-align: center;
@@ -2274,7 +2274,7 @@ main {
 }
 
 .planning-section h5 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -2305,7 +2305,7 @@ main {
 }
 
 .setup-checker h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
@@ -2341,7 +2341,7 @@ main {
 }
 
 .requirement-check label {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-size: 0.95rem;
     cursor: pointer;
 }
@@ -2406,8 +2406,8 @@ main {
 }
 
 .step-header .step-number {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -2421,7 +2421,7 @@ main {
 
 .step-header h4 {
     margin: 0;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-weight: 600;
 }
 
@@ -2440,8 +2440,8 @@ main {
 
 .action-button {
     display: inline-block;
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     padding: 0.75rem 2rem;
     text-decoration: none;
     border-radius: 4px;
@@ -2454,11 +2454,11 @@ main {
 .action-button:hover {
     background: #b8a56f;
     transform: translateY(-1px);
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
 }
 
 .action-button.primary {
-    background: #c5b783;
+    background: var(--ivey-gold);
 }
 
 .step-instructions {
@@ -2470,7 +2470,7 @@ main {
 
 .step-instructions p {
     margin-bottom: 1rem;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-weight: 600;
 }
 
@@ -2703,7 +2703,7 @@ main {
 
 .gif-image[data-paused="false"] + .gif-controls .gif-play-btn {
     background: rgba(197, 183, 131, 0.9);
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
 }
 
 .gif-image[data-paused="false"] + .gif-controls .gif-play-btn:hover {
@@ -2875,7 +2875,7 @@ main {
 
 .setup-summary-card {
     background: linear-gradient(135deg, #c5b783 0%, #b8a56f 100%);
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
@@ -2972,7 +2972,7 @@ main {
 }
 
 .claude-prompt-box h5 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -2984,14 +2984,14 @@ main {
     font-family: 'Monaco', 'Consolas', monospace;
     font-size: 0.9rem;
     line-height: 1.4;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     border: 1px solid #e1e5e9;
     margin-bottom: 1rem;
 }
 
 .copy-prompt-btn {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -3141,8 +3141,8 @@ main {
 }
 
 .step-badge {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
     font-size: 0.8rem;
@@ -3188,8 +3188,8 @@ main {
 }
 
 .substep-number {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -3202,7 +3202,7 @@ main {
 }
 
 .substep-header h5 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-size: 1.2rem;
     font-weight: 600;
     margin: 0;
@@ -3271,8 +3271,8 @@ main {
 }
 
 .copy-button {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -3350,7 +3350,7 @@ main {
 
 .feature-info h6,
 .feature-info strong {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin-bottom: 0.5rem;
     font-size: 1rem;
 }
@@ -3497,7 +3497,7 @@ main {
 
 .notification-content span {
     flex: 1;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
 }
 
 .notification-content button {
@@ -3687,7 +3687,7 @@ main {
 }
 
 .video-note p {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 0 0 1rem 0;
@@ -3722,8 +3722,8 @@ main {
 }
 
 .nav-btn {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
@@ -3790,8 +3790,8 @@ main {
 }
 
 .time-badge {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
     font-weight: 600;
@@ -3826,7 +3826,7 @@ main {
 }
 
 .benefit-content h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin: 0 0 0.75rem 0;
     font-size: 1.25rem;
 }
@@ -3858,13 +3858,13 @@ main {
 }
 
 .ai-help-header h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin: 0;
     font-size: 1.25rem;
 }
 
 .ai-help-content p {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
@@ -3880,7 +3880,7 @@ main {
 .ai-help-examples p {
     margin: 0 0 0.5rem 0;
     font-weight: 600;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
 }
 
 .ai-help-examples ul {
@@ -3904,7 +3904,7 @@ main {
 }
 
 .checklist-header h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin: 0 0 0.5rem 0;
     font-size: 1.5rem;
 }
@@ -3943,8 +3943,8 @@ main {
 }
 
 .step-number {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -3957,15 +3957,15 @@ main {
 }
 
 .step-header h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin: 0;
     font-size: 1.25rem;
     flex-grow: 1;
 }
 
 .step-time {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
     font-size: 0.75rem;
@@ -4001,7 +4001,7 @@ main {
 }
 
 .account-info h5 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin: 0 0 0.25rem 0;
     font-size: 1rem;
 }
@@ -4041,13 +4041,13 @@ main {
 }
 
 .completion-check label {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-weight: 600;
     cursor: pointer;
 }
 
 .step-instructions ol {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     padding-left: 1.5rem;
     line-height: 1.8;
 }
@@ -4066,7 +4066,7 @@ main {
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Courier New', monospace;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
 }
 
 .step-instructions h5 {
@@ -4126,22 +4126,22 @@ main {
 
 /* Cognitive Helper Boxes */
 .cognitive-helper-box {
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    border: 2px solid #f59e0b;
+    background: linear-gradient(135deg, rgba(197, 183, 131, 0.1) 0%, rgba(197, 183, 131, 0.2) 100%);
+    border: 2px solid var(--ivey-gold);
     border-radius: 8px;
     padding: 1rem 1.25rem;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(245, 158, 11, 0.1);
+    box-shadow: 0 2px 4px rgba(197, 183, 131, 0.1);
 }
 
 .cognitive-helper-box.priority {
-    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-    border-color: #ef4444;
-    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.1);
+    background: linear-gradient(135deg, rgba(88, 44, 131, 0.1) 0%, rgba(88, 44, 131, 0.15) 100%);
+    border-color: var(--ivey-deep-purple);
+    box-shadow: 0 2px 4px rgba(88, 44, 131, 0.1);
 }
 
 .cognitive-helper-box h5 {
-    color: #92400e;
+    color: var(--ivey-gold-dark);
     margin: 0 0 0.5rem 0;
     font-size: 1rem;
     font-weight: 600;
@@ -4151,18 +4151,18 @@ main {
 }
 
 .cognitive-helper-box.priority h5 {
-    color: #dc2626;
+    color: var(--ivey-deep-purple);
 }
 
 .cognitive-helper-box p {
-    color: #78350f;
+    color: var(--ivey-dark-gray);
     margin: 0;
     line-height: 1.5;
     font-size: 0.9rem;
 }
 
 .cognitive-helper-box.priority p {
-    color: #991b1b;
+    color: var(--ivey-deep-purple);
 }
 
 /* Difficulty Indicators */
@@ -4189,11 +4189,12 @@ main {
 }
 
 .difficulty-badge.medium {
-    background: #f59e0b;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
 }
 
 .difficulty-badge.hard {
-    background: #ef4444;
+    background: var(--ivey-deep-purple);
 }
 
 .tech-level {
@@ -4278,12 +4279,13 @@ main {
 
 /* Enhanced Error States */
 .error-message {
-    background: #fee2e2;
-    border: 2px solid #ef4444;
-    color: #dc2626;
+    background: linear-gradient(135deg, rgba(88, 44, 131, 0.1) 0%, rgba(88, 44, 131, 0.15) 100%);
+    border: 2px solid var(--ivey-deep-purple);
+    color: var(--ivey-deep-purple);
     padding: 1rem;
     border-radius: 6px;
     margin: 1rem 0;
+    font-weight: 500;
 }
 
 .success-message {
@@ -4298,28 +4300,29 @@ main {
 
 /* Enhanced Form Validation */
 input:invalid {
-    border-color: #ef4444 !important;
-    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.1) !important;
+    border-color: var(--ivey-deep-purple) !important;
+    box-shadow: 0 0 0 1px rgba(88, 44, 131, 0.1) !important;
 }
 
 input:valid {
-    border-color: #10b981 !important;
-    box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.1) !important;
+    border-color: var(--ivey-dark-green) !important;
+    box-shadow: 0 0 0 1px rgba(3, 70, 56, 0.1) !important;
 }
 
 /* Cognitive Load Helpers for Complex Instructions */
 .step-instructions ol {
     counter-reset: step-counter;
     list-style: none;
-    padding-left: 0;
+    padding-left: 2.5rem;
+    margin-left: 0;
 }
 
 .step-instructions ol li {
     counter-increment: step-counter;
     margin: 1rem 0;
-    padding: 0.75rem 1rem;
-    background: #f8fafc;
-    border-left: 4px solid #c5b783;
+    padding: 0.75rem 1rem 0.75rem 1.5rem;
+    background: rgba(197, 183, 131, 0.05);
+    border-left: 4px solid var(--ivey-gold);
     border-radius: 0 4px 4px 0;
     position: relative;
 }
@@ -4327,11 +4330,11 @@ input:valid {
 .step-instructions ol li::before {
     content: counter(step-counter);
     position: absolute;
-    left: -2rem;
+    left: -2.25rem;
     top: 50%;
     transform: translateY(-50%);
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
@@ -4340,6 +4343,8 @@ input:valid {
     justify-content: center;
     font-size: 0.8rem;
     font-weight: bold;
+    border: 2px solid var(--ivey-white);
+    box-shadow: 0 2px 4px rgba(197, 183, 131, 0.3);
 }
 
 /* Progress Indicators */
@@ -4470,7 +4475,7 @@ input:valid {
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
     font-weight: 500;
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     background: #f8f9fa;
     border-top: 2px solid #c5b783;
 }
@@ -4556,8 +4561,8 @@ input:valid {
 }
 
 .overview-number {
-    background: #c5b783;
-    color: #2c2c2c;
+    background: var(--ivey-gold);
+    color: var(--ivey-dark-gray);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -4570,7 +4575,7 @@ input:valid {
 }
 
 .overview-content h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-size: 1rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -4598,7 +4603,7 @@ input:valid {
 }
 
 .note-content h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin: 0 0 0.5rem 0;
     font-weight: 600;
 }
@@ -4803,7 +4808,7 @@ a:hover:not(.nav-btn):not(.setup-button):not(.suggestion-btn):not(.copy-prompt):
 }
 
 .ai-chat-header h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin: 0 0 0.5rem 0;
     font-size: 1.25rem;
 }
@@ -4822,7 +4827,7 @@ a:hover:not(.nav-btn):not(.setup-button):not(.suggestion-btn):not(.copy-prompt):
 }
 
 .setup-final-checklist h3 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin: 0 0 1rem 0;
     font-size: 1.25rem;
     text-align: center;
@@ -4864,7 +4869,7 @@ a:hover:not(.nav-btn):not(.setup-button):not(.suggestion-btn):not(.copy-prompt):
 }
 
 .check-content h4 {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     margin: 0 0 0.25rem 0;
     font-size: 1rem;
 }
@@ -4877,7 +4882,7 @@ a:hover:not(.nav-btn):not(.setup-button):not(.suggestion-btn):not(.copy-prompt):
 
 .workshop-ready {
     background: linear-gradient(135deg, #c5b783 0%, #b8a56f 100%);
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
@@ -4921,7 +4926,7 @@ a:hover:not(.nav-btn):not(.setup-button):not(.suggestion-btn):not(.copy-prompt):
 }
 
 .test-item label {
-    color: #2c2c2c;
+    color: var(--ivey-dark-gray);
     font-weight: 500;
     cursor: pointer;
 }
