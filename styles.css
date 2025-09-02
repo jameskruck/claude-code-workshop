@@ -2464,23 +2464,103 @@ main {
 }
 
 .completion-check {
-    background: #e8f5e8;
-    padding: 1rem;
-    border-radius: 4px;
-    border: 2px solid #28a745;
+    background: #f8fffe;
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.completion-check:hover {
+    border-color: #c5b783;
+    background: #fffef8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(197, 183, 131, 0.15);
+}
+
+.completion-check.checked {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border-color: #10b981;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
 }
 
 .completion-check input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: #28a745;
-    margin-right: 0.75rem;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+    position: relative;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.completion-check input[type="checkbox"]:hover {
+    border-color: #c5b783;
+    box-shadow: 0 0 0 3px rgba(197, 183, 131, 0.1);
+    transform: scale(1.05);
+}
+
+.completion-check input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-color: #10b981;
+    animation: checkboxPop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.completion-check input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6px;
+    height: 12px;
+    border: 2px solid white;
+    border-left: none;
+    border-top: none;
+    transform: translate(-50%, -60%) rotate(45deg);
+    animation: checkmarkDraw 0.3s ease 0.1s both;
 }
 
 .completion-check label {
-    color: #155724;
+    color: #374151;
     font-weight: 600;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.completion-check.checked label {
+    color: #065f46;
+}
+
+@keyframes checkboxPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes checkmarkDraw {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    50% {
+        width: 6px;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 6px;
+        height: 12px;
+        opacity: 1;
+    }
 }
 
 .setup-summary-card {
