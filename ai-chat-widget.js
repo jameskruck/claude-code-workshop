@@ -11,6 +11,16 @@ class AIchatWidget {
     }
 
     init() {
+        // Extra safety check - don't create if embedded chat exists
+        const embeddedChatExists = document.getElementById('chat-input') || 
+                                  document.getElementById('chat-messages') || 
+                                  document.getElementById('send-chat');
+        
+        if (embeddedChatExists) {
+            console.log('Embedded chat detected during init, aborting floating widget creation');
+            return;
+        }
+        
         this.createWidget();
         this.attachEventListeners();
         this.loadChatHistory();
@@ -23,6 +33,12 @@ class AIchatWidget {
     }
 
     createWidget() {
+        // Prevent duplicate widgets
+        if (document.getElementById('ai-chat-widget')) {
+            console.log('AI chat widget already exists, skipping creation');
+            return;
+        }
+        
         // Create the main chat widget container
         const widget = document.createElement('div');
         widget.id = 'ai-chat-widget';
