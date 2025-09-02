@@ -22,20 +22,7 @@
 }
 
 .ai-chat-widget.minimized {
-    max-height: 60px;
-    width: auto;
-}
-
-.ai-chat-widget.minimized .chat-body {
-    display: none;
-}
-
-.ai-chat-widget.minimized .chat-controls {
-    display: none;
-}
-
-.ai-chat-widget.minimized .chat-title {
-    margin-right: 0;
+    display: none !important;
 }
 
 /* Chat Header */
