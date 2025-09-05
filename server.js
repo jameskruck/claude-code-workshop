@@ -7,10 +7,66 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Storage configuration
+const DATA_DIR = '/data';
+const USE_DISK_STORAGE = fs.existsSync(DATA_DIR);
+
+// Initialize storage directories
+if (USE_DISK_STORAGE) {
+    const dirs = ['analytics', 'chat-history', 'feedback', 'sessions'];
+    dirs.forEach(dir => {
+        const fullPath = path.join(DATA_DIR, dir);
+        if (!fs.existsSync(fullPath)) {
+            fs.mkdirSync(fullPath, { recursive: true });
+        }
+    });
+    console.log('✅ Persistent disk storage enabled at /data');
+} else {
+    console.log('📝 Using in-memory storage (development mode)');
+}
+
 // Middleware
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.static(path.join(__dirname)));
+
+// Storage utilities
+function saveToFile(category, filename, data) {
+    if (!USE_DISK_STORAGE) return;
+    
+    try {
+        const filePath = path.join(DATA_DIR, category, filename);
+        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+    } catch (error) {
+        console.error(`Failed to save ${category}/${filename}:`, error);
+    }
+}
+
+function appendToFile(category, filename, data) {
+    if (!USE_DISK_STORAGE) return;
+    
+    try {
+        const filePath = path.join(DATA_DIR, category, filename);
+        const logEntry = JSON.stringify(data) + '\n';
+        fs.appendFileSync(filePath, logEntry);
+    } catch (error) {
+        console.error(`Failed to append to ${category}/${filename}:`, error);
+    }
+}
+
+function logAnalytics(event, data) {
+    const timestamp = new Date().toISOString();
+    const logData = { timestamp, event, ...data };
+    
+    // Log to console (always)
+    console.log(`📊 Analytics:`, logData);
+    
+    // Save to disk if available
+    if (USE_DISK_STORAGE) {
+        const today = new Date().toISOString().split('T')[0];
+        appendToFile('analytics', `workshop-${today}.log`, logData);
+    }
+}
 
 // Serve static files
 app.get('/', (req, res) => {
@@ -33,6 +89,16 @@ app.post('/api/chat', async (req, res) => {
             console.log('Error: Anthropic API key not found');
             return res.status(500).json({ error: 'API key not configured' });
         }
+
+        // Log chat interaction
+        logAnalytics('chat_interaction', {
+            activityType,
+            messageLength: message.length,
+            hasHistory: !!(chatHistory && chatHistory.length > 0),
+            historyLength: chatHistory ? chatHistory.length : 0,
+            userAgent: req.headers['user-agent'],
+            currentPage: context?.currentPage
+        });
 
         // Build activity-specific system prompt
         let systemPrompt = buildActivityPrompt(activityType, context);
@@ -287,15 +353,25 @@ app.post('/api/feedback', (req, res) => {
             feedback.timestamp = new Date().toISOString();
         }
         
-        // In a production environment, you'd save this to a database
-        // For now, we'll just log it
-        console.log('Feedback logged:', {
+        // Save feedback to disk storage if available
+        const feedbackSummary = {
             activityType: feedback.activityType,
             helpful: feedback.helpful,
             rating: feedback.rating,
             comment: feedback.comment ? feedback.comment.substring(0, 50) + '...' : 'No comment',
             timestamp: feedback.timestamp
-        });
+        };
+        
+        console.log('Feedback logged:', feedbackSummary);
+        
+        // Persist feedback
+        if (USE_DISK_STORAGE) {
+            const today = new Date().toISOString().split('T')[0];
+            appendToFile('feedback', `feedback-${today}.log`, feedback);
+        }
+        
+        // Log as analytics event
+        logAnalytics('feedback_submitted', feedbackSummary);
         
         res.json({ success: true, message: 'Feedback received successfully' });
         
@@ -311,21 +387,73 @@ app.post('/api/analytics', (req, res) => {
         const analyticsData = req.body;
         console.log('Workshop analytics received:', analyticsData);
         
+        // Add timestamp if not present
+        if (!analyticsData.timestamp) {
+            analyticsData.timestamp = new Date().toISOString();
+        }
+        
         // Log useful workshop metrics
-        console.log('Analytics summary:', {
+        const analyticsSummary = {
             sessionId: analyticsData.sessionId,
             activityProgress: analyticsData.activityProgress,
             toolsExplored: analyticsData.toolsExplored,
             promptsCopied: analyticsData.promptsCopied,
             chatInteractions: analyticsData.chatInteractions,
-            timestamp: new Date().toISOString()
-        });
+            timestamp: analyticsData.timestamp
+        };
+        
+        console.log('Analytics summary:', analyticsSummary);
+        
+        // Persist analytics data
+        if (USE_DISK_STORAGE) {
+            const today = new Date().toISOString().split('T')[0];
+            appendToFile('analytics', `session-data-${today}.log`, analyticsData);
+        }
+        
+        // Log as analytics event
+        logAnalytics('session_data', analyticsSummary);
         
         res.json({ success: true, message: 'Analytics data received' });
         
     } catch (error) {
         console.error('Analytics endpoint error:', error);
         res.status(500).json({ error: 'Failed to process analytics data' });
+    }
+});
+
+// Analytics dashboard endpoint (for reviewing workshop data)
+app.get('/api/analytics/summary', (req, res) => {
+    if (!USE_DISK_STORAGE) {
+        return res.json({ 
+            message: 'Disk storage not available',
+            storage: 'in-memory'
+        });
+    }
+    
+    try {
+        const today = new Date().toISOString().split('T')[0];
+        const analyticsPath = path.join(DATA_DIR, 'analytics');
+        
+        if (!fs.existsSync(analyticsPath)) {
+            return res.json({ 
+                message: 'No analytics data yet',
+                date: today 
+            });
+        }
+        
+        const files = fs.readdirSync(analyticsPath);
+        const summary = {
+            date: today,
+            availableFiles: files,
+            storage: 'persistent',
+            dataLocation: '/data/analytics/'
+        };
+        
+        res.json(summary);
+        
+    } catch (error) {
+        console.error('Analytics summary error:', error);
+        res.status(500).json({ error: 'Failed to retrieve analytics summary' });
     }
 });
 
