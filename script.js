@@ -1,4 +1,7 @@
 // Workshop Website Interactive Elements
+// Chat history for embedded chat
+let embeddedChatHistory = [];
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing workshop...');
     
@@ -752,6 +755,7 @@ async function sendChatMessage(message) {
             body: JSON.stringify({
                 message: message,
                 activityType: 'idea-generation',
+                chatHistory: embeddedChatHistory.slice(-10), // Send last 10 messages for context
                 context: {
                     institution: 'Business Education',
                     role: 'Learning Experience Designer',
@@ -804,6 +808,13 @@ async function sendChatMessage(message) {
 
 function addMessageToChat(sender, message) {
     const chatMessages = document.getElementById('chat-messages');
+    
+    // Add to chat history
+    embeddedChatHistory.push({
+        sender: sender,
+        content: message,
+        timestamp: Date.now()
+    });
     
     const messageDiv = document.createElement('div');
     messageDiv.className = `${sender}-message`;
