@@ -232,6 +232,7 @@ class AIchatWidget {
                 body: JSON.stringify({
                     message: message,
                     activityType: activityType,
+                    chatHistory: this.chatHistory.slice(-10), // Send last 10 messages for context
                     context: {
                         institution: 'Business Education',
                         role: 'Learning Experience Designer',

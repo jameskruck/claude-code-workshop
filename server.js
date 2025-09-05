@@ -22,7 +22,7 @@ app.post('/api/chat', async (req, res) => {
     console.log('Chat request received:', req.body);
     
     try {
-        const { message, activityType, context } = req.body;
+        const { message, activityType, context, chatHistory } = req.body;
         
         if (!message) {
             console.log('Error: No message provided');
@@ -37,6 +37,37 @@ app.post('/api/chat', async (req, res) => {
         // Build activity-specific system prompt
         let systemPrompt = buildActivityPrompt(activityType, context);
 
+        // Build messages array with conversation history
+        let messages = [
+            {
+                role: 'user',
+                content: systemPrompt
+            }
+        ];
+
+        // Add conversation history if available
+        if (chatHistory && chatHistory.length > 0) {
+            for (const historyItem of chatHistory) {
+                if (historyItem.sender === 'user') {
+                    messages.push({
+                        role: 'user',
+                        content: historyItem.content
+                    });
+                } else if (historyItem.sender === 'ai') {
+                    messages.push({
+                        role: 'assistant',
+                        content: historyItem.content
+                    });
+                }
+            }
+        }
+
+        // Add current message
+        messages.push({
+            role: 'user',
+            content: message
+        });
+
         // Make request to Anthropic API
         const response = await fetch('https://api.anthropic.com/v1/messages', {
             method: 'POST',
@@ -48,12 +79,7 @@ app.post('/api/chat', async (req, res) => {
             body: JSON.stringify({
                 model: 'claude-3-haiku-20240307',
                 max_tokens: 800,
-                messages: [
-                    { 
-                        role: 'user', 
-                        content: `${systemPrompt}\n\nUser: ${message}` 
-                    }
-                ]
+                messages: messages
             })
         });
 
