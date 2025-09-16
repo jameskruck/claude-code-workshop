@@ -53,3 +53,9 @@ build/
 NOTES.md
 TODO.md
 personal-*
+
+# Visual Studio
+.vs/
+
+# Course materials (keep out of repo)
+Course Materials/
