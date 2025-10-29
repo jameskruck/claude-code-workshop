@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On Practice | Claude Code Plugins Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">CC</div>
+                    <div class="header-text">
+                        <h1>Claude Code Plugins Workshop</h1>
+                        <p class="subtitle">Hands-On Practice Activities</p>
+                    </div>
+                </div>
+                <div class="header-meta">
+                    <span class="workshop-duration">30 minutes</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="workshop-nav" role="navigation" aria-label="Workshop navigation">
+            <div class="nav-items">
+                <a href="index.html" class="nav-item">Main Workshop</a>
+                <a href="plugins-intro.html" class="nav-item">What Are Plugins?</a>
+                <a href="plugins-setup.html" class="nav-item">Installation</a>
+                <a href="plugins-activities.html" class="nav-item active">Hands-On Practice</a>
+            </div>
+        </nav>
+
+        <main>
+            <div class="section-header">
+                <h2>Hands-On Practice with Real Course Development</h2>
+                <p class="section-subtitle">Transform rough notes → structured outline → detailed storyboard</p>
+            </div>
+
+            <div style="background: #d4edda; border-left: 4px solid #28a745; padding: 25px; border-radius: 8px; margin-bottom: 40px;">
+                <h3 style="margin-top: 0; color: #155724;">✅ You're All Set!</h3>
+                <p style="margin-bottom: 15px; color: #155724;">You already have:</p>
+                <ul style="color: #155724; margin: 0;">
+                    <li><strong>Claude Code running</strong> with education-toolkit plugin installed</li>
+                    <li><strong>Sample file downloaded:</strong> <code>sample-course-brief.md</code> in your working directory</li>
+                </ul>
+            </div>
+
+            <!-- EXERCISE 1 -->
+            <div class="exercise-card" style="background: white; border: 3px solid #28a745; border-radius: 8px; padding: 35px; margin-bottom: 40px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="background: #28a745; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin-right: 20px;">1</div>
+                    <div>
+                        <h3 style="margin: 0;">Create a Course Outline</h3>
+                        <p style="margin: 5px 0 0 0; color: #6c757d;">Strategic planning • 10 minutes</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 4px; margin-bottom: 20px;">
+                    <h4 style="margin-top: 0;">📋 Your Task</h4>
+                    <p>You're working with an SME who has rough notes for a B2B SaaS pricing course. Transform these messy notes into a professional, QM-compliant course outline.</p>
+                </div>
+
+                <h4>Step 1: Have Claude Read the File</h4>
+                <p style="margin-bottom: 15px;">The file is already in your directory. Ask Claude to read it:</p>
+                <div style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; margin-bottom: 15px;">
+Read the file sample-course-brief.md
+                </div>
+                <p style="font-size: 14px; color: #6c757d;">Claude will use the Read tool to access the file and show you the contents.</p>
+
+                <h4 style="margin-top: 25px;">Step 2: Invoke the Agent</h4>
+                <p style="margin-bottom: 15px;">Type this prompt (or copy from below):</p>
+                <div style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; margin-bottom: 15px; position: relative;">
+                    <button onclick="navigator.clipboard.writeText('Use the course-outline-creator agent to transform this course brief into a complete 5-week MBA course outline. Include: CLOs using QM standards, weekly structure with MLOs, assessment strategy with alignment matrix, concept threading map, and practitioner integration plan. Ask me about course format (cohort vs self-paced) and any other details you need.')" style="position: absolute; top: 10px; right: 10px; background: #0066cc; color: white; border: none; padding: 6px 12px; border-radius: 3px; cursor: pointer; font-size: 12px;">Copy</button>
+                    Use the course-outline-creator agent to transform this course brief into a complete 5-week MBA course outline. Include: CLOs using QM standards, weekly structure with MLOs, assessment strategy with alignment matrix, concept threading map, and practitioner integration plan. Ask me about course format (cohort vs self-paced) and any other details you need.
+                </div>
+
+                <h4 style="margin-top: 25px;">Step 3: Answer Questions</h4>
+                <p>The agent will ask about:</p>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Course format:</strong> Say "cohort-based" (fixed dates, allows peer review)</li>
+                    <li><strong>Duration:</strong> Confirm "5 weeks"</li>
+                    <li><strong>Other clarifications:</strong> Answer based on the brief content or your judgment</li>
+                </ul>
+
+                <div style="background: #d4edda; padding: 20px; border-radius: 4px; border-left: 4px solid #28a745; margin-top: 25px;">
+                    <h4 style="margin-top: 0; color: #155724;">✅ What You'll Get</h4>
+                    <ul style="margin-bottom: 0; color: #155724;">
+                        <li><strong>5 Course Learning Outcomes (CLOs)</strong> with single action verbs, Bloom's levels</li>
+                        <li><strong>Weekly structure</strong> with themes, MLOs (4-5 per week), case studies, practitioners</li>
+                        <li><strong>Assessment strategy</strong> with alignment matrix showing which assessments cover which CLOs</li>
+                        <li><strong>Concept threading map</strong> showing how Week 1 concepts build across Weeks 2-5</li>
+                        <li><strong>Practitioner integration plan</strong> with specific roles and topics</li>
+                    </ul>
+                </div>
+
+                <div style="background: #fff3cd; padding: 15px; border-radius: 4px; margin-top: 20px;">
+                    <p style="margin: 0; color: #856404;"><strong>💡 Pro Tip:</strong> Notice how the agent references the Ivey 6-phase development process and concept threading patterns automatically - that's the bundled knowledge base in action!</p>
+                </div>
+            </div>
+
+            <!-- EXERCISE 2 -->
+            <div class="exercise-card" style="background: white; border: 3px solid #007bff; border-radius: 8px; padding: 35px; margin-bottom: 40px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="background: #007bff; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin-right: 20px;">2</div>
+                    <div>
+                        <h3 style="margin: 0;">Build Week 1 Storyboard</h3>
+                        <p style="margin: 5px 0 0 0; color: #6c757d;">Detailed module design • 15 minutes</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 4px; margin-bottom: 20px;">
+                    <h4 style="margin-top: 0;">📋 Your Task</h4>
+                    <p>Take the course outline you just created and generate a detailed Week 1 storyboard with copy-paste-ready content for implementation in your LMS.</p>
+                    <p style="margin-bottom: 0;"><strong>Key insight:</strong> This demonstrates how agents work together in a pipeline (strategic planning → detailed design)</p>
+                </div>
+
+                <h4>Step 1: Use Your Outline</h4>
+                <p>You already have the outline from Exercise 1 in your Claude Code session - no need to upload anything new!</p>
+
+                <h4 style="margin-top: 25px;">Step 2: Invoke the Storyboard Builder</h4>
+                <p style="margin-bottom: 15px;">Type this prompt:</p>
+                <div style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; margin-bottom: 15px; position: relative;">
+                    <button onclick="navigator.clipboard.writeText('Use the uplimit-storyboard-builder agent to create a detailed Week 1 storyboard based on the course outline we just created. I need copy-paste-ready content for all modules including: element tables, text blocks written in full, infoboxes, widget specifications, video scripts, assessment instructions, and design rationale for each choice. Use the varied content delivery principles to ensure interactive, engaging design.')" style="position: absolute; top: 10px; right: 10px; background: #0066cc; color: white; border: none; padding: 6px 12px; border-radius: 3px; cursor: pointer; font-size: 12px;">Copy</button>
+                    Use the uplimit-storyboard-builder agent to create a detailed Week 1 storyboard based on the course outline we just created. I need copy-paste-ready content for all modules including: element tables, text blocks written in full, infoboxes, widget specifications, video scripts, assessment instructions, and design rationale for each choice. Use the varied content delivery principles to ensure interactive, engaging design.
+                </div>
+
+                <h4 style="margin-top: 25px;">Step 3: Review the Output</h4>
+                <p>The storyboard builder will create a comprehensive implementation guide with:</p>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Module-by-module breakdown</strong> (typically 7-8 modules for Week 1)</li>
+                    <li><strong>Element tables</strong> showing element type, duration, priority</li>
+                    <li><strong>Complete text blocks</strong> - ready to copy into your LMS</li>
+                    <li><strong>Widget specifications</strong> with interaction flows and success states</li>
+                    <li><strong>Infoboxes</strong> with full content and icons</li>
+                    <li><strong>Assessment instructions</strong> with rubrics</li>
+                    <li><strong>Design rationale</strong> explaining pedagogical choices</li>
+                </ul>
+
+                <div style="background: #d1ecf1; padding: 20px; border-radius: 4px; border-left: 4px solid #0c5460; margin-top: 25px;">
+                    <h4 style="margin-top: 0; color: #0c5460;">🔍 What to Look For</h4>
+                    <ul style="margin-bottom: 0; color: #0c5460;">
+                        <li><strong>Interactivity:</strong> Notice how it balances text, video, widgets (30/70 passive/active ratio)</li>
+                        <li><strong>Threading:</strong> Week 1 introduces all core concepts that will be built upon in Weeks 2-5</li>
+                        <li><strong>Knowledge checks:</strong> Formative assessments every 3-5 minutes of content</li>
+                        <li><strong>Varied delivery:</strong> Long text blocks broken into multiple short elements with different formats</li>
+                    </ul>
+                </div>
+
+                <div style="background: #fff3cd; padding: 15px; border-radius: 4px; margin-top: 20px;">
+                    <p style="margin: 0; color: #856404;"><strong>💡 Pro Tip:</strong> Ask follow-up questions! "Can you add more interactive widgets to Module 3?" or "Expand the assessment section with more detailed rubric criteria."</p>
+                </div>
+            </div>
+
+            <!-- EXERCISE 3 -->
+            <div class="exercise-card" style="background: white; border: 3px solid #6f42c1; border-radius: 8px; padding: 35px; margin-bottom: 40px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="background: #6f42c1; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin-right: 20px;">3</div>
+                    <div>
+                        <h3 style="margin: 0;">Choose Your Next Tool</h3>
+                        <p style="margin: 5px 0 0 0; color: #6c757d;">Based on your immediate needs • 5-10 minutes</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 4px; margin-bottom: 20px;">
+                    <h4 style="margin-top: 0;">🎯 Your Choice</h4>
+                    <p style="margin-bottom: 0;">Pick the exercise that matches your current work priorities. Both demonstrate different plugin capabilities you'll use regularly.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 25px;">
+
+                    <!-- Option A: Rubric -->
+                    <div style="border: 2px solid #28a745; border-radius: 8px; padding: 25px;">
+                        <h4 style="margin-top: 0; color: #28a745;">Option A: Generate Assessment Rubric</h4>
+                        <p><strong>Best if you:</strong> Need to create grading criteria for assessments</p>
+
+                        <h5 style="margin-top: 20px;">Steps:</h5>
+                        <ol style="font-size: 14px; line-height: 1.6;">
+                            <li>Use the storyboard's assessment from Exercise 2 (already in your session)</li>
+                            <li>Type: <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">Use the rubric-generator agent to create a detailed rubric for the Week 1 assessment in the storyboard</code></li>
+                            <li>Review the 100-point rubric created</li>
+                            <li>Try asking: "Add a student-facing version without point breakdowns"</li>
+                        </ol>
+
+                        <div style="background: #d4edda; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                            <p style="margin: 0; font-size: 13px; color: #155724;"><strong>You'll Get:</strong> QM-aligned rubric with 4 performance levels (Exemplary/Proficient/Developing/Needs Improvement), evaluation criteria aligned to learning objectives, point distribution, student & faculty versions</p>
+                        </div>
+
+                        <button onclick="document.getElementById('rubric-details').style.display='block'; this.style.display='none';" style="margin-top: 15px; background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold;">
+                            Show Alternative Prompt
+                        </button>
+
+                        <div id="rubric-details" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 15px; border-radius: 4px;">
+                            <h6>Or Try This Prompt:</h6>
+                            <div style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 12px;">
+                                Use the rubric-generator agent to create a rubric for a pricing strategy case analysis assignment. Students analyze a company's pricing evolution and recommend changes. Create a 100-point rubric with clear evaluation criteria for: strategic thinking, analytical rigor, practical recommendations, and business writing quality. Include 4 performance levels.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Option B: Accessibility -->
+                    <div style="border: 2px solid #dc3545; border-radius: 8px; padding: 25px;">
+                        <h4 style="margin-top: 0; color: #dc3545;">Option B: Audit Accessibility</h4>
+                        <p><strong>Best if you:</strong> Want to check content for WCAG compliance</p>
+
+                        <h5 style="margin-top: 20px;">Steps:</h5>
+                        <ol style="font-size: 14px; line-height: 1.6;">
+                            <li>Ask Claude: <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">Create a simple HTML page with an h1 heading, a paragraph, an image, and a button</code></li>
+                            <li>Then type: <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">Use the accessibility-auditor agent to check this HTML for WCAG 2.2 AA compliance</code></li>
+                            <li>Review the violations found (likely missing alt text, button label issues)</li>
+                            <li>Try asking: "Fix all violations"</li>
+                        </ol>
+
+                        <div style="background: #f8d7da; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                            <p style="margin: 0; font-size: 13px; color: #721c24;"><strong>You'll Get:</strong> Line-by-line identification of: low contrast text, missing alt text, improper heading hierarchy, missing button labels, semantic HTML issues, color contrast violations</p>
+                        </div>
+
+                        <button onclick="document.getElementById('accessibility-details').style.display='block'; this.style.display='none';" style="margin-top: 15px; background: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold;">
+                            Show Alternative Approach
+                        </button>
+
+                        <div id="accessibility-details" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 15px; border-radius: 4px;">
+                            <h6>Or Use Your Own HTML:</h6>
+                            <div style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 12px;">
+                                If you have HTML content from a real project, you can ask Claude to read that file and use the accessibility-auditor agent to check it for WCAG 2.2 AA compliance. The agent will identify all violations with specific line numbers and provide copy-paste fixes.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="background: #fff3cd; padding: 15px; border-radius: 4px; margin-top: 25px;">
+                    <p style="margin: 0; color: #856404;"><strong>💡 Have Time for Both?</strong> Great! Try both exercises to see the full range of what the plugin can do. Each takes only 5-10 minutes.</p>
+                </div>
+            </div>
+
+            <!-- Wrap Up Section -->
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 8px; margin-top: 50px;">
+                <h3 style="margin-top: 0; color: white;">🎉 Workshop Complete!</h3>
+
+                <h4 style="color: white;">What You Just Accomplished:</h4>
+                <ul style="line-height: 1.8; font-size: 16px;">
+                    <li>✅ Transformed rough SME notes into QM-compliant course outline (10x faster than manual)</li>
+                    <li>✅ Generated detailed Week 1 storyboard with copy-paste-ready content</li>
+                    <li>✅ Created assessment rubric OR audited accessibility (or both!)</li>
+                    <li>✅ Experienced the course development pipeline: planning → design → QA</li>
+                </ul>
+
+                <h4 style="color: white; margin-top: 30px;">Next Steps:</h4>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 4px; margin-top: 15px;">
+                    <p style="margin: 0 0 15px 0;"><strong>Try with your own content:</strong> Bring a course you're developing and use the same workflow</p>
+                    <p style="margin: 0 0 15px 0;"><strong>Explore other agents:</strong> Type <code style="background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 3px;">/plugin help education-toolkit</code> to see all 13 agents</p>
+                    <p style="margin: 0;"><strong>Get help:</strong> Monthly office hours or email <a href="mailto:jkruck@ivey.ca" style="color: white; text-decoration: underline;">jkruck@ivey.ca</a></p>
+                </div>
+
+                <h4 style="color: white; margin-top: 30px;">Explore More Agents:</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 4px;">
+                        <strong>peer-review-simulator</strong><br>
+                        <span style="font-size: 14px;">Get feedback from 6 ID specialists</span>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 4px;">
+                        <strong>consistency-checker</strong><br>
+                        <span style="font-size: 14px;">Validate terminology across weeks</span>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 4px;">
+                        <strong>assessment-designer</strong><br>
+                        <span style="font-size: 14px;">PAIRR, AI Roleplay, advanced assessments</span>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 4px;">
+                        <strong>student-journey-simulator</strong><br>
+                        <span style="font-size: 14px;">Test with 4 learner personas</span>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer style="margin-top: 60px; padding: 30px 0; border-top: 2px solid #e9ecef; text-align: center; color: #6c757d;">
+            <p><strong>Built for Ivey Business School EdTech Lab</strong></p>
+            <p>Questions? Contact <a href="mailto:jkruck@ivey.ca" style="color: #0066cc;">jkruck@ivey.ca</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

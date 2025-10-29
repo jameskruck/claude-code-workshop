@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugins Installation | Claude Code Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">CC</div>
+                    <div class="header-text">
+                        <h1>Claude Code Plugins Workshop</h1>
+                        <p class="subtitle">Installation Guide</p>
+                    </div>
+                </div>
+                <div class="header-meta">
+                    <span class="workshop-duration">5 minutes</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="workshop-nav" role="navigation" aria-label="Workshop navigation">
+            <div class="nav-items">
+                <a href="index.html" class="nav-item">Main Workshop</a>
+                <a href="plugins-intro.html" class="nav-item">What Are Plugins?</a>
+                <a href="plugins-setup.html" class="nav-item active">Installation</a>
+                <a href="plugins-activities.html" class="nav-item">Hands-On Practice</a>
+            </div>
+        </nav>
+
+        <main>
+            <div class="section-header">
+                <h2>Installing the Education Toolkit Plugin</h2>
+                <p class="section-subtitle">Follow these steps to add 13 specialized agents to your Claude Code</p>
+            </div>
+
+            <div style="background: #d1ecf1; border-left: 4px solid #0c5460; padding: 20px; margin-bottom: 30px; border-radius: 4px;">
+                <h3 style="margin-top: 0; color: #0c5460;">✅ You're Ready!</h3>
+                <p style="color: #0c5460; margin-bottom: 15px;">Claude Code is already running. Download the sample file you'll need for the workshop:</p>
+                <div style="background: white; padding: 15px; border-radius: 4px; margin-top: 10px;">
+                    <p style="margin: 0 0 10px 0; color: #0c5460;"><strong>📄 Sample Course Brief</strong></p>
+                    <a href="Starter Pack/Plugins Workshop/sample-course-brief.md" download style="display: inline-block; background: #0c5460; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: bold;">
+                        Download sample-course-brief.md
+                    </a>
+                    <p style="margin: 10px 0 0 0; font-size: 13px; color: #6c757d;">Save this to your Claude Code working directory</p>
+                </div>
+            </div>
+
+            <div class="installation-steps" style="margin-top: 40px;">
+
+                <div style="background: white; border: 2px solid #dee2e6; border-radius: 8px; padding: 30px; margin-bottom: 30px;">
+                    <h3 style="margin-top: 0;">Step 1: Open Plugin Menu</h3>
+                    <p style="font-size: 16px; margin-bottom: 20px;">Type this command in Claude Code:</p>
+                    <div style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 16px; margin-bottom: 15px;">
+                        /plugin
+                    </div>
+                    <p style="font-size: 14px; color: #6c757d;"><strong>What this does:</strong> Opens the plugin management menu</p>
+                </div>
+
+                <div style="background: white; border: 2px solid #dee2e6; border-radius: 8px; padding: 30px; margin-bottom: 30px;">
+                    <h3 style="margin-top: 0;">Step 2: Add Marketplace</h3>
+                    <p style="font-size: 16px; margin-bottom: 20px;">In the menu that appears, select <strong>"Add Marketplace"</strong>, then enter this URL:</p>
+                    <div style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 16px; margin-bottom: 15px;">
+                        https://github.com/jkruckivey/education-toolkit
+                    </div>
+                    <p style="font-size: 14px; color: #6c757d;"><strong>What this does:</strong> Adds the education-toolkit repository to your available plugins</p>
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                        <p style="margin: 0; font-size: 14px;"><strong>✓ Checkpoint:</strong> Marketplace added successfully</p>
+                    </div>
+                </div>
+
+                <div style="background: white; border: 2px solid #dee2e6; border-radius: 8px; padding: 30px; margin-bottom: 30px;">
+                    <h3 style="margin-top: 0;">Step 3: Install the Plugin</h3>
+                    <p style="font-size: 16px; margin-bottom: 20px;">Open the plugin menu again:</p>
+                    <div style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 16px; margin-bottom: 15px;">
+                        /plugin
+                    </div>
+                    <p style="font-size: 16px; margin-bottom: 15px;">Select <strong>"Browse and install plugins"</strong>, then choose <strong>"education-toolkit"</strong> from the list.</p>
+                    <p style="font-size: 14px; color: #6c757d;"><strong>What this does:</strong> Activates the plugin and loads all 13 agents + 10 slash commands into Claude Code</p>
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                        <p style="margin: 0; font-size: 14px;"><strong>✓ Checkpoint:</strong> education-toolkit installed successfully</p>
+                    </div>
+                </div>
+
+                <div style="background: white; border: 2px solid #dee2e6; border-radius: 8px; padding: 30px; margin-bottom: 30px;">
+                    <h3 style="margin-top: 0;">Step 4: Verify Installation</h3>
+                    <p style="font-size: 16px; margin-bottom: 20px;">Check that the plugin is active:</p>
+                    <div style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 16px; margin-bottom: 15px;">
+                        /plugin list
+                    </div>
+                    <p style="font-size: 16px; margin-bottom: 15px;"><strong>You should see:</strong></p>
+                    <div style="background: #e7f3ff; padding: 15px; border-radius: 4px; border-left: 4px solid #0066cc;">
+                        <p style="margin: 0; font-family: 'Courier New', monospace; font-size: 14px;">
+                            ✓ education-toolkit (v2.6.2)<br>
+                            &nbsp;&nbsp;13 agents, 10 commands
+                        </p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                        <p style="margin: 0; font-size: 14px;"><strong>✓ Checkpoint:</strong> education-toolkit appears in the list</p>
+                    </div>
+                </div>
+
+                <div style="background: white; border: 2px solid #dee2e6; border-radius: 8px; padding: 30px; margin-bottom: 30px;">
+                    <h3 style="margin-top: 0;">Step 5: Test the Plugin</h3>
+                    <p style="font-size: 16px; margin-bottom: 20px;">Let's verify everything works by invoking an agent:</p>
+                    <div style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 16px; margin-bottom: 15px;">
+                        Use the rubric-generator agent to create a rubric
+                    </div>
+                    <p style="font-size: 16px;"><strong>What should happen:</strong> Claude Code responds asking for assignment details to create a rubric</p>
+                    <div style="background: #d4edda; padding: 15px; border-radius: 4px; border-left: 4px solid #28a745; margin-top: 15px;">
+                        <p style="margin: 0; font-size: 14px; color: #155724;"><strong>🎉 Success!</strong> If Claude asks about your assignment, your plugin is working perfectly!</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="troubleshooting" style="margin-top: 50px; background: #f8f9fa; padding: 30px; border-radius: 8px;">
+                <h3 style="margin-top: 0;">🔧 Troubleshooting</h3>
+
+                <div style="margin-bottom: 25px;">
+                    <h4 style="color: #dc3545;">❌ Agents don't respond when invoked</h4>
+                    <p><strong>Fix:</strong> The plugin didn't install properly. Try:</p>
+                    <ol>
+                        <li>Run <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">/plugin list</code> to check if education-toolkit is listed</li>
+                        <li>If not listed, repeat Steps 2-3</li>
+                        <li>If listed but agents don't respond, try restarting Claude Code (exit and restart)</li>
+                    </ol>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <h4 style="color: #dc3545;">❌ "Plugin not found" error</h4>
+                    <p><strong>Fix:</strong> Double-check the GitHub URL:</p>
+                    <div style="background: white; padding: 15px; border-radius: 4px; border: 1px solid #dee2e6; font-family: 'Courier New', monospace;">
+                        https://github.com/<span style="background: #fff3cd;">jkruckivey</span>/education-toolkit
+                    </div>
+                    <p style="margin-top: 10px; font-size: 14px; color: #6c757d;">Make sure it's "jkruckivey" (not jameskruck, not jkruck)</p>
+                </div>
+
+
+                <div>
+                    <h4>💬 Still Having Issues?</h4>
+                    <p>During the workshop: <strong>Ask for help!</strong> Everyone learns together.</p>
+                    <p>After the workshop: Email <a href="mailto:jkruck@ivey.ca" style="color: #0066cc;">jkruck@ivey.ca</a> with your error message</p>
+                </div>
+            </div>
+
+            <div class="whats-next" style="margin-top: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 8px; text-align: center;">
+                <h3 style="margin-top: 0; color: white;">✅ Plugin Installed Successfully!</h3>
+                <p style="font-size: 18px; margin-bottom: 25px;">Now let's put these 13 agents to work with real course development tasks</p>
+                <a href="plugins-activities.html" style="display: inline-block; background: white; color: #667eea; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 18px;">
+                    Next: Hands-On Practice →
+                </a>
+            </div>
+
+        </main>
+
+        <footer style="margin-top: 60px; padding: 30px 0; border-top: 2px solid #e9ecef; text-align: center; color: #6c757d;">
+            <p><strong>Built for Ivey Business School EdTech Lab</strong></p>
+            <p>Questions? Contact <a href="mailto:jkruck@ivey.ca" style="color: #0066cc;">jkruck@ivey.ca</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

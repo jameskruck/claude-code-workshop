@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Value Metrics and Pricing Models</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        /* VIOLATION 1: Low contrast text (fails WCAG 2.2 AA) */
+        .intro {
+            background: #e0e0e0;
+            color: #999999;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        /* VIOLATION 2: Red text on white background (fails contrast for color blindness) */
+        .important {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        /* VIOLATION 3: Tiny text */
+        .disclaimer {
+            font-size: 8px;
+            color: #666;
+        }
+        /* VIOLATION 4: Click target too small */
+        .button {
+            background: #007bff;
+            color: white;
+            padding: 2px 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .content {
+            line-height: 1.6;
+        }
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .pricing-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- VIOLATION 5: Missing main landmark -->
+    <div class="content">
+
+        <!-- VIOLATION 6: Low contrast intro section -->
+        <div class="intro">
+            <p>Welcome to Module 2: Value Metrics and Pricing Models. In this module, you'll learn how B2B SaaS companies choose what to charge for and how to structure pricing tiers.</p>
+        </div>
+
+        <!-- VIOLATION 7: Improper heading hierarchy (skipping from h1 to h3) -->
+        <h1>Module 2: Value Metrics and Pricing Models</h1>
+        <h3>Learning Objectives</h3>
+
+        <p>By the end of this module, you will be able to:</p>
+        <ul>
+            <li>Identify the four primary SaaS pricing models (per-user, usage-based, tiered, hybrid)</li>
+            <li>Analyze how value metrics align with customer willingness to pay</li>
+            <li>Design a three-tier pricing structure using Good/Better/Best psychology</li>
+            <li>Evaluate when to use freemium vs. free trial strategies</li>
+        </ul>
+
+        <!-- VIOLATION 8: Missing alt text on informational image -->
+        <img src="value-metric-diagram.png" width="600">
+
+        <h3>What is a Value Metric?</h3>
+
+        <p>A <strong>value metric</strong> is the unit you charge for. It should:</p>
+        <ul>
+            <li>Align with how customers perceive value</li>
+            <li>Grow as customers get more value (natural expansion revenue)</li>
+            <li>Be easy to understand and predict</li>
+        </ul>
+
+        <!-- VIOLATION 9: Table missing headers -->
+        <table class="pricing-table">
+            <tr>
+                <td><strong>Company</strong></td>
+                <td><strong>Value Metric</strong></td>
+                <td><strong>Why It Works</strong></td>
+            </tr>
+            <tr>
+                <td>Slack</td>
+                <td>Active users</td>
+                <td>More team members = more value from collaboration</td>
+            </tr>
+            <tr>
+                <td>Snowflake</td>
+                <td>Data processed (GB)</td>
+                <td>Heavy users pay more, light users pay less</td>
+            </tr>
+            <tr>
+                <td>Salesforce</td>
+                <td>Users + features</td>
+                <td>Hybrid model: seats + tier upgrades</td>
+            </tr>
+        </table>
+
+        <!-- VIOLATION 10: Important deadline using color alone -->
+        <p class="important">Important: Submit your pricing strategy draft by Friday, Week 3</p>
+
+        <h3>The Four Pricing Models</h3>
+
+        <h4>1. Per-User Pricing</h4>
+        <p>Charge per seat/user. Examples: Slack ($8-15/user), Asana, Monday.com</p>
+        <p><strong>Pros:</strong> Predictable, easy to understand, scales with team growth</p>
+        <p><strong>Cons:</strong> Discourage
+
+s adding users, doesn't capture usage intensity</p>
+
+        <h4>2. Usage-Based Pricing</h4>
+        <p>Charge for consumption. Examples: AWS, Snowflake, Twilio</p>
+        <p><strong>Pros:</strong> Fair (pay for what you use), natural expansion, no vendor lock-in fear</p>
+        <p><strong>Cons:</strong> Unpredictable bills, complex to meter</p>
+
+        <!-- VIOLATION 11: Click here link (not descriptive) -->
+        <p>For more details, <a href="usage-based-deep-dive.html">click here</a></p>
+
+        <h4>3. Tiered Pricing</h4>
+        <p>Offer Good/Better/Best packages with feature differentiation</p>
+        <p>Most common in SaaS - gives customers choice and clear upgrade path</p>
+
+        <h4>4. Hybrid Models</h4>
+        <p>Combine multiple metrics (e.g., Salesforce: users + tier)</p>
+
+        <!-- VIOLATION 12: Decorative image without alt="" -->
+        <img src="pricing-models-infographic.png" width="700" style="display: block; margin: 20px auto;">
+
+        <!-- VIOLATION 13: Non-semantic button (div with onclick, not <button>) -->
+        <div class="button" onclick="location.href='activity.html'">
+            Start Pricing Activity
+        </div>
+
+        <h3>Next Steps</h3>
+
+        <p>Complete the interactive pricing calculator to practice designing tier structures. Then proceed to Module 3 where we'll analyze real-world pricing experiments.</p>
+
+        <!-- VIOLATION 14: Tiny disclaimer text -->
+        <p class="disclaimer">Pricing data sourced from public company disclosures and SaaS pricing benchmarks. For educational purposes only. Actual pricing strategies require market research and customer interviews.</p>
+
+        <!-- VIOLATION 15: Form without labels -->
+        <h3>Quick Reflection</h3>
+        <form>
+            <p>Which pricing model best fits your company?</p>
+            <input type="text" placeholder="Your answer" style="width: 300px; padding: 5px;">
+            <br><br>
+            <!-- VIOLATION 16: Button without accessible name -->
+            <div style="background: green; color: white; padding: 8px 16px; display: inline-block; cursor: pointer;" onclick="alert('Submitted')">
+                Submit
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
